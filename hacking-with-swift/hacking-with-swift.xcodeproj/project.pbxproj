@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1909954023382A3700199FD4 /* content in Resources */ = {isa = PBXBuildFile; fileRef = 1909953F23382A3700199FD4 /* content */; };
+		1909954D2338300800199FD4 /* content in Resources */ = {isa = PBXBuildFile; fileRef = 1909954C2338300800199FD4 /* content */; };
+		19099559233835CD00199FD4 /* content in Resources */ = {isa = PBXBuildFile; fileRef = 19099558233835CD00199FD4 /* content */; };
+		1909956923383AE700199FD4 /* content in Resources */ = {isa = PBXBuildFile; fileRef = 1909956823383AE700199FD4 /* content */; };
+		190995752338436F00199FD4 /* content in Resources */ = {isa = PBXBuildFile; fileRef = 190995742338436F00199FD4 /* content */; };
+		190995822338588100199FD4 /* content in Resources */ = {isa = PBXBuildFile; fileRef = 190995812338588100199FD4 /* content */; };
 		19D4857423345305002C1415 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D4857323345305002C1415 /* AppDelegate.swift */; };
 		19D4857623345305002C1415 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D4857523345305002C1415 /* ViewController.swift */; };
 		19D4857C23345305002C1415 /* hacking_with_swift.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 19D4857A23345305002C1415 /* hacking_with_swift.xcdatamodeld */; };
@@ -34,6 +40,66 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		19099537233826C200199FD4 /* variables.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = variables.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		190995382338275100199FD4 /* strings-&-integers.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "strings-&-integers.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		190995392338285800199FD4 /* multiple-line-strings.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "multiple-line-strings.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		1909953B233828D700199FD4 /* double-&-booleans.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "double-&-booleans.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		1909953C2338292600199FD4 /* string-interpolation.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "string-interpolation.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		1909953D2338297300199FD4 /* constants.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = constants.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		1909953E233829BA00199FD4 /* type-annotations.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "type-annotations.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		1909953F23382A3700199FD4 /* content */ = {isa = PBXFileReference; lastKnownFileType = text; path = content; sourceTree = "<group>"; };
+		1909954223382AC700199FD4 /* arrays.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = arrays.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		1909954323382B5E00199FD4 /* sets.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = sets.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		1909954423382C1F00199FD4 /* tuples.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = tuples.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		1909954523382CAD00199FD4 /* arrays-vs-sets-vs-tuples.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "arrays-vs-sets-vs-tuples.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		1909954623382CE200199FD4 /* dictionaries.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = dictionaries.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		1909954723382D3B00199FD4 /* dictionaries-default-value.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "dictionaries-default-value.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		1909954823382DAB00199FD4 /* create-empty-collections.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "create-empty-collections.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		1909954923382E4C00199FD4 /* enumerations.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = enumerations.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		1909954A23382EBC00199FD4 /* enum-associeated-value.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "enum-associeated-value.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		1909954B23382F7E00199FD4 /* enum-raw-value.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "enum-raw-value.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		1909954C2338300800199FD4 /* content */ = {isa = PBXFileReference; lastKnownFileType = text; path = content; sourceTree = "<group>"; };
+		1909954F2338308100199FD4 /* arithmetic-operators.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "arithmetic-operators.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		19099550233830CC00199FD4 /* operator-overloading.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "operator-overloading.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		190995512338312600199FD4 /* compound-assignment-operators.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "compound-assignment-operators.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		190995522338326800199FD4 /* comparison-operators.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "comparison-operators.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		190995532338335100199FD4 /* conditions.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = conditions.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		19099554233834A200199FD4 /* combining-conditions.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "combining-conditions.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		19099555233834F700199FD4 /* the-ternary-operator.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "the-ternary-operator.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		190995562338353900199FD4 /* switch-statements.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "switch-statements.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		190995572338358200199FD4 /* range-operators.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "range-operators.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		19099558233835CD00199FD4 /* content */ = {isa = PBXFileReference; lastKnownFileType = text; path = content; sourceTree = "<group>"; };
+		19099561233836AC00199FD4 /* for-loops.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "for-loops.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		190995622338374900199FD4 /* while-loops.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "while-loops.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		190995632338379F00199FD4 /* repeat-loops.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "repeat-loops.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		190995642338388200199FD4 /* exiting-loops.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "exiting-loops.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		190995652338393000199FD4 /* exiting-multiple-loops.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "exiting-multiple-loops.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		1909956623383A2B00199FD4 /* skipping-items.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "skipping-items.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		1909956723383A7500199FD4 /* while-true.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "while-true.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		1909956823383AE700199FD4 /* content */ = {isa = PBXFileReference; lastKnownFileType = text; path = content; sourceTree = "<group>"; };
+		1909956A23383E4E00199FD4 /* witing-functions.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "witing-functions.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		1909956B23383E9D00199FD4 /* accepting-parameters.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "accepting-parameters.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		1909956C23383ED600199FD4 /* returning-values.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "returning-values.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		1909956D23383F2600199FD4 /* parameter-labels.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "parameter-labels.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		1909956E23383F6400199FD4 /* omitting-parameter-labels.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "omitting-parameter-labels.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		1909956F23383FC200199FD4 /* default-parameters.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "default-parameters.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		190995702338402B00199FD4 /* variadic-functions.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "variadic-functions.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		19099571233840C700199FD4 /* writing-throwing-functions.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "writing-throwing-functions.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		190995722338421300199FD4 /* running-throwing-functions.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "running-throwing-functions.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		19099573233842C600199FD4 /* inout-parameters.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "inout-parameters.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		190995742338436F00199FD4 /* content */ = {isa = PBXFileReference; lastKnownFileType = text; path = content; sourceTree = "<group>"; };
+		1909957623384ED200199FD4 /* creating-basic-closures.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "creating-basic-closures.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		1909957723384F5C00199FD4 /* accepting-parameters-in-a-closure.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "accepting-parameters-in-a-closure.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		190995782338509B00199FD4 /* returning-values-from-a-closure.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "returning-values-from-a-closure.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		190995792338510C00199FD4 /* closures-as-parameters.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "closures-as-parameters.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		1909957A2338520100199FD4 /* trailing-closure-syntax.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "trailing-closure-syntax.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		1909957B233852D100199FD4 /* using-closures-as parameters-when-they-accept-parameters.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "using-closures-as parameters-when-they-accept-parameters.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		1909957C233853EF00199FD4 /* using-closures-as-parameters-when-they-return-values.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "using-closures-as-parameters-when-they-return-values.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		1909957D2338556C00199FD4 /* shorthand-parameters-names.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "shorthand-parameters-names.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		1909957E2338566C00199FD4 /* closures-with-multiple-parameters.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "closures-with-multiple-parameters.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		1909957F233856F800199FD4 /* returning-closures-from-functions.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "returning-closures-from-functions.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		19099580233857F500199FD4 /* capturing-values.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "capturing-values.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		190995812338588100199FD4 /* content */ = {isa = PBXFileReference; lastKnownFileType = text; path = content; sourceTree = "<group>"; };
 		19D4857023345305002C1415 /* hacking-with-swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "hacking-with-swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		19D4857323345305002C1415 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		19D4857523345305002C1415 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -83,9 +149,157 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		190995362338269C00199FD4 /* 100-days-of-swift */ = {
+			isa = PBXGroup;
+			children = (
+				1909953A233828B900199FD4 /* day-1 */,
+				1909954123382A4700199FD4 /* day-2 */,
+				1909954E2338300F00199FD4 /* day-3 */,
+				1909955A233835F300199FD4 /* day-4 */,
+				1909955B233835FB00199FD4 /* day-5 */,
+				1909955C2338360200199FD4 /* day-6 */,
+				1909955D2338360A00199FD4 /* day-7 */,
+				1909955E2338361200199FD4 /* day-8 */,
+				1909955F2338362100199FD4 /* day-9 */,
+				190995602338362900199FD4 /* day-10 */,
+			);
+			path = "100-days-of-swift";
+			sourceTree = "<group>";
+		};
+		1909953A233828B900199FD4 /* day-1 */ = {
+			isa = PBXGroup;
+			children = (
+				19099537233826C200199FD4 /* variables.playground */,
+				190995382338275100199FD4 /* strings-&-integers.playground */,
+				190995392338285800199FD4 /* multiple-line-strings.playground */,
+				1909953B233828D700199FD4 /* double-&-booleans.playground */,
+				1909953C2338292600199FD4 /* string-interpolation.playground */,
+				1909953D2338297300199FD4 /* constants.playground */,
+				1909953E233829BA00199FD4 /* type-annotations.playground */,
+				1909953F23382A3700199FD4 /* content */,
+			);
+			path = "day-1";
+			sourceTree = "<group>";
+		};
+		1909954123382A4700199FD4 /* day-2 */ = {
+			isa = PBXGroup;
+			children = (
+				1909954223382AC700199FD4 /* arrays.playground */,
+				1909954323382B5E00199FD4 /* sets.playground */,
+				1909954423382C1F00199FD4 /* tuples.playground */,
+				1909954523382CAD00199FD4 /* arrays-vs-sets-vs-tuples.playground */,
+				1909954623382CE200199FD4 /* dictionaries.playground */,
+				1909954723382D3B00199FD4 /* dictionaries-default-value.playground */,
+				1909954823382DAB00199FD4 /* create-empty-collections.playground */,
+				1909954923382E4C00199FD4 /* enumerations.playground */,
+				1909954A23382EBC00199FD4 /* enum-associeated-value.playground */,
+				1909954B23382F7E00199FD4 /* enum-raw-value.playground */,
+				1909954C2338300800199FD4 /* content */,
+			);
+			path = "day-2";
+			sourceTree = "<group>";
+		};
+		1909954E2338300F00199FD4 /* day-3 */ = {
+			isa = PBXGroup;
+			children = (
+				1909954F2338308100199FD4 /* arithmetic-operators.playground */,
+				19099550233830CC00199FD4 /* operator-overloading.playground */,
+				190995512338312600199FD4 /* compound-assignment-operators.playground */,
+				190995522338326800199FD4 /* comparison-operators.playground */,
+				190995532338335100199FD4 /* conditions.playground */,
+				19099554233834A200199FD4 /* combining-conditions.playground */,
+				19099555233834F700199FD4 /* the-ternary-operator.playground */,
+				190995562338353900199FD4 /* switch-statements.playground */,
+				190995572338358200199FD4 /* range-operators.playground */,
+				19099558233835CD00199FD4 /* content */,
+			);
+			path = "day-3";
+			sourceTree = "<group>";
+		};
+		1909955A233835F300199FD4 /* day-4 */ = {
+			isa = PBXGroup;
+			children = (
+				19099561233836AC00199FD4 /* for-loops.playground */,
+				190995622338374900199FD4 /* while-loops.playground */,
+				190995632338379F00199FD4 /* repeat-loops.playground */,
+				190995642338388200199FD4 /* exiting-loops.playground */,
+				190995652338393000199FD4 /* exiting-multiple-loops.playground */,
+				1909956623383A2B00199FD4 /* skipping-items.playground */,
+				1909956723383A7500199FD4 /* while-true.playground */,
+				1909956823383AE700199FD4 /* content */,
+			);
+			path = "day-4";
+			sourceTree = "<group>";
+		};
+		1909955B233835FB00199FD4 /* day-5 */ = {
+			isa = PBXGroup;
+			children = (
+				1909956A23383E4E00199FD4 /* witing-functions.playground */,
+				1909956B23383E9D00199FD4 /* accepting-parameters.playground */,
+				1909956C23383ED600199FD4 /* returning-values.playground */,
+				1909956D23383F2600199FD4 /* parameter-labels.playground */,
+				1909956E23383F6400199FD4 /* omitting-parameter-labels.playground */,
+				1909956F23383FC200199FD4 /* default-parameters.playground */,
+				190995702338402B00199FD4 /* variadic-functions.playground */,
+				19099571233840C700199FD4 /* writing-throwing-functions.playground */,
+				190995722338421300199FD4 /* running-throwing-functions.playground */,
+				19099573233842C600199FD4 /* inout-parameters.playground */,
+				190995742338436F00199FD4 /* content */,
+			);
+			path = "day-5";
+			sourceTree = "<group>";
+		};
+		1909955C2338360200199FD4 /* day-6 */ = {
+			isa = PBXGroup;
+			children = (
+				1909957623384ED200199FD4 /* creating-basic-closures.playground */,
+				1909957723384F5C00199FD4 /* accepting-parameters-in-a-closure.playground */,
+				190995782338509B00199FD4 /* returning-values-from-a-closure.playground */,
+				190995792338510C00199FD4 /* closures-as-parameters.playground */,
+				1909957A2338520100199FD4 /* trailing-closure-syntax.playground */,
+				1909957B233852D100199FD4 /* using-closures-as parameters-when-they-accept-parameters.playground */,
+				1909957C233853EF00199FD4 /* using-closures-as-parameters-when-they-return-values.playground */,
+				1909957D2338556C00199FD4 /* shorthand-parameters-names.playground */,
+				1909957E2338566C00199FD4 /* closures-with-multiple-parameters.playground */,
+				1909957F233856F800199FD4 /* returning-closures-from-functions.playground */,
+				19099580233857F500199FD4 /* capturing-values.playground */,
+				190995812338588100199FD4 /* content */,
+			);
+			path = "day-6";
+			sourceTree = "<group>";
+		};
+		1909955D2338360A00199FD4 /* day-7 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "day-7";
+			sourceTree = "<group>";
+		};
+		1909955E2338361200199FD4 /* day-8 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "day-8";
+			sourceTree = "<group>";
+		};
+		1909955F2338362100199FD4 /* day-9 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "day-9";
+			sourceTree = "<group>";
+		};
+		190995602338362900199FD4 /* day-10 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "day-10";
+			sourceTree = "<group>";
+		};
 		19D4856723345305002C1415 = {
 			isa = PBXGroup;
 			children = (
+				190995362338269C00199FD4 /* 100-days-of-swift */,
 				19D4857223345305002C1415 /* hacking-with-swift */,
 				19D4858A23345306002C1415 /* hacking-with-swiftTests */,
 				19D4859523345307002C1415 /* hacking-with-swiftUITests */,
@@ -263,8 +477,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1909956923383AE700199FD4 /* content in Resources */,
+				1909954023382A3700199FD4 /* content in Resources */,
+				190995822338588100199FD4 /* content in Resources */,
+				190995752338436F00199FD4 /* content in Resources */,
 				19D4858123345306002C1415 /* LaunchScreen.storyboard in Resources */,
+				1909954D2338300800199FD4 /* content in Resources */,
 				19D4857E23345306002C1415 /* Assets.xcassets in Resources */,
+				19099559233835CD00199FD4 /* content in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
