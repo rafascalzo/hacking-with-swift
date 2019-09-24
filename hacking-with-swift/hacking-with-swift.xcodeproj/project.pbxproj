@@ -23,6 +23,9 @@
 		19F6452B2339D400005DB701 /* content in Resources */ = {isa = PBXBuildFile; fileRef = 19F6452A2339D400005DB701 /* content */; };
 		19F6452D2339D411005DB701 /* content in Resources */ = {isa = PBXBuildFile; fileRef = 19F6452C2339D411005DB701 /* content */; };
 		19F6453B2339DA5A005DB701 /* content in Resources */ = {isa = PBXBuildFile; fileRef = 19F6453A2339DA5A005DB701 /* content */; };
+		89BBBE50233A51FE00F453FA /* content in Resources */ = {isa = PBXBuildFile; fileRef = 89BBBE4F233A51FE00F453FA /* content */; };
+		89BBBE59233A581A00F453FA /* content in Resources */ = {isa = PBXBuildFile; fileRef = 89BBBE58233A581A00F453FA /* content */; };
+		89BBBE5B233A590000F453FA /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 89BBBE5A233A590000F453FA /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -147,6 +150,26 @@
 		19F645382339D9CE005DB701 /* constants.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = constants.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		19F645392339DA29005DB701 /* type-annotations.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "type-annotations.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		19F6453A2339DA5A005DB701 /* content */ = {isa = PBXFileReference; lastKnownFileType = text; path = content; sourceTree = "<group>"; };
+		89BBBE45233A4BD600F453FA /* arrays.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = arrays.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		89BBBE46233A4C3700F453FA /* sets.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = sets.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		89BBBE47233A4CB500F453FA /* tuples.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = tuples.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		89BBBE48233A4D4800F453FA /* arrays-vs-sets-vs-tuples.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "arrays-vs-sets-vs-tuples.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		89BBBE49233A4E0B00F453FA /* dictionaries.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = dictionaries.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		89BBBE4A233A4F4300F453FA /* dictionary-default-values.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "dictionary-default-values.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		89BBBE4B233A4FE200F453FA /* creating-empty-collections.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "creating-empty-collections.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		89BBBE4C233A502C00F453FA /* enumerations.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = enumerations.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		89BBBE4D233A509E00F453FA /* enum-associated-values.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "enum-associated-values.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		89BBBE4E233A512300F453FA /* enum-raw-values.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "enum-raw-values.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		89BBBE4F233A51FE00F453FA /* content */ = {isa = PBXFileReference; lastKnownFileType = text; path = content; sourceTree = "<group>"; };
+		89BBBE51233A52C800F453FA /* creating-your-own-classes.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = "creating-your-own-classes.playground"; path = "100-days-of-swiftUI/day2/creating-your-own-classes.playground"; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		89BBBE52233A53A500F453FA /* class-inheritance.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = "class-inheritance.playground"; path = "100-days-of-swiftUI/day2/class-inheritance.playground"; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		89BBBE53233A544D00F453FA /* overriding-methods.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = "overriding-methods.playground"; path = "100-days-of-swiftUI/day2/overriding-methods.playground"; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		89BBBE54233A54DB00F453FA /* final-classes.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = "final-classes.playground"; path = "100-days-of-swiftUI/day2/final-classes.playground"; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		89BBBE55233A554F00F453FA /* copying-objects.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = "copying-objects.playground"; path = "100-days-of-swiftUI/day2/copying-objects.playground"; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		89BBBE56233A56F100F453FA /* deinitializers.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = deinitializers.playground; path = "100-days-of-swiftUI/day2/deinitializers.playground"; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		89BBBE57233A579A00F453FA /* mutability.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = mutability.playground; path = "100-days-of-swiftUI/day2/mutability.playground"; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		89BBBE58233A581A00F453FA /* content */ = {isa = PBXFileReference; lastKnownFileType = text; name = content; path = "100-days-of-swiftUI/day2/content"; sourceTree = SOURCE_ROOT; };
+		89BBBE5A233A590000F453FA /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -331,6 +354,14 @@
 		190995602338362900199FD4 /* day-10 */ = {
 			isa = PBXGroup;
 			children = (
+				89BBBE51233A52C800F453FA /* creating-your-own-classes.playground */,
+				89BBBE52233A53A500F453FA /* class-inheritance.playground */,
+				89BBBE53233A544D00F453FA /* overriding-methods.playground */,
+				89BBBE54233A54DB00F453FA /* final-classes.playground */,
+				89BBBE55233A554F00F453FA /* copying-objects.playground */,
+				89BBBE56233A56F100F453FA /* deinitializers.playground */,
+				89BBBE57233A579A00F453FA /* mutability.playground */,
+				89BBBE58233A581A00F453FA /* content */,
 			);
 			path = "day-10";
 			sourceTree = "<group>";
@@ -338,6 +369,7 @@
 		19D4856723345305002C1415 = {
 			isa = PBXGroup;
 			children = (
+				89BBBE5A233A590000F453FA /* Default-568h@2x.png */,
 				19F6452E2339D800005DB701 /* 100-days-of-swiftUI */,
 				190995362338269C00199FD4 /* 100-days-of-swift */,
 				19D4857223345305002C1415 /* hacking-with-swift */,
@@ -416,6 +448,15 @@
 		19F6452E2339D800005DB701 /* 100-days-of-swiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				89BBBE43233A4BA700F453FA /* day1 */,
+				89BBBE44233A4BC500F453FA /* day2 */,
+			);
+			path = "100-days-of-swiftUI";
+			sourceTree = "<group>";
+		};
+		89BBBE43233A4BA700F453FA /* day1 */ = {
+			isa = PBXGroup;
+			children = (
 				19F645312339D847005DB701 /* variables.playground */,
 				19F645342339D8F3005DB701 /* strings-and-integers.playground */,
 				19F645352339D924005DB701 /* multi-line-strings.playground */,
@@ -425,7 +466,25 @@
 				19F645392339DA29005DB701 /* type-annotations.playground */,
 				19F6453A2339DA5A005DB701 /* content */,
 			);
-			path = "100-days-of-swiftUI";
+			path = day1;
+			sourceTree = "<group>";
+		};
+		89BBBE44233A4BC500F453FA /* day2 */ = {
+			isa = PBXGroup;
+			children = (
+				89BBBE45233A4BD600F453FA /* arrays.playground */,
+				89BBBE46233A4C3700F453FA /* sets.playground */,
+				89BBBE47233A4CB500F453FA /* tuples.playground */,
+				89BBBE48233A4D4800F453FA /* arrays-vs-sets-vs-tuples.playground */,
+				89BBBE49233A4E0B00F453FA /* dictionaries.playground */,
+				89BBBE4A233A4F4300F453FA /* dictionary-default-values.playground */,
+				89BBBE4B233A4FE200F453FA /* creating-empty-collections.playground */,
+				89BBBE4C233A502C00F453FA /* enumerations.playground */,
+				89BBBE4D233A509E00F453FA /* enum-associated-values.playground */,
+				89BBBE4E233A512300F453FA /* enum-raw-values.playground */,
+				89BBBE4F233A51FE00F453FA /* content */,
+			);
+			path = day2;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -533,11 +592,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				1909956923383AE700199FD4 /* content in Resources */,
+				89BBBE59233A581A00F453FA /* content in Resources */,
 				1909954023382A3700199FD4 /* content in Resources */,
 				190995822338588100199FD4 /* content in Resources */,
 				190995752338436F00199FD4 /* content in Resources */,
+				89BBBE5B233A590000F453FA /* Default-568h@2x.png in Resources */,
 				19F6452D2339D411005DB701 /* content in Resources */,
 				19D4858123345306002C1415 /* LaunchScreen.storyboard in Resources */,
+				89BBBE50233A51FE00F453FA /* content in Resources */,
 				1909954D2338300800199FD4 /* content in Resources */,
 				19F6452B2339D400005DB701 /* content in Resources */,
 				19D4857E23345306002C1415 /* Assets.xcassets in Resources */,
@@ -736,7 +798,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "hacking-with-swift/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -744,6 +807,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "github.com-rafascalzo.hacking-with-swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -753,7 +817,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "hacking-with-swift/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -761,6 +826,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "github.com-rafascalzo.hacking-with-swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
