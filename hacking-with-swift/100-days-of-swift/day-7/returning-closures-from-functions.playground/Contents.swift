@@ -20,3 +20,4 @@ result("London")
 //It’s technically allowable – although really not recommended! – to call the return value from travel() directly:
 
 let result2 = travel()("London")
+

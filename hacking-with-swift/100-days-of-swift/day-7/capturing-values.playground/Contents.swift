@@ -31,8 +31,3 @@ let result = travel()
 result("London")
 result("London")
 result("London")
-result("London")
-result("London")
-result("London")
-result("London")
-

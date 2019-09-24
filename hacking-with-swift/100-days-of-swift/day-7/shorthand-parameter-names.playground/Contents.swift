@@ -1,5 +1,5 @@
 import UIKit
-
+//
 //We just made a travel() function. It accepts one parameter, which is a closure that itself accepts one parameter and returns a string. That closure is then run between two calls to print().
 //
 //Here’s that in code:
@@ -35,3 +35,4 @@ travel { place in
 travel {
     "I'm going to \($0) in my car"
 }
+
