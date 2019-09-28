@@ -16,6 +16,8 @@
 		190BB532233DB914007D3486 /* swiftUI.day3.content in Resources */ = {isa = PBXBuildFile; fileRef = 190BB531233DB914007D3486 /* swiftUI.day3.content */; };
 		190BB53B233DBCB7007D3486 /* 100.DoS.day-11.content in Resources */ = {isa = PBXBuildFile; fileRef = 190BB53A233DBCB7007D3486 /* 100.DoS.day-11.content */; };
 		190BB53D233DBCDA007D3486 /* optionals-summary in Resources */ = {isa = PBXBuildFile; fileRef = 190BB53C233DBCDA007D3486 /* optionals-summary */; };
+		199DD2A8233F058900EA5685 /* swiftui-functions-summary.m in Sources */ = {isa = PBXBuildFile; fileRef = 199DD2A7233F058900EA5685 /* swiftui-functions-summary.m */; };
+		199DD2B3233F076A00EA5685 /* swiftui-loops-summary.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 199DD2B1233F076A00EA5685 /* swiftui-loops-summary.cpp */; };
 		19D4857423345305002C1415 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D4857323345305002C1415 /* AppDelegate.swift */; };
 		19D4857623345305002C1415 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D4857523345305002C1415 /* ViewController.swift */; };
 		19D4857C23345305002C1415 /* hacking_with_swift.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 19D4857A23345305002C1415 /* hacking_with_swift.xcdatamodeld */; };
@@ -128,6 +130,29 @@
 		190BB545233DC000007D3486 /* optional-try.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "optional-try.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		190BB546233DC0A4007D3486 /* failable-initializers.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "failable-initializers.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		190BB547233DC161007D3486 /* typecasting.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = typecasting.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		199DD29C233F022D00EA5685 /* writing-functions.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "writing-functions.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		199DD29D233F02BA00EA5685 /* accepting-parameters.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "accepting-parameters.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		199DD29E233F02E100EA5685 /* return-values.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "return-values.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		199DD29F233F035100EA5685 /* parameter-labels.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "parameter-labels.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		199DD2A0233F037C00EA5685 /* ommiting-parameter-labels.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "ommiting-parameter-labels.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		199DD2A1233F03D700EA5685 /* default-parameters.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "default-parameters.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		199DD2A2233F042F00EA5685 /* variadic-functions.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "variadic-functions.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		199DD2A3233F04A400EA5685 /* writing-throwing-functions.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "writing-throwing-functions.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		199DD2A4233F04DA00EA5685 /* running-throwing-functions.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "running-throwing-functions.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		199DD2A5233F052C00EA5685 /* inout-parameters.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "inout-parameters.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		199DD2A6233F058900EA5685 /* hacking-with-swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "hacking-with-swift-Bridging-Header.h"; sourceTree = "<group>"; };
+		199DD2A7233F058900EA5685 /* swiftui-functions-summary.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "swiftui-functions-summary.m"; sourceTree = "<group>"; };
+		199DD2AA233F067D00EA5685 /* for-loops.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "for-loops.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		199DD2AB233F069800EA5685 /* while-loops.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "while-loops.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		199DD2AC233F06AA00EA5685 /* repeat-loops.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "repeat-loops.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		199DD2AD233F06C400EA5685 /* exiting-loops.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "exiting-loops.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		199DD2AE233F06DC00EA5685 /* exiting-multiple-loops.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "exiting-multiple-loops.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		199DD2AF233F06F900EA5685 /* skipping-items.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "skipping-items.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		199DD2B0233F070F00EA5685 /* while-true.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "while-true.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		199DD2B1233F076A00EA5685 /* swiftui-loops-summary.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "swiftui-loops-summary.cpp"; sourceTree = "<group>"; };
+		199DD2B2233F076A00EA5685 /* swiftui-loops-summary.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "swiftui-loops-summary.hpp"; sourceTree = "<group>"; };
+		199DD2B5233F0A7C00EA5685 /* variables-and-constants.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "variables-and-constants.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		199DD2B6233F0B0300EA5685 /* types-of-data.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "types-of-data.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		19D4857023345305002C1415 /* hacking-with-swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "hacking-with-swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		19D4857323345305002C1415 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		19D4857523345305002C1415 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -228,6 +253,7 @@
 		190995362338269C00199FD4 /* 100-days-of-swift */ = {
 			isa = PBXGroup;
 			children = (
+				199DD2B4233F0A6400EA5685 /* day-13 */,
 				1909953A233828B900199FD4 /* day-1 */,
 				1909954123382A4700199FD4 /* day-2 */,
 				1909954E2338300F00199FD4 /* day-3 */,
@@ -442,6 +468,50 @@
 			path = "day-12";
 			sourceTree = "<group>";
 		};
+		199DD29B233F020700EA5685 /* day-4 */ = {
+			isa = PBXGroup;
+			children = (
+				199DD2AA233F067D00EA5685 /* for-loops.playground */,
+				199DD2AB233F069800EA5685 /* while-loops.playground */,
+				199DD2AC233F06AA00EA5685 /* repeat-loops.playground */,
+				199DD2AD233F06C400EA5685 /* exiting-loops.playground */,
+				199DD2AE233F06DC00EA5685 /* exiting-multiple-loops.playground */,
+				199DD2AF233F06F900EA5685 /* skipping-items.playground */,
+				199DD2B0233F070F00EA5685 /* while-true.playground */,
+				199DD2B1233F076A00EA5685 /* swiftui-loops-summary.cpp */,
+				199DD2B2233F076A00EA5685 /* swiftui-loops-summary.hpp */,
+			);
+			path = "day-4";
+			sourceTree = "<group>";
+		};
+		199DD2A9233F063E00EA5685 /* day-5 */ = {
+			isa = PBXGroup;
+			children = (
+				199DD29C233F022D00EA5685 /* writing-functions.playground */,
+				199DD29D233F02BA00EA5685 /* accepting-parameters.playground */,
+				199DD29E233F02E100EA5685 /* return-values.playground */,
+				199DD29F233F035100EA5685 /* parameter-labels.playground */,
+				199DD2A0233F037C00EA5685 /* ommiting-parameter-labels.playground */,
+				199DD2A1233F03D700EA5685 /* default-parameters.playground */,
+				199DD2A2233F042F00EA5685 /* variadic-functions.playground */,
+				199DD2A3233F04A400EA5685 /* writing-throwing-functions.playground */,
+				199DD2A4233F04DA00EA5685 /* running-throwing-functions.playground */,
+				199DD2A5233F052C00EA5685 /* inout-parameters.playground */,
+				199DD2A7233F058900EA5685 /* swiftui-functions-summary.m */,
+				199DD2A6233F058900EA5685 /* hacking-with-swift-Bridging-Header.h */,
+			);
+			path = "day-5";
+			sourceTree = "<group>";
+		};
+		199DD2B4233F0A6400EA5685 /* day-13 */ = {
+			isa = PBXGroup;
+			children = (
+				199DD2B5233F0A7C00EA5685 /* variables-and-constants.playground */,
+				199DD2B6233F0B0300EA5685 /* types-of-data.playground */,
+			);
+			path = "day-13";
+			sourceTree = "<group>";
+		};
 		19D4856723345305002C1415 = {
 			isa = PBXGroup;
 			children = (
@@ -524,6 +594,8 @@
 		19F6452E2339D800005DB701 /* 100-days-of-swiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				199DD2A9233F063E00EA5685 /* day-5 */,
+				199DD29B233F020700EA5685 /* day-4 */,
 				190BB529233DB5E8007D3486 /* day-3 */,
 				89BBBE43233A4BA700F453FA /* day-1 */,
 				89BBBE44233A4BC500F453FA /* day-2 */,
@@ -632,6 +704,7 @@
 				TargetAttributes = {
 					19D4856F23345305002C1415 = {
 						CreatedOnToolsVersion = 10.3;
+						LastSwiftMigration = 1030;
 					};
 					19D4858623345306002C1415 = {
 						CreatedOnToolsVersion = 10.3;
@@ -709,8 +782,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				199DD2B3233F076A00EA5685 /* swiftui-loops-summary.cpp in Sources */,
 				19D4857623345305002C1415 /* ViewController.swift in Sources */,
 				19D4857423345305002C1415 /* AppDelegate.swift in Sources */,
+				199DD2A8233F058900EA5685 /* swiftui-functions-summary.m in Sources */,
 				19D4857C23345305002C1415 /* hacking_with_swift.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -878,6 +953,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "hacking-with-swift/Info.plist";
@@ -888,6 +964,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "github.com-rafascalzo.hacking-with-swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "100-days-of-swiftUI/day-4/hacking-with-swift-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -897,6 +975,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "hacking-with-swift/Info.plist";
@@ -907,6 +986,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "github.com-rafascalzo.hacking-with-swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "100-days-of-swiftUI/day-4/hacking-with-swift-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
