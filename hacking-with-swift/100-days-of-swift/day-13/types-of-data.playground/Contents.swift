@@ -4,8 +4,8 @@ import UIKit
 //
 //Strings can be long (e.g. a million letters or more), short (e.g. 10 letters) or even empty (no letters), it doesn't matter: they are all strings in Swift's eyes, and all work the same. Swift knows that name should hold a string because you assign a string to it when you create it: "Tim McGraw". If you were to rewrite your code to this it would stop working:
 
-var name
-    name = "Tim McGraw"
+var name1
+    name1 = "Tim McGraw"
 //This time Xcode will give you an error message that won't make much sense just yet: "Type annotation missing in pattern". What it means is, "I can't figure out what data type name is because you aren't giving me enough information."
 //
 //At this point you have two options: either create your variable and give it an initial value on one line of code, or use what's called a type annotation, which is where you tell Swift what data type the variable will hold later on, even though you aren't giving it a value right now.
