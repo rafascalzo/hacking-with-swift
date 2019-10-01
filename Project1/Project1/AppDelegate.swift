@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  Project1
 //
-//  Created by rafaelviewcontroller on 9/30/19.
+//  Created by rafaelviewcontroller on 10/1/19.
 //  Copyright © 2019 rafaelviewcontroller. All rights reserved.
 //
 
@@ -17,8 +17,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         window = UIWindow(frame: UIScreen.main.bounds)
+        
+        window?.rootViewController =  ViewController()
         window?.makeKeyAndVisible()
-        window?.rootViewController = MainTableViewController()
         return true
     }
 
