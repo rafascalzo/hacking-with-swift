@@ -17,6 +17,7 @@
 		190BB532233DB914007D3486 /* swiftUI.day3.content in Resources */ = {isa = PBXBuildFile; fileRef = 190BB531233DB914007D3486 /* swiftUI.day3.content */; };
 		190BB53B233DBCB7007D3486 /* 100.DoS.day-11.content in Resources */ = {isa = PBXBuildFile; fileRef = 190BB53A233DBCB7007D3486 /* 100.DoS.day-11.content */; };
 		190BB53D233DBCDA007D3486 /* optionals-summary in Resources */ = {isa = PBXBuildFile; fileRef = 190BB53C233DBCDA007D3486 /* optionals-summary */; };
+		1911C76823430B1E00866722 /* swiftUI.summary.structs.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1911C76723430B1E00866722 /* swiftUI.summary.structs.strings */; };
 		199DD2A8233F058900EA5685 /* swiftui-functions-summary.m in Sources */ = {isa = PBXBuildFile; fileRef = 199DD2A7233F058900EA5685 /* swiftui-functions-summary.m */; };
 		199DD2B3233F076A00EA5685 /* swiftui-loops-summary.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 199DD2B1233F076A00EA5685 /* swiftui-loops-summary.cpp */; };
 		19D4857423345305002C1415 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D4857323345305002C1415 /* AppDelegate.swift */; };
@@ -143,6 +144,19 @@
 		190BB545233DC000007D3486 /* optional-try.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "optional-try.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		190BB546233DC0A4007D3486 /* failable-initializers.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "failable-initializers.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		190BB547233DC161007D3486 /* typecasting.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = typecasting.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		1911C75B2343068C00866722 /* creating-your-own-structs.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "creating-your-own-structs.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		1911C75C2343070200866722 /* computed-properties.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "computed-properties.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		1911C75D2343078100866722 /* property-observers.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "property-observers.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		1911C75E234307EA00866722 /* methods.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = methods.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		1911C75F2343080700866722 /* mutating-methods.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "mutating-methods.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		1911C7602343086100866722 /* properties-and-methods-of-strings.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "properties-and-methods-of-strings.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		1911C7612343088C00866722 /* properties-and-methods-of-arrays.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "properties-and-methods-of-arrays.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		1911C762234308D200866722 /* initializers.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = initializers.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		1911C7632343090300866722 /* referring-to-the-current-instance.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "referring-to-the-current-instance.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		1911C7642343094900866722 /* lazy-properties.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "lazy-properties.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		1911C76523430A6500866722 /* static-properties-and-methods.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "static-properties-and-methods.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		1911C76623430A9F00866722 /* access-control.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "access-control.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		1911C76723430B1E00866722 /* swiftUI.summary.structs.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = swiftUI.summary.structs.strings; sourceTree = "<group>"; };
 		199DD29C233F022D00EA5685 /* writing-functions.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "writing-functions.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		199DD29D233F02BA00EA5685 /* accepting-parameters.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "accepting-parameters.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		199DD29E233F02E100EA5685 /* return-values.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "return-values.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -531,6 +545,26 @@
 			path = "day-12";
 			sourceTree = "<group>";
 		};
+		1911C75A2343066E00866722 /* day-8 */ = {
+			isa = PBXGroup;
+			children = (
+				1911C75B2343068C00866722 /* creating-your-own-structs.playground */,
+				1911C75C2343070200866722 /* computed-properties.playground */,
+				1911C75D2343078100866722 /* property-observers.playground */,
+				1911C75E234307EA00866722 /* methods.playground */,
+				1911C75F2343080700866722 /* mutating-methods.playground */,
+				1911C7602343086100866722 /* properties-and-methods-of-strings.playground */,
+				1911C7612343088C00866722 /* properties-and-methods-of-arrays.playground */,
+				1911C762234308D200866722 /* initializers.playground */,
+				1911C7632343090300866722 /* referring-to-the-current-instance.playground */,
+				1911C7642343094900866722 /* lazy-properties.playground */,
+				1911C76523430A6500866722 /* static-properties-and-methods.playground */,
+				1911C76623430A9F00866722 /* access-control.playground */,
+				1911C76723430B1E00866722 /* swiftUI.summary.structs.strings */,
+			);
+			path = "day-8";
+			sourceTree = "<group>";
+		};
 		199DD29B233F020700EA5685 /* day-4 */ = {
 			isa = PBXGroup;
 			children = (
@@ -693,6 +727,7 @@
 		19F6452E2339D800005DB701 /* 100-days-of-swiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				1911C75A2343066E00866722 /* day-8 */,
 				89BBBE43233A4BA700F453FA /* day-1 */,
 				89BBBE44233A4BC500F453FA /* day-2 */,
 				190BB529233DB5E8007D3486 /* day-3 */,
@@ -855,6 +890,7 @@
 				89BBBE50233A51FE00F453FA /* content in Resources */,
 				1909954D2338300800199FD4 /* content in Resources */,
 				19F6452B2339D400005DB701 /* content in Resources */,
+				1911C76823430B1E00866722 /* swiftUI.summary.structs.strings in Resources */,
 				19D4857E23345306002C1415 /* Assets.xcassets in Resources */,
 				19F6453B2339DA5A005DB701 /* content in Resources */,
 				19099559233835CD00199FD4 /* content in Resources */,
