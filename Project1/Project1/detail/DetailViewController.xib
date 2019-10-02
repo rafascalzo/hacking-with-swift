@@ -10,9 +10,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewController" customModule="Project1" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailViewController" customModule="Project1" customModuleProvider="target">
             <connections>
-                <outlet property="tableView" destination="4FY-GV-hlx" id="8ji-gH-Ti3"/>
+                <outlet property="imageView" destination="bOn-VX-6Zd" id="ZSG-hP-a5w"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -21,19 +21,19 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4FY-GV-hlx">
-                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                </tableView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bOn-VX-6Zd">
+                    <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                </imageView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="4FY-GV-hlx" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="lS8-00-whY"/>
-                <constraint firstItem="4FY-GV-hlx" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="sh5-9K-VRx"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="4FY-GV-hlx" secondAttribute="bottom" id="tXP-6R-3hW"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="4FY-GV-hlx" secondAttribute="trailing" id="tgn-S9-kox"/>
+                <constraint firstItem="bOn-VX-6Zd" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="A0O-j9-Hx6"/>
+                <constraint firstItem="bOn-VX-6Zd" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="TXX-ZM-obo"/>
+                <constraint firstItem="bOn-VX-6Zd" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="WoU-XQ-G9U"/>
+                <constraint firstAttribute="bottom" secondItem="bOn-VX-6Zd" secondAttribute="bottom" id="j6p-dD-o5K"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="47.826086956521742" y="57.589285714285708"/>
         </view>
     </objects>
 </document>
