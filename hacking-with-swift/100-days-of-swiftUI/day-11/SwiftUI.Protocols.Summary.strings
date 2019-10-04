@@ -1,0 +1,16 @@
+/* 
+  SwiftUI.Protocols.Summary.strings
+  hacking-with-swift
+
+  Created by rafaelviewcontroller on 10/3/19.
+  Copyright © 2019 rafaelviewcontroller. All rights reserved.
+*/
+"""
+You’ve made it to the end of the ninth part of this series, so let’s summarize:
+
+Protocols describe what methods and properties a conforming type must have, but don’t provide the implementations of those methods.
+You can build protocols on top of other protocols, similar to classes.
+Extensions let you add methods and computed properties to specific types such as Int.
+Protocol extensions let you add methods and computed properties to protocols.
+Protocol-oriented programming is the practice of designing your app architecture as a series of protocols, then using protocol extensions to provide default method implementations.
+"""

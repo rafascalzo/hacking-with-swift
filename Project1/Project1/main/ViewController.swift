@@ -32,6 +32,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
         
     }
+    
+    fileprivate func isLoggedIn() -> Bool {
+        return UserDefaults.standard.bool(forKey: "isLogedIn")
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return pictures.count
     }

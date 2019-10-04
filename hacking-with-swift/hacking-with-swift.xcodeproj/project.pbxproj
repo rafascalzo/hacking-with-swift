@@ -18,6 +18,13 @@
 		190BB53B233DBCB7007D3486 /* 100.DoS.day-11.content in Resources */ = {isa = PBXBuildFile; fileRef = 190BB53A233DBCB7007D3486 /* 100.DoS.day-11.content */; };
 		190BB53D233DBCDA007D3486 /* optionals-summary in Resources */ = {isa = PBXBuildFile; fileRef = 190BB53C233DBCDA007D3486 /* optionals-summary */; };
 		1911C76823430B1E00866722 /* swiftUI.summary.structs.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1911C76723430B1E00866722 /* swiftUI.summary.structs.strings */; };
+		1966DFBB2346D20300C47A45 /* protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1966DFBA2346D20300C47A45 /* protocols.swift */; };
+		1966DFBD2346D27100C47A45 /* protocol-inheritance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1966DFBC2346D27100C47A45 /* protocol-inheritance.swift */; };
+		1966DFC12346D4E900C47A45 /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1966DFC02346D4E900C47A45 /* extensions.swift */; };
+		1966DFC42346D51F00C47A45 /* protocol-extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1966DFC32346D51F00C47A45 /* protocol-extensions.swift */; };
+		1966DFC62346D59300C47A45 /* protocol-oriented-prgramming.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1966DFC52346D59300C47A45 /* protocol-oriented-prgramming.swift */; };
+		1966DFC82346D5E600C47A45 /* SwiftUI.Protocols.Summary.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1966DFC72346D5E600C47A45 /* SwiftUI.Protocols.Summary.strings */; };
+		198995CA2345963400C38D53 /* SwiftUI.Classes.Summary.strings in Resources */ = {isa = PBXBuildFile; fileRef = 198995C92345963400C38D53 /* SwiftUI.Classes.Summary.strings */; };
 		199DD2A8233F058900EA5685 /* swiftui-functions-summary.m in Sources */ = {isa = PBXBuildFile; fileRef = 199DD2A7233F058900EA5685 /* swiftui-functions-summary.m */; };
 		199DD2B3233F076A00EA5685 /* swiftui-loops-summary.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 199DD2B1233F076A00EA5685 /* swiftui-loops-summary.cpp */; };
 		19D4857423345305002C1415 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D4857323345305002C1415 /* AppDelegate.swift */; };
@@ -157,6 +164,20 @@
 		1911C76523430A6500866722 /* static-properties-and-methods.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "static-properties-and-methods.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		1911C76623430A9F00866722 /* access-control.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "access-control.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		1911C76723430B1E00866722 /* swiftUI.summary.structs.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = swiftUI.summary.structs.strings; sourceTree = "<group>"; };
+		1966DFBA2346D20300C47A45 /* protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = protocols.swift; sourceTree = "<group>"; };
+		1966DFBC2346D27100C47A45 /* protocol-inheritance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "protocol-inheritance.swift"; sourceTree = "<group>"; };
+		1966DFC02346D4E900C47A45 /* extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
+		1966DFC32346D51F00C47A45 /* protocol-extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "protocol-extensions.swift"; sourceTree = "<group>"; };
+		1966DFC52346D59300C47A45 /* protocol-oriented-prgramming.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "protocol-oriented-prgramming.swift"; sourceTree = "<group>"; };
+		1966DFC72346D5E600C47A45 /* SwiftUI.Protocols.Summary.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = SwiftUI.Protocols.Summary.strings; sourceTree = "<group>"; };
+		198995C2234591C200C38D53 /* creating-your-own-classes.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "creating-your-own-classes.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		198995C32345923000C38D53 /* class-inheritance.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "class-inheritance.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		198995C42345928E00C38D53 /* overriding-methods.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "overriding-methods.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		198995C52345933A00C38D53 /* final-classes.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "final-classes.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		198995C62345936A00C38D53 /* copying-objects.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "copying-objects.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		198995C72345940500C38D53 /* deinitializers.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = deinitializers.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		198995C82345945100C38D53 /* mutability.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = mutability.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		198995C92345963400C38D53 /* SwiftUI.Classes.Summary.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = SwiftUI.Classes.Summary.strings; sourceTree = "<group>"; };
 		199DD29C233F022D00EA5685 /* writing-functions.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "writing-functions.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		199DD29D233F02BA00EA5685 /* accepting-parameters.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "accepting-parameters.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		199DD29E233F02E100EA5685 /* return-values.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "return-values.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -565,6 +586,34 @@
 			path = "day-8";
 			sourceTree = "<group>";
 		};
+		1966DFB92346D1F500C47A45 /* day-11 */ = {
+			isa = PBXGroup;
+			children = (
+				1966DFBA2346D20300C47A45 /* protocols.swift */,
+				1966DFBC2346D27100C47A45 /* protocol-inheritance.swift */,
+				1966DFC02346D4E900C47A45 /* extensions.swift */,
+				1966DFC32346D51F00C47A45 /* protocol-extensions.swift */,
+				1966DFC52346D59300C47A45 /* protocol-oriented-prgramming.swift */,
+				1966DFC72346D5E600C47A45 /* SwiftUI.Protocols.Summary.strings */,
+			);
+			path = "day-11";
+			sourceTree = "<group>";
+		};
+		198995C12345919900C38D53 /* day-10 */ = {
+			isa = PBXGroup;
+			children = (
+				198995C2234591C200C38D53 /* creating-your-own-classes.playground */,
+				198995C32345923000C38D53 /* class-inheritance.playground */,
+				198995C42345928E00C38D53 /* overriding-methods.playground */,
+				198995C52345933A00C38D53 /* final-classes.playground */,
+				198995C62345936A00C38D53 /* copying-objects.playground */,
+				198995C72345940500C38D53 /* deinitializers.playground */,
+				198995C82345945100C38D53 /* mutability.playground */,
+				198995C92345963400C38D53 /* SwiftUI.Classes.Summary.strings */,
+			);
+			path = "day-10";
+			sourceTree = "<group>";
+		};
 		199DD29B233F020700EA5685 /* day-4 */ = {
 			isa = PBXGroup;
 			children = (
@@ -727,6 +776,8 @@
 		19F6452E2339D800005DB701 /* 100-days-of-swiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				1966DFB92346D1F500C47A45 /* day-11 */,
+				198995C12345919900C38D53 /* day-10 */,
 				1911C75A2343066E00866722 /* day-8 */,
 				89BBBE43233A4BA700F453FA /* day-1 */,
 				89BBBE44233A4BC500F453FA /* day-2 */,
@@ -877,8 +928,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1966DFC82346D5E600C47A45 /* SwiftUI.Protocols.Summary.strings in Resources */,
 				1909956923383AE700199FD4 /* content in Resources */,
 				89BBBE59233A581A00F453FA /* content in Resources */,
+				198995CA2345963400C38D53 /* SwiftUI.Classes.Summary.strings in Resources */,
 				1909954023382A3700199FD4 /* content in Resources */,
 				190995822338588100199FD4 /* content in Resources */,
 				190BB532233DB914007D3486 /* swiftUI.day3.content in Resources */,
@@ -920,11 +973,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1966DFC42346D51F00C47A45 /* protocol-extensions.swift in Sources */,
 				199DD2B3233F076A00EA5685 /* swiftui-loops-summary.cpp in Sources */,
 				19D4857623345305002C1415 /* ViewController.swift in Sources */,
 				19D4857423345305002C1415 /* AppDelegate.swift in Sources */,
+				1966DFC12346D4E900C47A45 /* extensions.swift in Sources */,
+				1966DFBB2346D20300C47A45 /* protocols.swift in Sources */,
 				199DD2A8233F058900EA5685 /* swiftui-functions-summary.m in Sources */,
+				1966DFC62346D59300C47A45 /* protocol-oriented-prgramming.swift in Sources */,
 				19D4857C23345305002C1415 /* hacking_with_swift.xcdatamodeld in Sources */,
+				1966DFBD2346D27100C47A45 /* protocol-inheritance.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

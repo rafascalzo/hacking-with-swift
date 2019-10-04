@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainViewController" customModule="Project2" customModuleProvider="target">
+            <connections>
+                <outlet property="firstButton" destination="cTZ-zo-e44" id="0zv-Iz-EQ7"/>
+                <outlet property="secondButton" destination="nEz-Qm-PFq" id="LTW-py-HiH"/>
+                <outlet property="thirdButton" destination="U8Y-3O-2HF" id="EKy-gY-SUW"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cTZ-zo-e44">
+                    <rect key="frame" x="107" y="100" width="200" height="100"/>
+                    <state key="normal" image="germany"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nEz-Qm-PFq">
+                    <rect key="frame" x="107" y="230" width="200" height="100"/>
+                    <state key="normal" image="germany"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U8Y-3O-2HF">
+                    <rect key="frame" x="107" y="360" width="200" height="100"/>
+                    <state key="normal" image="germany"/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="U8Y-3O-2HF" firstAttribute="top" secondItem="nEz-Qm-PFq" secondAttribute="bottom" constant="30" id="2bc-Fg-o4z"/>
+                <constraint firstItem="U8Y-3O-2HF" firstAttribute="centerX" secondItem="nEz-Qm-PFq" secondAttribute="centerX" id="3fE-sC-uuc"/>
+                <constraint firstItem="cTZ-zo-e44" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="S51-Xz-mc3"/>
+                <constraint firstItem="nEz-Qm-PFq" firstAttribute="centerX" secondItem="cTZ-zo-e44" secondAttribute="centerX" id="fHi-0w-n2l"/>
+                <constraint firstItem="nEz-Qm-PFq" firstAttribute="top" secondItem="cTZ-zo-e44" secondAttribute="bottom" constant="30" id="nOh-nC-UBE"/>
+                <constraint firstItem="cTZ-zo-e44" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="56" id="xx3-at-LEl"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="germany" width="200" height="100"/>
+    </resources>
+</document>
