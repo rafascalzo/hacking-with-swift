@@ -29,17 +29,21 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let navigationBar = navigationController?.navigationBar {
-            
-            // labelScore.frame = CGRect(x: navigationBar.frame.maxX - 80, y: 0, width: 120, height: navigationBar.frame.height)
-            
-            navigationBar.addSubview(labelScore)
-            labelScore.translatesAutoresizingMaskIntoConstraints = false
-            NSLayoutConstraint.activate([labelScore.trailingAnchor.constraint(equalTo: navigationBar.trailingAnchor),
-                                         labelScore.widthAnchor.constraint(equalToConstant: 120),
-                                         labelScore.heightAnchor.constraint(equalTo: navigationBar.heightAnchor),
-                                         labelScore.centerYAnchor.constraint(equalTo: navigationBar.centerYAnchor)])
-        }
+//        if let navigationBar = navigationController?.navigationBar {
+//            
+//            // labelScore.frame = CGRect(x: navigationBar.frame.maxX - 80, y: 0, width: 120, height: navigationBar.frame.height)
+//            
+//            navigationBar.addSubview(labelScore)
+//            labelScore.translatesAutoresizingMaskIntoConstraints = false
+//            NSLayoutConstraint.activate([labelScore.leadingAnchor.constraint(equalTo: navigationBar.leadingAnchor),
+//                                         labelScore.widthAnchor.constraint(equalToConstant: 120),
+//                                         labelScore.heightAnchor.constraint(equalTo: navigationBar.heightAnchor),
+//                                         labelScore.centerYAnchor.constraint(equalTo: navigationBar.centerYAnchor)])
+//        }
+        
+        let btn = UIBarButtonItem(title: "SCORE", style: .plain, target: self, action: #selector(handleTapped))
+        
+        navigationItem.rightBarButtonItem = btn
         countries+=["estonia","france","germany","ireland","italy","monaco","nigeria","poland","russia","spain","uk","us"]
         firstButton.layer.borderWidth = 1
         secondButton.layer.borderWidth = 1
@@ -52,7 +56,12 @@ class MainViewController: UIViewController {
         askQuestion()
         // Do any additional setup after loading the view.
     }
-    
+    @objc func handleTapped(_ action: UIBarButtonItem) {
+        let alert = UIAlertController(title: "Score", message: "Your score is \(score)", preferredStyle: .alert)
+        let ok = UIAlertAction(title: "ok", style: .default, handler: nil)
+        alert.addAction(ok)
+        present(alert, animated: true)
+    }
     func askQuestion(action: UIAlertAction! = nil) {
         
         countries.shuffle()

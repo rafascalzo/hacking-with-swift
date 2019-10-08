@@ -23,6 +23,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cellid")
         
+        
         let fm = FileManager.default
         let path = Bundle.main.resourcePath!
         let items = try! fm.contentsOfDirectory(atPath: path)
@@ -42,7 +43,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @objc func shareTapped(_ action: UIBarButtonItem) {
         
         let itens:[Any] = ["Go to", URL(string: "https://www.twitter.com")!, " and found me"]
-        
+        print(itens)
         let vc = UIActivityViewController(activityItems: itens, applicationActivities: [])
         vc.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
         present(vc,animated: true)
