@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		191BF6F1234EB37D00BCE6CF /* ContentViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191BF6F0234EB37D00BCE6CF /* ContentViewTest.swift */; };
 		89B2B33F234E0D58001A936B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B2B33E234E0D58001A936B /* AppDelegate.swift */; };
 		89B2B341234E0D58001A936B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B2B340234E0D58001A936B /* SceneDelegate.swift */; };
 		89B2B343234E0D58001A936B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B2B342234E0D58001A936B /* ContentView.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		191BF6F0234EB37D00BCE6CF /* ContentViewTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewTest.swift; sourceTree = "<group>"; };
 		89B2B33B234E0D58001A936B /* WeSplit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeSplit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89B2B33E234E0D58001A936B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89B2B340234E0D58001A936B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 				89B2B33E234E0D58001A936B /* AppDelegate.swift */,
 				89B2B340234E0D58001A936B /* SceneDelegate.swift */,
 				89B2B342234E0D58001A936B /* ContentView.swift */,
+				191BF6F0234EB37D00BCE6CF /* ContentViewTest.swift */,
 				89B2B344234E0D58001A936B /* Assets.xcassets */,
 				89B2B349234E0D58001A936B /* LaunchScreen.storyboard */,
 				89B2B34C234E0D58001A936B /* Info.plist */,
@@ -148,6 +151,7 @@
 			files = (
 				89B2B33F234E0D58001A936B /* AppDelegate.swift in Sources */,
 				89B2B341234E0D58001A936B /* SceneDelegate.swift in Sources */,
+				191BF6F1234EB37D00BCE6CF /* ContentViewTest.swift in Sources */,
 				89B2B343234E0D58001A936B /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

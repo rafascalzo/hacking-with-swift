@@ -2,56 +2,73 @@
 //  ContentView.swift
 //  WeSplit
 //
-//  Created by Fulltrack Mobile on 09/10/19.
+//  Created by rafaelviewcontroller on 10/9/19.
 //  Copyright © 2019 rafaeldelegate. All rights reserved.
-//
 
 import SwiftUI
 
 struct ContentView: View {
-    @State var name = ""
-    @State var tapCount = 0
-    @State var students = ["Rafael", "Samantha", "Harry", "Janaina","Carol","Thamyris"]
-    @State private var selectedStudent = "Harry"
+    
+    @State private var checkAmount = ""
+    @State private var numberOfPeople = 2
+    @State private var tipPercentage = 2
+    
+    let tipPercentages = [10, 15, 20, 25, 0]
+    
+    var totalPerPerson: Double {
+        let peopleCount = Double(numberOfPeople + 2)
+        let tipSelection = Double(tipPercentages[tipPercentage])
+        let orderAmount = Double(checkAmount) ?? 0
+        
+        let tipValue = orderAmount / 100 * tipSelection
+        let grandTotal = orderAmount + tipValue
+        let amountPerPerson = grandTotal / peopleCount
+        return amountPerPerson
+    }
+    
+    var totalAmountForCheck: Double {
+        let peopleCount = Double(numberOfPeople + 2)
+        let tipSelection = Double(tipPercentages[tipPercentage])
+        let orderAmount = Double(checkAmount) ?? 0
+        
+        let tipValue = orderAmount / 100 * tipSelection
+        let grandTotal = orderAmount + tipValue
+        return grandTotal
+    }
     
     var body: some View {
+        NavigationView{
+            Form {
+                Section {
+                    TextField("Amount ", text: $checkAmount)
+                        //.keyboardType(.decimalPad)
+                        .keyboardType(.numberPad)
+                    
+                    Picker("Number of People", selection: $numberOfPeople) {
+                        ForEach (2..<100) {
+                            Text("\($0) people")
+                        }
+                        .keyboardType(.alphabet)
+                    }
+                }
+                Section(header: Text("How much tip do you want to leave?")){
+                    Picker("Tip percentage", selection: $tipPercentage) {
+                        ForEach (0 ..< tipPercentages.count) {
+                            Text("\(self.tipPercentages[$0])%")
+                        }.pickerStyle(SegmentedPickerStyle())
+                    }
+                }
+                Section(header: Text("Amount per person")) {
+                    Text("$\(totalPerPerson, specifier: "%.2f")")
+                }
+                Section(header: Text("Total amount for the check")) {
+                    Text("$\(totalAmountForCheck, specifier: "%.2f")")
+                }
+                
+            }
+        .navigationBarTitle("WeSplit")
+        }
         
-        Picker("Select your  student", selection: $selectedStudent) {
-                               ForEach (0..<students.count) {
-                                   Text(self.students[$0])
-                               }
-                           }
-        
-        
-//        NavigationView {
-//            Form {
-//                Section {
-//                    Text("Hello World")
-//                    Button("Tap Count \(self.tapCount)"){
-//                        self.tapCount += 1
-//                    }
-//                }
-//                Section {
-//                    TextField("Enter your name", text: $name)
-//                    Text("Your name is " + name)
-//                }
-//                Section {
-//                    ForEach(0..<10) {
-//                        Text("Row \($0)")
-//                    }
-//                }
-//                Section {
-//
-//                    ForEach(0..<students.count){
-//                        Text("\(self.students[$0])")
-//                    }
-//                }
-//                Section {
-//
-//                }
-//            }
-//            .navigationBarTitle(Text("SwiftUI"), displayMode: .inline)
-//        }
     }
 }
 
