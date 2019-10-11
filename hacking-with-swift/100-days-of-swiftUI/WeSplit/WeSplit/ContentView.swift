@@ -46,6 +46,7 @@ struct ContentView: View {
                     
                     Picker("Number of People", selection: $numberOfPeople) {
                         ForEach (2..<100) {
+                            TextField("People z\($0)", text: self.$checkAmount)
                             Text("\($0) people")
                         }
                         .keyboardType(.alphabet)
