@@ -329,6 +329,7 @@
 		89BBBE57233A579A00F453FA /* mutability.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = mutability.playground; path = "100-days-of-swiftUI/day2/mutability.playground"; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		89BBBE58233A581A00F453FA /* content */ = {isa = PBXFileReference; lastKnownFileType = text; name = content; path = "100-days-of-swiftUI/day2/content"; sourceTree = SOURCE_ROOT; };
 		89BBBE5A233A590000F453FA /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		AFCB30B6235182D300E5B0F1 /* capture-lists.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "capture-lists.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -418,6 +419,7 @@
 				199DD2B4233F0A6400EA5685 /* day-13 */,
 				19F52D072341356B00240C52 /* day-14 */,
 				19F52D062341356100240C52 /* day-15 */,
+				AFCB30B6235182D300E5B0F1 /* capture-lists.playground */,
 			);
 			path = "100-days-of-swift";
 			sourceTree = "<group>";
