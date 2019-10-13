@@ -10,13 +10,13 @@ import SwiftUI
 struct ContentView: View {
     
     @State private var checkAmount = ""
-    @State private var numberOfPeople = 2
+    @State private var numberOfPeople = ""
     @State private var tipPercentage = 2
     
     let tipPercentages = [10, 15, 20, 25, 0]
     
     var totalPerPerson: Double {
-        let peopleCount = Double(numberOfPeople + 2)
+        let peopleCount = Double(Int(numberOfPeople) ?? 1)
         let tipSelection = Double(tipPercentages[tipPercentage])
         let orderAmount = Double(checkAmount) ?? 0
         
@@ -27,7 +27,7 @@ struct ContentView: View {
     }
     
     var totalAmountForCheck: Double {
-        let peopleCount = Double(numberOfPeople + 2)
+        let peopleCount = Double((Int(numberOfPeople) ?? 0) + 2)
         let tipSelection = Double(tipPercentages[tipPercentage])
         let orderAmount = Double(checkAmount) ?? 0
         
@@ -44,20 +44,23 @@ struct ContentView: View {
                         //.keyboardType(.decimalPad)
                         .keyboardType(.numberPad)
                     
-                    Picker("Number of People", selection: $numberOfPeople) {
-                        ForEach (2..<100) {
-                            TextField("People z\($0)", text: self.$checkAmount)
-                            Text("\($0) people")
-                        }
-                        .keyboardType(.alphabet)
-                    }
+//                    Picker("Number of People", selection: $numberOfPeople) {
+//                        ForEach (2..<100) {
+//                            TextField("People z\($0)", text: self.$checkAmount)
+//                            Text("\($0) people")
+//                        }
+//                        .keyboardType(.alphabet)
+//                    }
+                    TextField("NumberOfPeople", text: $numberOfPeople)
+                        .keyboardType(.numberPad)
                 }
                 Section(header: Text("How much tip do you want to leave?")){
                     Picker("Tip percentage", selection: $tipPercentage) {
                         ForEach (0 ..< tipPercentages.count) {
                             Text("\(self.tipPercentages[$0])%")
-                        }.pickerStyle(SegmentedPickerStyle())
-                    }
+                        }
+                    }.pickerStyle(SegmentedPickerStyle())
+                    
                 }
                 Section(header: Text("Amount per person")) {
                     Text("$\(totalPerPerson, specifier: "%.2f")")

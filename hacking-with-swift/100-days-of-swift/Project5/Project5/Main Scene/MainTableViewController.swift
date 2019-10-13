@@ -19,6 +19,8 @@ class MainTableViewController: UITableViewController {
         super.viewDidLoad()
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(promptForAnswer))
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .play, target: self, action: #selector(startGame(_:)))
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -40,7 +42,7 @@ class MainTableViewController: UITableViewController {
         
     }
     
-    func startGame() {
+    @objc func startGame(_ sender: UIBarButtonItem? = nil) {
         title = allWords.randomElement()
         usedWords.removeAll(keepingCapacity: true)
         tableView.reloadData()
@@ -83,8 +85,6 @@ class MainTableViewController: UITableViewController {
             guard let title = title else { return }
             showError("Word not possible ", "You can't spell that word from \(title.lowercased()).")
         }
-        
-        
     }
     
     func showError(_ errorTitle: String, _ errorMessage: String) {
