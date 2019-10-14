@@ -13,6 +13,7 @@
 		AFF90C322353EF5B00D71194 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFF90C312353EF5B00D71194 /* Assets.xcassets */; };
 		AFF90C352353EF5B00D71194 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFF90C342353EF5B00D71194 /* Preview Assets.xcassets */; };
 		AFF90C382353EF5B00D71194 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFF90C362353EF5B00D71194 /* LaunchScreen.storyboard */; };
+		AFF90C402353F75E00D71194 /* ContentViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF90C3F2353F75E00D71194 /* ContentViewTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		AFF90C342353EF5B00D71194 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AFF90C372353EF5B00D71194 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AFF90C392353EF5B00D71194 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AFF90C3F2353F75E00D71194 /* ContentViewTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				AFF90C362353EF5B00D71194 /* LaunchScreen.storyboard */,
 				AFF90C392353EF5B00D71194 /* Info.plist */,
 				AFF90C332353EF5B00D71194 /* Preview Content */,
+				AFF90C3F2353F75E00D71194 /* ContentViewTest.swift */,
 			);
 			path = GuessTheFlag;
 			sourceTree = "<group>";
@@ -148,6 +151,7 @@
 			files = (
 				AFF90C2C2353EF5A00D71194 /* AppDelegate.swift in Sources */,
 				AFF90C2E2353EF5A00D71194 /* SceneDelegate.swift in Sources */,
+				AFF90C402353F75E00D71194 /* ContentViewTest.swift in Sources */,
 				AFF90C302353EF5A00D71194 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -69,7 +69,8 @@ struct ContentView: View {
                     Text("Conversion: \(temperature, specifier: "%.2f")")
                 }
             }
-        }.navigationBarTitle("Unit Conversor")
+            .navigationBarTitle("Unit Conversor")
+        }
     }
 }
 
