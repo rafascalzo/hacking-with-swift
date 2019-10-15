@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainViewController" customModule="Project2" customModuleProvider="target">
+            <connections>
+                <outlet property="firstButton" destination="cTZ-zo-e44" id="0zv-Iz-EQ7"/>
+                <outlet property="secondButton" destination="nEz-Qm-PFq" id="LTW-py-HiH"/>
+                <outlet property="thirdButton" destination="U8Y-3O-2HF" id="EKy-gY-SUW"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cTZ-zo-e44">
+                    <rect key="frame" x="107" y="100" width="200" height="100"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="cTZ-zo-e44" secondAttribute="height" multiplier="2:1" id="ahM-PT-GkF"/>
+                    </constraints>
+                    <state key="normal" image="germany"/>
+                    <connections>
+                        <action selector="buttonTapped:" destination="-1" eventType="touchUpInside" id="TY2-Ah-yM4"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nEz-Qm-PFq">
+                    <rect key="frame" x="107" y="230" width="200" height="100"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="nEz-Qm-PFq" secondAttribute="height" multiplier="2:1" id="BxA-dK-MaR"/>
+                    </constraints>
+                    <state key="normal" image="germany"/>
+                    <connections>
+                        <action selector="buttonTapped:" destination="-1" eventType="touchUpInside" id="RJe-K0-XPm"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U8Y-3O-2HF">
+                    <rect key="frame" x="107" y="360" width="200" height="100"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="U8Y-3O-2HF" secondAttribute="height" multiplier="2:1" id="pka-Xu-jix"/>
+                    </constraints>
+                    <state key="normal" image="germany"/>
+                    <connections>
+                        <action selector="buttonTapped:" destination="-1" eventType="touchUpInside" id="47a-pm-NpM"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="U8Y-3O-2HF" firstAttribute="top" secondItem="nEz-Qm-PFq" secondAttribute="bottom" constant="30" id="2bc-Fg-o4z"/>
+                <constraint firstItem="U8Y-3O-2HF" firstAttribute="centerX" secondItem="nEz-Qm-PFq" secondAttribute="centerX" id="3fE-sC-uuc"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="U8Y-3O-2HF" secondAttribute="bottom" constant="20" id="LrU-Uv-Kcs"/>
+                <constraint firstItem="cTZ-zo-e44" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="S51-Xz-mc3"/>
+                <constraint firstItem="U8Y-3O-2HF" firstAttribute="height" secondItem="nEz-Qm-PFq" secondAttribute="height" id="Z0q-7a-vel"/>
+                <constraint firstItem="nEz-Qm-PFq" firstAttribute="height" secondItem="cTZ-zo-e44" secondAttribute="height" id="Z8k-vR-Ezn"/>
+                <constraint firstItem="nEz-Qm-PFq" firstAttribute="centerX" secondItem="cTZ-zo-e44" secondAttribute="centerX" id="fHi-0w-n2l"/>
+                <constraint firstItem="nEz-Qm-PFq" firstAttribute="top" secondItem="cTZ-zo-e44" secondAttribute="bottom" constant="30" id="nOh-nC-UBE"/>
+                <constraint firstItem="cTZ-zo-e44" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="56" id="xx3-at-LEl"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="132" y="111"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="germany" width="200" height="100"/>
+    </resources>
+</document>
