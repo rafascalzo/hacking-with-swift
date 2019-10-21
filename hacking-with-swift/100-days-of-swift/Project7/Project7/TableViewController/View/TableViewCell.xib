@@ -30,20 +30,12 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ll0-JD-HxF">
-                        <rect key="frame" x="137" y="7" width="46" height="30"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <state key="normal" title="Button">
-                            <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        </state>
-                    </button>
                 </subviews>
+                <color key="tintColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             </tableViewCellContentView>
-            <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="accessoryView" destination="ll0-JD-HxF" id="PRi-ga-uHs"/>
-                <outlet property="button" destination="ll0-JD-HxF" id="ggE-Xl-Ljp"/>
                 <outlet property="subtitle" destination="YYA-Kd-3q9" id="BFi-pF-9e8"/>
                 <outlet property="title" destination="QGZ-bF-qbh" id="QpF-8R-ez3"/>
             </connections>

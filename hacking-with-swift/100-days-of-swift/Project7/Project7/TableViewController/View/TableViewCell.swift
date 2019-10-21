@@ -10,7 +10,6 @@ import UIKit
 
 class TableViewCell: UITableViewCell {
 
-    @IBOutlet var button: UIButton!
     @IBOutlet var title: UILabel!
     @IBOutlet var subtitle: UILabel!
     override func awakeFromNib() {

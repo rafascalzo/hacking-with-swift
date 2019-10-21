@@ -6,6 +6,11 @@
 //  Copyright © 2019 rafaeldelegate. All rights reserved.
 //
 
+//Text("Hello World")
+//.frame(maxWidth: .infinity, maxHeight: .infinity)
+//.background(Color.red)
+//.edgesIgnoringSafeArea(.all)
+
 //import Foundation
 //struct ContentView: View {
 //    var body: some View {

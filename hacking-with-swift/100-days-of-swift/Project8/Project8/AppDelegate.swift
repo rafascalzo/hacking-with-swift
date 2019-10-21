@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  Project7
+//  Project8
 //
-//  Created by rafaeldelegate on 10/17/19.
+//  Created by rafaeldelegate on 10/20/19.
 //  Copyright © 2019 rafaeldelegate. All rights reserved.
 //
 
@@ -16,9 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = UINavigationController(rootViewController: TabBarViewController())
+        window?.rootViewController = UINavigationController(rootViewController: ViewController())
         window?.makeKeyAndVisible()
-        
         return true
     }
 
