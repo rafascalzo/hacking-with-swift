@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF7228E4235E9D8A009C08B4 /* level2.txt in Resources */ = {isa = PBXBuildFile; fileRef = AF7228E2235E9D89009C08B4 /* level2.txt */; };
+		AF7228E5235E9D8A009C08B4 /* level1.txt in Resources */ = {isa = PBXBuildFile; fileRef = AF7228E3235E9D8A009C08B4 /* level1.txt */; };
 		AFFB1101235D0906001E2C48 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFB1100235D0906001E2C48 /* AppDelegate.swift */; };
 		AFFB1103235D0906001E2C48 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFB1102235D0906001E2C48 /* SceneDelegate.swift */; };
 		AFFB1105235D0906001E2C48 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFB1104235D0906001E2C48 /* ViewController.swift */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AF7228E2235E9D89009C08B4 /* level2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = level2.txt; sourceTree = "<group>"; };
+		AF7228E3235E9D8A009C08B4 /* level1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = level1.txt; sourceTree = "<group>"; };
 		AFFB10FD235D0906001E2C48 /* Project8.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project8.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFFB1100235D0906001E2C48 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AFFB1102235D0906001E2C48 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,6 +64,8 @@
 				AFFB1109235D0908001E2C48 /* Assets.xcassets */,
 				AFFB110B235D0908001E2C48 /* LaunchScreen.storyboard */,
 				AFFB110E235D0908001E2C48 /* Info.plist */,
+				AF7228E3235E9D8A009C08B4 /* level1.txt */,
+				AF7228E2235E9D89009C08B4 /* level2.txt */,
 			);
 			path = Project8;
 			sourceTree = "<group>";
@@ -123,7 +129,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				AFFB110D235D0908001E2C48 /* LaunchScreen.storyboard in Resources */,
+				AF7228E5235E9D8A009C08B4 /* level1.txt in Resources */,
 				AFFB110A235D0908001E2C48 /* Assets.xcassets in Resources */,
+				AF7228E4235E9D8A009C08B4 /* level2.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
