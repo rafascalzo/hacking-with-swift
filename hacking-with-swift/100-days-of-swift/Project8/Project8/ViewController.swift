@@ -103,9 +103,9 @@ class ViewController: UIViewController {
             buttonsView.topAnchor.constraint(equalTo: submit.bottomAnchor, constant: 20),
             buttonsView.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor, constant: -20)
         ])
-        buttonsView.backgroundColor = .green
-        cluesLabel.backgroundColor = .red
-        answersLabel.backgroundColor = .blue
+//        buttonsView.backgroundColor = .green
+//        cluesLabel.backgroundColor = .red
+//        answersLabel.backgroundColor = .blue
         
         
         let width = 150
@@ -122,6 +122,8 @@ class ViewController: UIViewController {
                 // calculate the frame of this button using its column and row
                 let frame = CGRect(x: col * width, y: row * height, width: width, height: height)
                 letterButton.frame = frame
+                letterButton.layer.borderColor = UIColor.black.cgColor
+                letterButton.layer.borderWidth = 0.25
                 letterButton.addTarget(self, action: #selector(letterTapped), for: .touchUpInside)
                 buttonsView.addSubview(letterButton)
                 
@@ -162,7 +164,20 @@ class ViewController: UIViewController {
                 ac.addAction(UIAlertAction(title: "Let's go!", style: .default, handler: levelUp))
                 present(ac, animated: true)
             }
+        } else {
+            let ac = UIAlertController(title: "Oh no", message: "This isn't match anything in this world", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "Ok, i'll try not to be crazy", style: .default, handler: okthen))
+            present(ac, animated: true)
         }
+    }
+    
+    func okthen(action: Any) {
+       currentAnswer.text = ""
+        for button in activatedButtons {
+            button.isHidden = false
+        }
+        
+        activatedButtons.removeAll()
     }
     
     func levelUp(action: UIAlertAction) {
