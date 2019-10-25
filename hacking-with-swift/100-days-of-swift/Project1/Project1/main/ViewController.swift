@@ -9,10 +9,12 @@
 import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
- 
+    
     @IBOutlet var tableView: UITableView!
     
     var pictures = [String]()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -21,6 +23,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cellid")
         
+        performSelector(inBackground: #selector(fetchData), with: nil)
+        fetchData()
+        
+    }
+    @objc fileprivate func fetchData() {
         let fm = FileManager.default
         let path = Bundle.main.resourcePath!
         let items = try! fm.contentsOfDirectory(atPath: path)
@@ -31,8 +38,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             }
         }
         
+        tableView.performSelector(onMainThread: #selector(UITableView.reloadData), with: nil, waitUntilDone: false)
     }
-    
     fileprivate func isLoggedIn() -> Bool {
         return UserDefaults.standard.bool(forKey: "isLogedIn")
     }

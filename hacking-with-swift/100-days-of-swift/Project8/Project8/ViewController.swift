@@ -19,6 +19,10 @@ class ViewController: UIViewController {
     var activatedButtons = [UIButton]()
     var solutions = [String]()
     
+    var clueString = ""
+    var solutionsString = ""
+    var letterBits = [String]()
+    
     var score = 0 {
         didSet {
             scoreLabel.text = "Score \(score)"
@@ -199,10 +203,8 @@ class ViewController: UIViewController {
         activatedButtons.removeAll()
     }
     
-    func loadLevel() {
-        var clueString = ""
-        var solutionsString = ""
-        var letterBits = [String]()
+       @objc func fetchData(){
+        
         
         if let levelFileURL = Bundle.main.url(forResource: "level\(level)", withExtension: "txt") {
             if let levelContents = try? String(contentsOf: levelFileURL) {
@@ -225,16 +227,29 @@ class ViewController: UIViewController {
                 }
             }
         }
-        cluesLabel.text = clueString.trimmingCharacters(in: .whitespacesAndNewlines)
-        answersLabel.text = solutionsString.trimmingCharacters(in: .whitespacesAndNewlines)
-        letterButtons.shuffle()
         
-        if letterButtons.count == letterBits.count {
-            for i in 0..<letterButtons.count {
-                letterButtons[i].setTitle(letterBits[i], for: .normal)
-            }
-        }
+        performSelector(onMainThread: #selector(updateUI), with: nil, waitUntilDone: false)
+    }
+    
+    func loadLevel() {
+        performSelector(inBackground: #selector(fetchData), with: nil)
+    }
+    
+    @objc func updateUI() {
+                cluesLabel.text = clueString.trimmingCharacters(in: .whitespacesAndNewlines)
+                answersLabel.text = solutionsString.trimmingCharacters(in: .whitespacesAndNewlines)
+                letterButtons.shuffle()
         
+                if letterButtons.count == letterBits.count {
+                    for i in 0..<letterButtons.count {
+                        letterButtons[i].setTitle(letterBits[i], for: .normal)
+                    }
+                }
     }
 }
 
+struct Level {
+    let clueString: String
+    let solutionsString: String
+    let letterBits: [String]
+}

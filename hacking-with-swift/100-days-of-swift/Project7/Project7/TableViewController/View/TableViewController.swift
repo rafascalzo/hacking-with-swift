@@ -12,6 +12,8 @@ class TableViewController: UITableViewController {
   
     var petitions = [Petition]()
     var selectedPetitions = [Petition]()
+    var filteredPetitions = [Petition]()
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
