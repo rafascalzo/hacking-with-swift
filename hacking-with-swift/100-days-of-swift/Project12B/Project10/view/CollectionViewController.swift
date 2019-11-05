@@ -21,6 +21,17 @@ class CollectionViewController: UICollectionViewController {
         collectionView.backgroundColor = .black
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewPerson))
+        let defaults = UserDefaults.standard
+        if let savedData = defaults.object(forKey: "people") as? Data {
+            let jsonDecoder = JSONDecoder()
+            
+            do {
+               let people = try jsonDecoder.decode([Person].self, from: savedData)
+                self.people = people
+            } catch let error {
+                NSLog("%@ \(error.localizedDescription)", " failed to load person")
+            }
+        }
     }
     
     @objc func addNewPerson(_ sender: UIBarButtonItem) {
@@ -34,16 +45,6 @@ class CollectionViewController: UICollectionViewController {
         
         present(picker, animated: true)
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
 
     // MARK: UICollectionViewDataSource
 
@@ -83,6 +84,7 @@ class CollectionViewController: UICollectionViewController {
             guard let newName = ac?.textFields?[0].text else { return }
             person.name = newName
             
+            self?.save()
             self?.collectionView.reloadData()
         }
         ac.addAction(ok)
@@ -100,6 +102,7 @@ class CollectionViewController: UICollectionViewController {
             }
             return false
         }
+        save()
         collectionView.reloadData()
     }
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -108,6 +111,7 @@ class CollectionViewController: UICollectionViewController {
         
         let rename = UIAlertAction(title: "Rename", style: .default) { [weak self] _ in
             self?.renamePerson(person)
+            self?.save()
         }
         let delete = UIAlertAction(title: "Delete", style: .default) { [weak self](_) in
             print("deleting person")
@@ -118,38 +122,20 @@ class CollectionViewController: UICollectionViewController {
         ac.addAction(delete)
         present(ac, animated: true, completion: nil)
     }
-
+    
+    func save() {
+        let jsonEncoder = JSONEncoder()
+        
+        if let savedData = try? jsonEncoder.encode(people) {
+            let defaults = UserDefaults.standard
+            defaults.set(savedData, forKey: "people")
+        } else {
+            print("failed to save people data")
+        }
+    }
     // MARK: UICollectionViewDelegate
 
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
-    
-    }
-    */
-    
+ 
 }
 
 extension CollectionViewController: UICollectionViewDelegateFlowLayout {
@@ -176,6 +162,7 @@ extension CollectionViewController : UIImagePickerControllerDelegate, UINavigati
         
         let person = Person("Rafael", imageName)
         people.append(person)
+        save()
         collectionView.reloadData()
         
         dismiss(animated: true, completion: nil)
