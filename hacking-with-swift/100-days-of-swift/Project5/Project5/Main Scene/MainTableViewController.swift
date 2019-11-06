@@ -8,19 +8,25 @@
 
 import UIKit
 
+struct GameState: Codable {
+    
+    var selectedWord: String
+    var usedWords: [String]
+}
+
 class MainTableViewController: UITableViewController {
     // MARK: - Constants
     
     // MARK: - Variables
     var allWords = [String]()
     var usedWords = [String]()
-        
+    var gameState: GameState!
     override func viewDidLoad() {
         super.viewDidLoad()
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(promptForAnswer))
         
-        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .play, target: self, action: #selector(startGame(_:)))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .play, target: self, action: #selector(resetGame))
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -43,11 +49,43 @@ class MainTableViewController: UITableViewController {
     }
     
     @objc func startGame(_ sender: UIBarButtonItem? = nil) {
+        let defaults = UserDefaults.standard
+        
+        if let savedData = defaults.object(forKey: "gameState") as? Data {
+            let jsonDecoder = JSONDecoder()
+            if let decodedGameState = try? jsonDecoder.decode(GameState.self, from: savedData) {
+                gameState = decodedGameState
+                title = gameState.selectedWord
+                usedWords = gameState.usedWords
+                print(gameState.usedWords)
+                tableView.reloadData()
+            }
+        } else {
+            resetGame()
+        }
+        
+        
+        
+    }
+    func save() {
+        print("vo salva")
+        let defaults = UserDefaults.standard
+        
+        let jsonEncoder = JSONEncoder()
+        
+        if let dataToSave = try? jsonEncoder.encode(gameState) {
+            defaults.set(dataToSave, forKey: "gameState")
+        } else {
+            print("failed to save")
+        }
+    }
+    @objc func resetGame(_ sender: UIBarButtonItem? = nil) {
         title = allWords.randomElement()
         usedWords.removeAll(keepingCapacity: true)
+        gameState = GameState(selectedWord: title!, usedWords: usedWords)
         tableView.reloadData()
+        save()
     }
-    
     @objc func promptForAnswer(_ sender: UIBarButtonItem) {
         
         let ac = UIAlertController(title: "Enter answer", message: nil, preferredStyle: .alert)
@@ -71,7 +109,8 @@ class MainTableViewController: UITableViewController {
             if isOriginal(word: lowerAnswer){
                 if isReal(word: lowerAnswer){
                     usedWords.insert(lowerAnswer, at: 0)
-                    
+                    gameState.usedWords = usedWords
+                    save()
                     let indexPath = IndexPath(row: 0, section: 0)
                     tableView.insertRows(at: [indexPath], with: .automatic)
                     return
@@ -99,6 +138,7 @@ class MainTableViewController: UITableViewController {
         
         for letter in word {
             if let position = tempWord.firstIndex(of: letter) {
+                print(position)
                 tempWord.remove(at: position)
             } else {
                 return false

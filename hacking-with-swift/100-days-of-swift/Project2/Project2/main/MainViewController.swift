@@ -8,6 +8,25 @@
 
 import UIKit
 
+class Player: NSObject, NSCoding {
+
+    var score: Int
+    var highestScore: Int
+    
+    init(score: Int, highestScore: Int) {
+        self.score = score
+        self.highestScore = highestScore
+    }
+    required init?(coder: NSCoder) {
+        score = coder.decodeObject(forKey: "score") as? Int ?? 0
+        highestScore = coder.decodeObject(forKey: "highestScore") as? Int ?? 0
+    }
+    func encode(with coder: NSCoder) {
+        coder.encode(score, forKey: "score")
+        coder.encode(highestScore, forKey: "highestScore")
+    }
+}
+
 class MainViewController: UIViewController {
     
     @IBOutlet var firstButton: UIButton!
@@ -15,7 +34,7 @@ class MainViewController: UIViewController {
     @IBOutlet var thirdButton: UIButton!
     
     var countries = [String]()
-    var score = 0
+    var player: Player!
     var correctAnswer = 0
     var questionNumber = 0
     var alertMessage: String = ""
@@ -29,6 +48,22 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let defaults = UserDefaults.standard
+        
+        if let savedData = defaults.object(forKey: "player") as? Data {
+            
+            do {
+                let decodedPlayer = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(savedData) as? Player
+                self.player = decodedPlayer
+            } catch let error {
+                print("Failed to get savedPlayer", error.localizedDescription)
+            }
+//            if let decodedPlayer = try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(savedData) as? Player {
+//                self.player = decodedPlayer
+//            }
+        } else {
+            player = Player(score: 0, highestScore: 0)
+        }
 //        if let navigationBar = navigationController?.navigationBar {
 //            
 //            // labelScore.frame = CGRect(x: navigationBar.frame.maxX - 80, y: 0, width: 120, height: navigationBar.frame.height)
@@ -57,7 +92,7 @@ class MainViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     @objc func handleTapped(_ action: UIBarButtonItem) {
-        let alert = UIAlertController(title: "Score", message: "Your score is \(score)", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Score", message: "Your score is \(player.score)", preferredStyle: .alert)
         let ok = UIAlertAction(title: "ok", style: .default, handler: nil)
         alert.addAction(ok)
         present(alert, animated: true)
@@ -78,8 +113,8 @@ class MainViewController: UIViewController {
         
         if sender.tag == correctAnswer {
             title = "Correct"
-            score += 1;
-            labelScore.text = "Score \(score)"
+            player.score += 1;
+            labelScore.text = "Score \(player.score)"
             alertMessage = "Correct! Thats the flag of \(countries[sender.tag])"
         } else {
             title = "Wrong"
@@ -90,18 +125,39 @@ class MainViewController: UIViewController {
         var alert = UIAlertController(title: title, message: alertMessage, preferredStyle: .alert)
         
         if questionNumber == 10 {
-            alert = UIAlertController(title: title, message: "Your final score is \(score)", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Reset Game", style: .default))
-            labelScore.text = "Score 0"
-            score = 0
-            questionNumber = 0
+            alert = UIAlertController(title: title, message: "Your final score is \(player.score)", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Reset Game", style: .default, handler: showGrats))
+            
         } else {
             
             alert.addAction(UIAlertAction(title: "Continue", style: .default, handler: askQuestion))
         }
-        
-        
         present(alert, animated: true)
+    }
+    
+    func showGrats(_ action: UIAlertAction! = nil) {
+        print(player.score, player.highestScore)
+        if player.score > player.highestScore {
+            player.highestScore = player.score
+            save()
+            
+            let ac = UIAlertController(title: "Top first!", message: "Congrats! you hit the highest score \(player.highestScore)", preferredStyle: .alert)
+            let ok = UIAlertAction(title: "Yuhul", style: .default, handler: askQuestion)
+            ac.addAction(ok)
+            present(ac, animated: true)
+        } else {
+            askQuestion()
+        }
+        labelScore.text = "Score 0"
+        player.score = 0
+        questionNumber = 0
+    }
+    
+    func save() {
+        let defaults = UserDefaults.standard
+        if let encodedPlayer = try? NSKeyedArchiver.archivedData(withRootObject: player!, requiringSecureCoding: false) {
+            defaults.set(encodedPlayer, forKey: "player")
+        }
     }
     
 }
