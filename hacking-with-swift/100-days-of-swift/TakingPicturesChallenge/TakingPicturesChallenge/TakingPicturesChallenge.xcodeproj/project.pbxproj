@@ -7,31 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AF6132C7237279CF00421488 /* PictureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6132C5237279CF00421488 /* PictureCell.swift */; };
-		AF6132C8237279CF00421488 /* PictureCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF6132C6237279CF00421488 /* PictureCell.xib */; };
-		AF6132D5237286BB00421488 /* PicturesTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6132D3237286BB00421488 /* PicturesTableView.swift */; };
-		AF6132D6237286BB00421488 /* PicturesTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF6132D4237286BB00421488 /* PicturesTableView.xib */; };
-		AF8D679D237275F600B5269A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8D679C237275F600B5269A /* AppDelegate.swift */; };
-		AF8D679F237275F600B5269A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8D679E237275F600B5269A /* SceneDelegate.swift */; };
-		AF8D67A6237275F800B5269A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF8D67A5237275F800B5269A /* Assets.xcassets */; };
-		AF8D67A9237275F800B5269A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF8D67A7237275F800B5269A /* LaunchScreen.storyboard */; };
+		AF473BD223750E8E006C87EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF473BD123750E8E006C87EB /* AppDelegate.swift */; };
+		AF473BD423750E8E006C87EB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF473BD323750E8E006C87EB /* SceneDelegate.swift */; };
+		AF473BDB23750E90006C87EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF473BDA23750E90006C87EB /* Assets.xcassets */; };
+		AF473BDE23750E90006C87EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF473BDC23750E90006C87EB /* LaunchScreen.storyboard */; };
+		AF473BE723750FE2006C87EB /* PicturesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF473BE523750FE2006C87EB /* PicturesView.swift */; };
+		AF473BE823750FE2006C87EB /* PicturesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF473BE623750FE2006C87EB /* PicturesView.xib */; };
+		AF473BEB2375114E006C87EB /* PictureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF473BE92375114E006C87EB /* PictureCell.swift */; };
+		AF473BEC2375114E006C87EB /* PictureCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF473BEA2375114E006C87EB /* PictureCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		AF6132C5237279CF00421488 /* PictureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureCell.swift; sourceTree = "<group>"; };
-		AF6132C6237279CF00421488 /* PictureCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PictureCell.xib; sourceTree = "<group>"; };
-		AF6132D3237286BB00421488 /* PicturesTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturesTableView.swift; sourceTree = "<group>"; };
-		AF6132D4237286BB00421488 /* PicturesTableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PicturesTableView.xib; sourceTree = "<group>"; };
-		AF8D6799237275F600B5269A /* TakingPicturesChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TakingPicturesChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		AF8D679C237275F600B5269A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AF8D679E237275F600B5269A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		AF8D67A5237275F800B5269A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		AF8D67A8237275F800B5269A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		AF8D67AA237275F800B5269A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF473BCE23750E8E006C87EB /* TakingPicturesChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TakingPicturesChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF473BD123750E8E006C87EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AF473BD323750E8E006C87EB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		AF473BDA23750E90006C87EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AF473BDD23750E90006C87EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AF473BDF23750E90006C87EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF473BE523750FE2006C87EB /* PicturesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturesView.swift; sourceTree = "<group>"; };
+		AF473BE623750FE2006C87EB /* PicturesView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PicturesView.xib; sourceTree = "<group>"; };
+		AF473BE92375114E006C87EB /* PictureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureCell.swift; sourceTree = "<group>"; };
+		AF473BEA2375114E006C87EB /* PictureCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PictureCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		AF8D6796237275F600B5269A /* Frameworks */ = {
+		AF473BCB23750E8E006C87EB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -41,56 +41,56 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		AF8D6790237275F600B5269A = {
+		AF473BC523750E8E006C87EB = {
 			isa = PBXGroup;
 			children = (
-				AF8D679B237275F600B5269A /* TakingPicturesChallenge */,
-				AF8D679A237275F600B5269A /* Products */,
+				AF473BD023750E8E006C87EB /* TakingPicturesChallenge */,
+				AF473BCF23750E8E006C87EB /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		AF8D679A237275F600B5269A /* Products */ = {
+		AF473BCF23750E8E006C87EB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AF8D6799237275F600B5269A /* TakingPicturesChallenge.app */,
+				AF473BCE23750E8E006C87EB /* TakingPicturesChallenge.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		AF8D679B237275F600B5269A /* TakingPicturesChallenge */ = {
+		AF473BD023750E8E006C87EB /* TakingPicturesChallenge */ = {
 			isa = PBXGroup;
 			children = (
-				AF8D67B2237276B300B5269A /* TableView */,
-				AF8D679C237275F600B5269A /* AppDelegate.swift */,
-				AF8D679E237275F600B5269A /* SceneDelegate.swift */,
-				AF8D67A5237275F800B5269A /* Assets.xcassets */,
-				AF8D67A7237275F800B5269A /* LaunchScreen.storyboard */,
-				AF8D67AA237275F800B5269A /* Info.plist */,
+				AF473BED23751293006C87EB /* Main */,
+				AF473BD123750E8E006C87EB /* AppDelegate.swift */,
+				AF473BD323750E8E006C87EB /* SceneDelegate.swift */,
+				AF473BDA23750E90006C87EB /* Assets.xcassets */,
+				AF473BDC23750E90006C87EB /* LaunchScreen.storyboard */,
+				AF473BDF23750E90006C87EB /* Info.plist */,
 			);
 			path = TakingPicturesChallenge;
 			sourceTree = "<group>";
 		};
-		AF8D67B2237276B300B5269A /* TableView */ = {
+		AF473BED23751293006C87EB /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				AF6132C5237279CF00421488 /* PictureCell.swift */,
-				AF6132C6237279CF00421488 /* PictureCell.xib */,
-				AF6132D3237286BB00421488 /* PicturesTableView.swift */,
-				AF6132D4237286BB00421488 /* PicturesTableView.xib */,
+				AF473BE523750FE2006C87EB /* PicturesView.swift */,
+				AF473BE623750FE2006C87EB /* PicturesView.xib */,
+				AF473BE92375114E006C87EB /* PictureCell.swift */,
+				AF473BEA2375114E006C87EB /* PictureCell.xib */,
 			);
-			path = TableView;
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		AF8D6798237275F600B5269A /* TakingPicturesChallenge */ = {
+		AF473BCD23750E8E006C87EB /* TakingPicturesChallenge */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AF8D67AD237275F800B5269A /* Build configuration list for PBXNativeTarget "TakingPicturesChallenge" */;
+			buildConfigurationList = AF473BE223750E90006C87EB /* Build configuration list for PBXNativeTarget "TakingPicturesChallenge" */;
 			buildPhases = (
-				AF8D6795237275F600B5269A /* Sources */,
-				AF8D6796237275F600B5269A /* Frameworks */,
-				AF8D6797237275F600B5269A /* Resources */,
+				AF473BCA23750E8E006C87EB /* Sources */,
+				AF473BCB23750E8E006C87EB /* Frameworks */,
+				AF473BCC23750E8E006C87EB /* Resources */,
 			);
 			buildRules = (
 			);
@@ -98,25 +98,25 @@
 			);
 			name = TakingPicturesChallenge;
 			productName = TakingPicturesChallenge;
-			productReference = AF8D6799237275F600B5269A /* TakingPicturesChallenge.app */;
+			productReference = AF473BCE23750E8E006C87EB /* TakingPicturesChallenge.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		AF8D6791237275F600B5269A /* Project object */ = {
+		AF473BC623750E8E006C87EB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1110;
 				LastUpgradeCheck = 1110;
 				ORGANIZATIONNAME = rafaeldelegate;
 				TargetAttributes = {
-					AF8D6798237275F600B5269A = {
+					AF473BCD23750E8E006C87EB = {
 						CreatedOnToolsVersion = 11.1;
 					};
 				};
 			};
-			buildConfigurationList = AF8D6794237275F600B5269A /* Build configuration list for PBXProject "TakingPicturesChallenge" */;
+			buildConfigurationList = AF473BC923750E8E006C87EB /* Build configuration list for PBXProject "TakingPicturesChallenge" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -124,49 +124,49 @@
 				en,
 				Base,
 			);
-			mainGroup = AF8D6790237275F600B5269A;
-			productRefGroup = AF8D679A237275F600B5269A /* Products */;
+			mainGroup = AF473BC523750E8E006C87EB;
+			productRefGroup = AF473BCF23750E8E006C87EB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				AF8D6798237275F600B5269A /* TakingPicturesChallenge */,
+				AF473BCD23750E8E006C87EB /* TakingPicturesChallenge */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		AF8D6797237275F600B5269A /* Resources */ = {
+		AF473BCC23750E8E006C87EB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF6132D6237286BB00421488 /* PicturesTableView.xib in Resources */,
-				AF6132C8237279CF00421488 /* PictureCell.xib in Resources */,
-				AF8D67A9237275F800B5269A /* LaunchScreen.storyboard in Resources */,
-				AF8D67A6237275F800B5269A /* Assets.xcassets in Resources */,
+				AF473BEC2375114E006C87EB /* PictureCell.xib in Resources */,
+				AF473BDE23750E90006C87EB /* LaunchScreen.storyboard in Resources */,
+				AF473BDB23750E90006C87EB /* Assets.xcassets in Resources */,
+				AF473BE823750FE2006C87EB /* PicturesView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		AF8D6795237275F600B5269A /* Sources */ = {
+		AF473BCA23750E8E006C87EB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF6132D5237286BB00421488 /* PicturesTableView.swift in Sources */,
-				AF6132C7237279CF00421488 /* PictureCell.swift in Sources */,
-				AF8D679D237275F600B5269A /* AppDelegate.swift in Sources */,
-				AF8D679F237275F600B5269A /* SceneDelegate.swift in Sources */,
+				AF473BEB2375114E006C87EB /* PictureCell.swift in Sources */,
+				AF473BD223750E8E006C87EB /* AppDelegate.swift in Sources */,
+				AF473BD423750E8E006C87EB /* SceneDelegate.swift in Sources */,
+				AF473BE723750FE2006C87EB /* PicturesView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		AF8D67A7237275F800B5269A /* LaunchScreen.storyboard */ = {
+		AF473BDC23750E90006C87EB /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				AF8D67A8237275F800B5269A /* Base */,
+				AF473BDD23750E90006C87EB /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -174,7 +174,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		AF8D67AB237275F800B5269A /* Debug */ = {
+		AF473BE023750E90006C87EB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -234,7 +234,7 @@
 			};
 			name = Debug;
 		};
-		AF8D67AC237275F800B5269A /* Release */ = {
+		AF473BE123750E90006C87EB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -288,7 +288,7 @@
 			};
 			name = Release;
 		};
-		AF8D67AE237275F800B5269A /* Debug */ = {
+		AF473BE323750E90006C87EB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -305,7 +305,7 @@
 			};
 			name = Debug;
 		};
-		AF8D67AF237275F800B5269A /* Release */ = {
+		AF473BE423750E90006C87EB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -325,25 +325,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		AF8D6794237275F600B5269A /* Build configuration list for PBXProject "TakingPicturesChallenge" */ = {
+		AF473BC923750E8E006C87EB /* Build configuration list for PBXProject "TakingPicturesChallenge" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				AF8D67AB237275F800B5269A /* Debug */,
-				AF8D67AC237275F800B5269A /* Release */,
+				AF473BE023750E90006C87EB /* Debug */,
+				AF473BE123750E90006C87EB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AF8D67AD237275F800B5269A /* Build configuration list for PBXNativeTarget "TakingPicturesChallenge" */ = {
+		AF473BE223750E90006C87EB /* Build configuration list for PBXNativeTarget "TakingPicturesChallenge" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				AF8D67AE237275F800B5269A /* Debug */,
-				AF8D67AF237275F800B5269A /* Release */,
+				AF473BE323750E90006C87EB /* Debug */,
+				AF473BE423750E90006C87EB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = AF8D6791237275F600B5269A /* Project object */;
+	rootObject = AF473BC623750E8E006C87EB /* Project object */;
 }

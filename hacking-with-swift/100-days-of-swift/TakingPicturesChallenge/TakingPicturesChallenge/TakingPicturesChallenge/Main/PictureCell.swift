@@ -2,15 +2,16 @@
 //  PictureCell.swift
 //  TakingPicturesChallenge
 //
-//  Created by rafaeldelegate on 11/5/19.
+//  Created by rafaeldelegate on 11/7/19.
 //  Copyright © 2019 rafaeldelegate. All rights reserved.
 //
 
 import UIKit
 
-
 class PictureCell: UITableViewCell {
-
+    
+  
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
