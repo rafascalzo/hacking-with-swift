@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF1DE3972377C738005CBAB6 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1DE3962377C738005CBAB6 /* String.swift */; };
 		AF473BD223750E8E006C87EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF473BD123750E8E006C87EB /* AppDelegate.swift */; };
 		AF473BD423750E8E006C87EB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF473BD323750E8E006C87EB /* SceneDelegate.swift */; };
 		AF473BDB23750E90006C87EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF473BDA23750E90006C87EB /* Assets.xcassets */; };
@@ -15,9 +16,11 @@
 		AF473BE823750FE2006C87EB /* PicturesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF473BE623750FE2006C87EB /* PicturesView.xib */; };
 		AF473BEB2375114E006C87EB /* PictureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF473BE92375114E006C87EB /* PictureCell.swift */; };
 		AF473BEC2375114E006C87EB /* PictureCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF473BEA2375114E006C87EB /* PictureCell.xib */; };
+		AFE4B2CC2377308D00ED6B1D /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE4B2CB2377308D00ED6B1D /* ImagePicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AF1DE3962377C738005CBAB6 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		AF473BCE23750E8E006C87EB /* TakingPicturesChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TakingPicturesChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF473BD123750E8E006C87EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF473BD323750E8E006C87EB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -28,6 +31,7 @@
 		AF473BE623750FE2006C87EB /* PicturesView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PicturesView.xib; sourceTree = "<group>"; };
 		AF473BE92375114E006C87EB /* PictureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureCell.swift; sourceTree = "<group>"; };
 		AF473BEA2375114E006C87EB /* PictureCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PictureCell.xib; sourceTree = "<group>"; };
+		AFE4B2CB2377308D00ED6B1D /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +70,7 @@
 				AF473BDA23750E90006C87EB /* Assets.xcassets */,
 				AF473BDC23750E90006C87EB /* LaunchScreen.storyboard */,
 				AF473BDF23750E90006C87EB /* Info.plist */,
+				AF1DE3962377C738005CBAB6 /* String.swift */,
 			);
 			path = TakingPicturesChallenge;
 			sourceTree = "<group>";
@@ -77,6 +82,7 @@
 				AF473BE623750FE2006C87EB /* PicturesView.xib */,
 				AF473BE92375114E006C87EB /* PictureCell.swift */,
 				AF473BEA2375114E006C87EB /* PictureCell.xib */,
+				AFE4B2CB2377308D00ED6B1D /* ImagePicker.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -153,8 +159,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF1DE3972377C738005CBAB6 /* String.swift in Sources */,
 				AF473BEB2375114E006C87EB /* PictureCell.swift in Sources */,
 				AF473BD223750E8E006C87EB /* AppDelegate.swift in Sources */,
+				AFE4B2CC2377308D00ED6B1D /* ImagePicker.swift in Sources */,
 				AF473BD423750E8E006C87EB /* SceneDelegate.swift in Sources */,
 				AF473BE723750FE2006C87EB /* PicturesView.swift in Sources */,
 			);

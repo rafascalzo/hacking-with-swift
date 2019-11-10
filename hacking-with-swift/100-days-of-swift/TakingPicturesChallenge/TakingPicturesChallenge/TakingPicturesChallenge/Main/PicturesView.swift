@@ -9,7 +9,10 @@
 import UIKit
 
 struct Picture: Codable {
-    let name: String
+    
+    let image: String
+    let title: String
+    let caption: String
     let date: Date
 }
 
@@ -18,7 +21,7 @@ let picturesReuseID = "Picture"
 class PicturesView: UITableViewController {
     
     var pictures = [[Picture]]()
-  
+  let imagePicker = ImagePicker()
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,20 +29,30 @@ class PicturesView: UITableViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-         self.navigationItem.rightBarButtonItem = self.editButtonItem
+        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(handleAddBarButtonTapped))
+        self.navigationItem.leftBarButtonItem = addButton
         tableView.register(UINib(nibName: "PictureCell", bundle: nil), forCellReuseIdentifier: picturesReuseID)
         
-        for i in 0..<7 {
-            var pics = [Picture]()
-            for j in 0..<Int.random(in: 2...7) {
-                let pic = Picture(name: "\(i) \(j)", date: Date())
-                pics.append(pic)
-            }
-            pictures.append(pics)
-        }
-        print(pictures)
-        tableView.reloadData()
+//        for i in 0..<7 {
+//            var pics = [Picture]()
+//            for j in 0..<Int.random(in: 2...7) {
+//                let pic = Picture(image: "oi", title: "thua", caption: "breve descicaode sas porra", date: Date())
+//                pics.append(pic)
+//            }
+//            pictures.append(pics)
+//        }
         
+        
+    }
+    
+    @objc func handleAddBarButtonTapped(action: UIBarButtonItem? = nil) {
+        let picker = UIImagePickerController()
+        picker.sourceType = .photoLibrary
+        picker.allowsEditing = true
+        
+        imagePicker.delegate = self
+        picker.delegate = imagePicker
+        present(picker, animated: true, completion: nil)
     }
 
     // MARK: - Table view data source
@@ -60,21 +73,11 @@ class PicturesView: UITableViewController {
             return UITableViewCell()
         }
         let item = pictures[indexPath.section][indexPath.row]
-        let formatter = DateFormatter()
-        formatter.dateFormat = "dd/MM/yyyy"
-        let date = formatter.string(from: item.date)
-        let components = date.components(separatedBy: "/")
-        
-        var day = components[0]
-        let month = components[1]
-        let year = components[2]
-        
-        day = "\(Int.random(in: 1...31))"
-        let fragmentDay = [day,month,year]
-        let randomDay = fragmentDay.joined(separator: "\\")
-        
-        cell.textLabel?.text = "\(randomDay)"
-        cell.imageView?.image = UIImage(named: "dorito")
+        let randomDay = String.getHour(from: item.date, withFormat: .hourAndMinutesPMFormat)
+        print(item.image)
+        let image = imagePicker.getImageByID(item.image)
+        cell.textLabel?.text = "Fada Linda \(randomDay)"
+        cell.imageView?.image = image
         // Configure the cell...
 
         return cell
@@ -125,5 +128,19 @@ class PicturesView: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+}
+
+extension PicturesView: ImagePickerDelegate {
+    func handle(_ image: UIImage) {
+        guard let imagename = image.accessibilityIdentifier else { return }
+        print(imagename)
+        let picture = Picture(image: imagename, title: "Fada Delicia", caption: "Gostosa", date: Date())
+        let pics = [picture]
+        pictures.append(pics)
+        tableView.reloadData()
+        
+    }
+    
     
 }
