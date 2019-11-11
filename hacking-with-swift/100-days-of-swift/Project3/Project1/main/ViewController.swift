@@ -24,15 +24,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cellid")
         
         
-        let fm = FileManager.default
-        let path = Bundle.main.resourcePath!
-        let items = try! fm.contentsOfDirectory(atPath: path)
-        
-        for item in items {
-            if item.hasPrefix("nssl"){
-                pictures.append(item)
-            }
-        }
+        pictures = FileManagerDefaults.getResourcePathWith("nssl")
         
     }
     

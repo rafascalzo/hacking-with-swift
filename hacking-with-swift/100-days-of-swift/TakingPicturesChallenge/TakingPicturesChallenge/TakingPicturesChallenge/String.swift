@@ -9,16 +9,15 @@
 import Foundation
 import UIKit
 
-//09-12-2018 14:11                  --> MM-dd-yyyy HH:mm
-//Sep 12, 2:11 PM                   --> MMM d, h:mm a
-//September 2018                    --> MMMM yyyy
-//Sep 12, 2018                      --> MMM d, yyyy
-//Wed, 12 Sep 2018 14:11:54 +0000   --> E, d MMM yyyy HH:mm:ss Z
-//2018-09-12T14:11:54+0000          --> yyyy-MM-dd'T'HH:mm:ssZ
-//12.09.18                          --> dd.MM.yy
-//10:41:02.112                      --> HH:mm:ss.SSS
-
+//# Day: d, dd 31
+//# Month: MM 09 MMM Sep MMMM September
+//# Year: yyyy 2019
+//# Hour: HH 12
+//# Minutes: mm 45
+//# Seconds: ss 47 ss.SS 47.11 ss.SSS 47.112
 public enum DateFormat: String, CodingKey {
+    // returns 2018-09-12T14:11:54+0000
+    case yearMothDayTHourMinutesSeconds = "yyyy-MM-dd'T'HH:mm:ssZ"
     // returns 31/12/1876
     case dayMonthAndYear = "dd/MM/yyyy"
     // returns 12/31/1876
@@ -40,7 +39,10 @@ public enum TimeFormat: String, CodingKey {
     case hourMinutesSecondsAndMiliseconds = "HH:mm:ss.SSS"
     // return 10:41:25 PM
     case hourMinutesSecondsPMFormat = "HH:mm:ss a"
+    // return 10:45 PM
     case hourAndMinutesPMFormat = "h:mm a"
+    // returns 10:45:54 +0000
+    case hourMinutesSecondsAndZ = "HH:mm:ss Z"
 }
 
 extension Date {
@@ -48,6 +50,62 @@ extension Date {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd/MM/yyyy"
         return dateFormatter.date(from: customString) ?? Date()
+    }
+    
+    static func getHour(from date: Date, withFormat timeFormat: TimeFormat) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = timeFormat.rawValue
+        return formatter.string(from: date)
+    }
+    
+    static func getStringDate(from date: Date, withFormat dateFormat: DateFormat) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = dateFormat.rawValue
+        return formatter.string(from: date)
+    }
+    
+    static func getRandomStringDate(from date: Date, withFormat dateFormat: DateFormat) -> String {
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = dateFormat.rawValue
+               let date = formatter.string(from: date)
+               let components = date.components(separatedBy: "/")
+        
+        var day: String?
+        var month: String?
+        var year: String?
+        var dayOfTheWeek:String?
+        
+        switch dateFormat {
+       
+        case .dayMonthAndYear:
+            day = components[0]
+            month = components[1]
+            year = components[2]
+        case .extendedDayOfTheWeekMonthDayAndYear:
+            dayOfTheWeek = components[0]
+            month = components[0]
+            day = components[1]
+            year = components[2]
+        case .literalShortMonthDayAndYear:
+            month = components[0]
+            day = components[1]
+            year = components[3]
+        case .dayalphabeticalMonthAndYear:
+            day = components[0]
+            month = components[1]
+            year = components[2]
+        @unknown default:
+            break
+        }
+        print(day)
+               
+        print(month)
+        
+               print(year)
+               day = "\(Int.random(in: 1...31))"
+               let fragmentDay = [dayOfTheWeek ?? "",day ?? "",month ?? "",year ?? ""]
+               return fragmentDay.joined(separator: "/")
     }
 }
 

@@ -44,9 +44,36 @@ class DetailViewController: UIViewController {
             print("no found name")
             return
         }
-        print(imageName)
-        let vc = UIActivityViewController(activityItems: [image,imageName], applicationActivities: [])
-        vc.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
-        present(vc,animated: true)
+        share(itens: imageView,imageName)
+       
     }
+}
+
+extension UIViewController {
+    
+       func share(itens: Any...) {
+              var itensToShow = [Any]()
+              for item in itens {
+                  print(type(of: item))
+                  if let dataItem = item as? Data {
+                      itensToShow.append(dataItem)
+                  }
+                  
+                  if let string = item as? String {
+                      itensToShow.append(string)
+                  }
+                  
+                  if let imageView = item as? UIImageView {
+                      guard let image = imageView.image?.jpegData(compressionQuality: 0.8) else {
+                          print("no image found")
+                          return
+                      }
+                      itensToShow.append(image)
+                  }
+              }
+              
+              let vc = UIActivityViewController(activityItems: itensToShow, applicationActivities: [])
+              vc.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
+              present(vc,animated: true)
+          }
 }

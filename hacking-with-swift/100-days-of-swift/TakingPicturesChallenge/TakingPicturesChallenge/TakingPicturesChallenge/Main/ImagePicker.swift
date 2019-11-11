@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum CameraResourceOption: String {
+public enum CameraResourceOption: String {
     case camera
     case library
     case savedPhotosAlbum
@@ -37,8 +37,9 @@ class ImagePicker: NSObject, UIImagePickerControllerDelegate, UINavigationContro
         if let jpegData = image.jpegData(compressionQuality: 0.8) {
             try? jpegData.write(to: imagePath)
         }
-        delegate?.handle(image)
         picker.dismiss(animated: true, completion: nil)
+        delegate?.handle(image)
+        
     }
     
     func getDocumentsDirectory() -> URL {

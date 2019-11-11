@@ -24,6 +24,7 @@
 		19F9A9362343B1D300264431 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F9A9352343B1D300264431 /* AppDelegate.swift */; };
 		19F9A93D2343B1D500264431 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19F9A93C2343B1D500264431 /* Assets.xcassets */; };
 		19F9A9402343B1D500264431 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19F9A93E2343B1D500264431 /* LaunchScreen.storyboard */; };
+		AFFD5C8D2378EF250007B179 /* FileManagerDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFD5C8C2378EF250007B179 /* FileManagerDefaults.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		19F9A93C2343B1D500264431 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		19F9A93F2343B1D500264431 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		19F9A9412343B1D500264431 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AFFD5C8C2378EF250007B179 /* FileManagerDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerDefaults.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +130,7 @@
 				191AF08B234434E600536595 /* main */,
 				191AF08A234434B100536595 /* supporting-files */,
 				190D89A02343E38A002332DC /* images */,
+				AFFD5C8C2378EF250007B179 /* FileManagerDefaults.swift */,
 			);
 			path = Project1;
 			sourceTree = "<group>";
@@ -217,6 +220,7 @@
 				191AF08F2344371F00536595 /* DetailViewController.swift in Sources */,
 				190D89B72343E73D002332DC /* ViewController.swift in Sources */,
 				19F9A9362343B1D300264431 /* AppDelegate.swift in Sources */,
+				AFFD5C8D2378EF250007B179 /* FileManagerDefaults.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
