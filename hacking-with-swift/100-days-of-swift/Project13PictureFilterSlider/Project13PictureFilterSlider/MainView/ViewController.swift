@@ -13,10 +13,16 @@ class ViewController: UIViewController {
 
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var intensity: UISlider!
+    @IBOutlet var radius: UISlider!
+    @IBOutlet var angle: UISlider!
+    
     var currentImage: UIImage!
     
     var context: CIContext!
     var currentFilter: CIFilter!
+    var radiusFilter: CIFilter!
+    var angleFilter: CIFilter!
+    var gaussianFilter: CIFilter!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,9 +30,31 @@ class ViewController: UIViewController {
         context = CIContext()
         currentFilter = CIFilter(name: "CISepiaTone")
         intensity.setValue(0, animated: false)
+        angle.setValue(0, animated: false)
+        radius.setValue(0, animated: false)
+        
         title = "InstaFilter"
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(importPicture))
+        
+        let image = generateQRCode(from: "Rafael Varanelli Scalzo Moraes")
+        imageView.image = image
     }
+    
+    func generateQRCode(from string: String) -> UIImage? {
+        let data = string.data(using: String.Encoding.ascii)
+
+        if let filter = CIFilter(name: "CIQRCodeGenerator") {
+            filter.setValue(data, forKey: "inputMessage")
+            let transform = CGAffineTransform(scaleX: 3, y: 3)
+
+            if let output = filter.outputImage?.transformed(by: transform) {
+                return UIImage(ciImage: output)
+            }
+        }
+
+        return nil
+    }
+
     
     @objc func importPicture() {
         let picker = UIImagePickerController()
@@ -35,6 +63,7 @@ class ViewController: UIViewController {
         present(picker, animated: true)
     }
 
+    @IBOutlet var changeFilter: UIButton!
     @IBAction func changeFilter(_ sender: Any) {
         
         let ac = UIAlertController(title: "Choose a filter", message: nil, preferredStyle: .actionSheet)
@@ -42,11 +71,73 @@ class ViewController: UIViewController {
         ac.addAction(UIAlertAction(title: "CIGaussianBlur", style: .default, handler: setFilter))
         ac.addAction(UIAlertAction(title: "CIPixellate", style: .default, handler: setFilter))
         ac.addAction(UIAlertAction(title: "CISepiaTone", style: .default, handler: setFilter))
-        ac.addAction(UIAlertAction(title: "CITwirlDistortion", style: .default, handler: setFilter))
         ac.addAction(UIAlertAction(title: "CIUnsharpMask", style: .default, handler: setFilter))
         ac.addAction(UIAlertAction(title: "CIVignette", style: .default, handler: setFilter))
         ac.addAction(UIAlertAction(title: "Cancel", style: .cancel))
         present(ac, animated: true)
+    }
+    
+    func setAngleFilter() {
+        guard currentImage != nil else {
+                          NSLog("Not today bro")
+                          return }
+               
+                      angle.setValue(0, animated: true)
+                      angleFilter = CIFilter(name: "CIVortexDistortion")
+                      
+                      let beginImage = CIImage(image: currentImage)
+                      angleFilter.setValue(beginImage, forKey: kCIInputImageKey)
+    }
+    
+    func processAngleFilter() {
+           angleFilter.setValue(angle.value * 200, forKey: kCIInputAngleKey)
+           
+           guard let image = angleFilter.outputImage else { return }
+        
+           //currentFilter.setValue(intensity.value, forKey: kCIInputIntensityKey)
+           
+           if let cgImage = context.createCGImage(image, from: image.extent) {
+               let processedImage = UIImage(cgImage: cgImage)
+               self.imageView.image = processedImage
+                currentImage = processedImage
+           }
+           
+           if let cgImage = context.createCGImage(image, from: image.extent) {
+               let processedImage = UIImage(cgImage: cgImage)
+               imageView.image = processedImage
+                currentImage = processedImage
+           }
+    }
+    
+    func setRadiusFilter() {
+        guard currentImage != nil else {
+                   NSLog("Not today bro")
+                   return }
+        
+               radius.setValue(0, animated: true)
+               radiusFilter = CIFilter(name: "CITwirlDistortion")
+               
+               let beginImage = CIImage(image: currentImage)
+               radiusFilter.setValue(beginImage, forKey: kCIInputImageKey)
+    }
+    func processRadiusFilter() {
+           radiusFilter.setValue(radius.value * 200, forKey: kCIInputRadiusKey)
+           
+           guard let image = radiusFilter.outputImage else { return }
+        
+           //currentFilter.setValue(intensity.value, forKey: kCIInputIntensityKey)
+           
+           if let cgImage = context.createCGImage(image, from: image.extent) {
+               let processedImage = UIImage(cgImage: cgImage)
+               self.imageView.image = processedImage
+            currentImage = processedImage
+           }
+           
+           if let cgImage = context.createCGImage(image, from: image.extent) {
+               let processedImage = UIImage(cgImage: cgImage)
+               imageView.image = processedImage
+            currentImage = processedImage
+           }
     }
     @objc func setFilter(action: UIAlertAction! = nil) {
         guard currentImage != nil else {
@@ -59,16 +150,30 @@ class ViewController: UIViewController {
         
         let beginImage = CIImage(image: currentImage)
         currentFilter.setValue(beginImage, forKey: kCIInputImageKey)
-        
+        changeFilter.setTitle(actionTitle, for: .normal)
         applyProcessing()
     }
+    
     @IBAction func save(_ sender: Any) {
-        guard let image = imageView.image else { return }
+        guard let image = imageView.image else {
+            let ac = UIAlertController(title: "Error", message: "No image selected", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            present(ac, animated: true)
+            
+            return }
         UIImageWriteToSavedPhotosAlbum(image, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
     }
     
     @IBAction func intensityChanged(_ sender: Any) {
         applyProcessing()
+    }
+    
+    @IBAction func radiusChanged(_ sender: Any) {
+        processRadiusFilter()
+    }
+    
+    @IBAction func angleChanged(_ sender: Any) {
+        processAngleFilter()
     }
     
     @objc func image(_ image: UIImage, didFinishSavingWithError: Error?, contextInfo: UnsafeRawPointer) {
@@ -95,8 +200,9 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
         
         let beginImage = CIImage(image: currentImage)
         currentFilter.setValue(beginImage, forKey: kCIInputImageKey)
+        setRadiusFilter()
+        setAngleFilter()
         applyProcessing()
-        
     }
     
     func applyProcessing() {
@@ -115,11 +221,13 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
         if let cgImage = context.createCGImage(image, from: image.extent) {
             let processedImage = UIImage(cgImage: cgImage)
             self.imageView.image = processedImage
+            currentImage = processedImage
         }
         
         if let cgImage = context.createCGImage(image, from: image.extent) {
             let processedImage = UIImage(cgImage: cgImage)
             imageView.image = processedImage
+            currentImage = processedImage
         }
     }
 }
