@@ -148,7 +148,10 @@ class ViewController: UIViewController {
         guard let buttonTitle = sender.titleLabel?.text else { return }
         currentAnswer.text = currentAnswer.text?.appending(buttonTitle)
         activatedButtons.append(sender)
-        sender.isHidden = true
+        UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 2, initialSpringVelocity: 3, options: .curveEaseOut, animations: {
+            sender.alpha = 0
+        })
+        //sender.isHidden = true
     }
     @objc func submitTapped(_ sender: UIButton) {
         guard let answerText = currentAnswer.text else { return }
@@ -178,7 +181,10 @@ class ViewController: UIViewController {
     func okthen(action: Any) {
        currentAnswer.text = ""
         for button in activatedButtons {
-            button.isHidden = false
+            UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 2, initialSpringVelocity: 3, options: .curveEaseOut, animations: {
+                button.alpha = 1
+            })
+            //button.isHidden = false
         }
         
         activatedButtons.removeAll()
@@ -191,13 +197,19 @@ class ViewController: UIViewController {
         loadLevel()
         
         for button in letterButtons {
-            button.isHidden = false
+            UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 2, initialSpringVelocity: 3, options: .curveEaseOut, animations: {
+                button.alpha = 1
+            })
+            //button.isHidden = false
         }
     }
     @objc func clearTapped(_ sender: UIButton) {
         currentAnswer.text = ""
         for button in activatedButtons {
-            button.isHidden = false
+            UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 2, initialSpringVelocity: 3, options: .curveEaseOut, animations: {
+                button.alpha = 1
+            })
+            //button.isHidden = false
         }
         
         activatedButtons.removeAll()

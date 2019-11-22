@@ -196,13 +196,35 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
         guard let image = info[.editedImage] as? UIImage else { return }
         dismiss(animated: true)
         currentImage = image
+        if imageView.image != nil {
+            UIView.animate(withDuration: 2, delay: 0, usingSpringWithDamping: 2, initialSpringVelocity: 2, options: .curveEaseOut, animations: {
+                self.imageView.alpha = 0
+            }) { finished in
+                self.imageView.alpha = 0
+                self.imageView.image = self.currentImage
+                UIView.animate(withDuration: 2, delay: 0, usingSpringWithDamping: 2, initialSpringVelocity: 2, options: .curveEaseOut, animations: {
+                    self.imageView.alpha = 1
+                }) { finished in
+                    let beginImage = CIImage(image: self.currentImage)
+                    self.currentFilter.setValue(beginImage, forKey: kCIInputImageKey)
+                    self.setRadiusFilter()
+                    self.setAngleFilter()
+                    self.applyProcessing()
+                    return
+                }
+            }
+        }
+        imageView.alpha = 0
         imageView.image = currentImage
-        
-        let beginImage = CIImage(image: currentImage)
-        currentFilter.setValue(beginImage, forKey: kCIInputImageKey)
-        setRadiusFilter()
-        setAngleFilter()
-        applyProcessing()
+        UIView.animate(withDuration: 2, delay: 0, usingSpringWithDamping: 2, initialSpringVelocity: 2, options: .curveEaseOut, animations: {
+            self.imageView.alpha = 1
+        }) { finished in
+            let beginImage = CIImage(image: self.currentImage)
+            self.currentFilter.setValue(beginImage, forKey: kCIInputImageKey)
+            self.setRadiusFilter()
+            self.setAngleFilter()
+            self.applyProcessing()
+        }
     }
     
     func applyProcessing() {

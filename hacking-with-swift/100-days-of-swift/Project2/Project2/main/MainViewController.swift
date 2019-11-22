@@ -109,30 +109,40 @@ class MainViewController: UIViewController {
         thirdButton.setImage(UIImage(named: countries[2]), for: .normal)
     }
     @IBAction func buttonTapped(_ sender: UIButton) {
-        var title: String
         
-        if sender.tag == correctAnswer {
-            title = "Correct"
-            player.score += 1;
-            labelScore.text = "Score \(player.score)"
-            alertMessage = "Correct! Thats the flag of \(countries[sender.tag])"
-        } else {
-            title = "Wrong"
-            alertMessage = "Wrong! Thats the flag of \(countries[sender.tag])"
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 3, initialSpringVelocity: 1, options: .curveEaseInOut, animations: {
+            sender.transform = CGAffineTransform(scaleX: 0.85, y: 0.85)
+        }) { finished in
+            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 3, initialSpringVelocity: 1, options: .curveEaseInOut, animations: {
+                sender.transform = .identity
+            }) { finished in
+                 var title: String
+                       
+                if sender.tag == self.correctAnswer {
+                           title = "Correct"
+                    self.player.score += 1;
+                    self.labelScore.text = "Score \(self.player.score )"
+                    self.alertMessage = "Correct! Thats the flag of \(self.countries[sender.tag] )"
+                       } else {
+                           title = "Wrong"
+                    self.alertMessage = "Wrong! Thats the flag of \(self.countries[sender.tag] )"
+                       }
+                self.questionNumber += 1
+                       
+                var alert = UIAlertController(title: title, message: self.alertMessage, preferredStyle: .alert)
+                       
+                if self.questionNumber == 10 {
+                    alert = UIAlertController(title: title, message: "Your final score is \(self.player.score )", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Reset Game", style: .default, handler: self.showGrats))
+                           
+                       } else {
+                           
+                    alert.addAction(UIAlertAction(title: "Continue", style: .default, handler: self.askQuestion))
+                       }
+                self.present(alert, animated: true)
+            }
         }
-        questionNumber += 1
-        
-        var alert = UIAlertController(title: title, message: alertMessage, preferredStyle: .alert)
-        
-        if questionNumber == 10 {
-            alert = UIAlertController(title: title, message: "Your final score is \(player.score)", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Reset Game", style: .default, handler: showGrats))
-            
-        } else {
-            
-            alert.addAction(UIAlertAction(title: "Continue", style: .default, handler: askQuestion))
-        }
-        present(alert, animated: true)
+       
     }
     
     func showGrats(_ action: UIAlertAction! = nil) {
