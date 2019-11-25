@@ -1,0 +1,91 @@
+[
+  {
+    "name":"French Republic",
+    "capital_city":"Paris",
+    "size_km2":640679,
+    "population":67022000,
+    "currency":"Euro (€) (EUR)",
+    "largest_city":"Paris"
+  },
+  {
+    "name":"United States of America",
+    "capital_city":"Washington, D.C.",
+    "size_km2":9833520,
+    "population":327167434,
+    "currency":"United States dollar ($) (USD)",
+    "largest_city":"New York City"
+  },
+   {
+    "name":"Federal Republic of Germany",
+    "capital_city":"Berlin",
+    "size_km2":357386,
+    "population":83019200,
+    "currency":"Euro (€) (EUR)",
+    "largest_city":"Berlin"
+  },
+  {
+    "name":"Federative Republic of Brazil",
+    "capital_city":"Brasília",
+    "size_km2":8515767,
+    "population":210147125,
+    "currency":"Real (R$) (BRL)",
+    "largest_city":"Brasília"
+  },
+  {
+    "name":"Swiss Confederation",
+    "capital_city":"Bern",
+    "size_km2":41285,
+    "population":8570146,
+    "currency":"Swiss franc (CHF)",
+    "largest_city":"Zürich"
+  },
+  {
+    "name":"People's Republic of China",
+    "capital_city":"Beijing",
+    "size_km2":9596961,
+    "population":1427647786,
+    "currency":"Renminbi (yuan; ¥) (CNY)",
+    "largest_city":"Shanghai"
+  },
+  {
+    "name":"Japan",
+    "capital_city":"Tokyo",
+    "size_km2":377973,
+    "population":126317000,
+    "currency":"Yen (¥) / En 円 (JPY)",
+    "largest_city":"Tokyo"
+  },
+  {
+    "name":"Republic of India",
+    "capital_city":"New Delhi",
+    "size_km2":3287263,
+    "population":1352642280,
+    "currency":"Indian rupee (₹) (INR)",
+    "largest_city":"Mumbai"
+  },
+  {
+     "name":"Commonwealth of Australia",
+     "capital_city":"Canberra",
+     "size_km2":7692024,
+     "population":25531600,
+     "currency":"Australian dollar (AUD)",
+     "largest_city":"Sydney"
+   },
+  {
+    "name":"Republic of Korea",
+    "capital_city":"Seoul",
+    "size_km2":100363,
+    "population":51709098,
+    "currency":"Korean Republic won (₩) (KRW)",
+    "largest_city":"Seoul"
+  },
+  {
+    "name":"Democratic People's Republic of Korea",
+    "capital_city":"Pyongyang",
+    "size_km2":120540,
+    "population":25549604,
+    "currency":"Korean People's won (₩) (KPW)",
+    "largest_city":"Pyongyang"
+  }
+]
+

@@ -13,15 +13,15 @@
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="UITableView" customModule="CountryChallenge">
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="UITableView">
             <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
-                <outlet property="dataSource" destination="-1" id="RpO-f7-Gff"/>
-                <outlet property="delegate" destination="-1" id="Gh6-By-3KQ"/>
+                <outlet property="dataSource" destination="-1" id="Gsh-aH-y6W"/>
+                <outlet property="delegate" destination="-1" id="WLC-42-jYC"/>
             </connections>
             <point key="canvasLocation" x="132" y="111"/>
         </view>
