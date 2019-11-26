@@ -23,7 +23,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         title = "Storm Viewer"
         navigationController?.navigationBar.prefersLargeTitles = true
         
@@ -96,7 +95,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let controller = DetailViewController()
-        var pic = pictures[indexPath.row]
+        let pic = pictures[indexPath.row]
         pictures[indexPath.row].count += 1
         save()
         print(pic.count)

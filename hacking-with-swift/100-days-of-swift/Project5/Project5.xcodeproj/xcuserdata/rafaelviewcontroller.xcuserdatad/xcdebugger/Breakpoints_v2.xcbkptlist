@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "A9D3B7DA-DF48-4227-B5CC-FD1CF5F6D203"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EDAD0828-B4D1-4218-984E-A51B9ACA4E22"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            condition = "title!.count &gt; 8"
+            continueAfterRunningActions = "No"
+            filePath = "Project5/Main Scene/MainTableViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "resetGame(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
