@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		89544E0C23943322005FF6F1 /* FireParticles.sks in Resources */ = {isa = PBXBuildFile; fileRef = 89544E0B23943322005FF6F1 /* FireParticles.sks */; };
 		AF22AD3C236FD31F008339BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF22AD3B236FD31F008339BA /* AppDelegate.swift */; };
 		AF22AD3E236FD31F008339BA /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = AF22AD3D236FD31F008339BA /* GameScene.sks */; };
-		AF22AD40236FD31F008339BA /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = AF22AD3F236FD31F008339BA /* Actions.sks */; };
 		AF22AD42236FD31F008339BA /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF22AD41236FD31F008339BA /* GameScene.swift */; };
 		AF22AD44236FD31F008339BA /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF22AD43236FD31F008339BA /* GameViewController.swift */; };
 		AF22AD47236FD31F008339BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF22AD45236FD31F008339BA /* Main.storyboard */; };
@@ -18,10 +18,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		89544E0B23943322005FF6F1 /* FireParticles.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FireParticles.sks; sourceTree = "<group>"; };
 		AF22AD38236FD31F008339BA /* Project11.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project11.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF22AD3B236FD31F008339BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF22AD3D236FD31F008339BA /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
-		AF22AD3F236FD31F008339BA /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
 		AF22AD41236FD31F008339BA /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		AF22AD43236FD31F008339BA /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		AF22AD46236FD31F008339BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -62,13 +62,13 @@
 			children = (
 				AF22AD3B236FD31F008339BA /* AppDelegate.swift */,
 				AF22AD3D236FD31F008339BA /* GameScene.sks */,
-				AF22AD3F236FD31F008339BA /* Actions.sks */,
 				AF22AD41236FD31F008339BA /* GameScene.swift */,
 				AF22AD43236FD31F008339BA /* GameViewController.swift */,
 				AF22AD45236FD31F008339BA /* Main.storyboard */,
 				AF22AD48236FD320008339BA /* Assets.xcassets */,
 				AF22AD4A236FD320008339BA /* LaunchScreen.storyboard */,
 				AF22AD4D236FD320008339BA /* Info.plist */,
+				89544E0B23943322005FF6F1 /* FireParticles.sks */,
 			);
 			path = Project11;
 			sourceTree = "<group>";
@@ -133,9 +133,9 @@
 			files = (
 				AF22AD47236FD31F008339BA /* Main.storyboard in Resources */,
 				AF22AD3E236FD31F008339BA /* GameScene.sks in Resources */,
+				89544E0C23943322005FF6F1 /* FireParticles.sks in Resources */,
 				AF22AD49236FD320008339BA /* Assets.xcassets in Resources */,
 				AF22AD4C236FD320008339BA /* LaunchScreen.storyboard in Resources */,
-				AF22AD40236FD31F008339BA /* Actions.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,7 +224,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -278,7 +278,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
