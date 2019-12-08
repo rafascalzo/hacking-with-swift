@@ -12,7 +12,7 @@ import GameplayKit
 class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var scoreLabel: SKLabelNode!
-    
+    var imBusy: Bool = false
     var score: Int = 0 {
         didSet {
             scoreLabel.text = "Score \(score)"
@@ -106,28 +106,31 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 box.name = "obstacle"
                 addChild(box)
             } else {
-                if ballCounter >= maximumBalls {
-                    score = 0
-                    for node in self.children {
-                        if node.name == "obstacle" {
-                            node.removeFromParent()
+                if !imBusy {
+                    imBusy = true
+                    if ballCounter >= maximumBalls {
+                        score = 0
+                        for node in self.children {
+                            if node.name == "obstacle" {
+                                node.removeFromParent()
+                            }
                         }
+                        ballCounter = 0
+                        maximumBalls = 5
+                        imBusy = false
+                    } else {
+                        let ball = SKSpriteNode(imageNamed: ballNames.randomElement()!)
+                        ball.name = "ball"
+                        ball.physicsBody = SKPhysicsBody(circleOfRadius: ball.size.width / 2.0)
+                        ball.physicsBody?.restitution = 0.9
+                        ball.physicsBody?.contactTestBitMask = ball.physicsBody?.collisionBitMask ?? 0
+                        ball.position = CGPoint(x: location.x, y: 768)
+                        addChild(ball)
+                        ballCounter += 1
                     }
-                    ballCounter = 0
-                    maximumBalls = 5
-                } else {
-                    let ball = SKSpriteNode(imageNamed: ballNames.randomElement()!)
-                    ball.name = "ball"
-                    ball.physicsBody = SKPhysicsBody(circleOfRadius: ball.size.width / 2.0)
-                    ball.physicsBody?.restitution = 0.9
-                    ball.physicsBody?.contactTestBitMask = ball.physicsBody?.collisionBitMask ?? 0
-                    ball.position = CGPoint(x: location.x, y: 768)
-                    addChild(ball)
-                    ballCounter += 1
                 }
                 
             }
-            
         }
     }
     
@@ -183,6 +186,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             addChild(fireParticles)
         }
         ball.removeFromParent()
+        imBusy = false
     }
     
     func didBegin(_ contact: SKPhysicsContact) {
