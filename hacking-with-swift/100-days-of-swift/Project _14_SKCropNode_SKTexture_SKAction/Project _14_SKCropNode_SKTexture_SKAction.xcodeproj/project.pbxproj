@@ -13,6 +13,11 @@
 		896B1B5C239D71E4007180B3 /* downsound.caf in Resources */ = {isa = PBXBuildFile; fileRef = 896B1B5A239D71E4007180B3 /* downsound.caf */; };
 		896B1B5E239D72D1007180B3 /* vacilao.caf in Resources */ = {isa = PBXBuildFile; fileRef = 896B1B5D239D72D1007180B3 /* vacilao.caf */; };
 		896B1B60239D72D9007180B3 /* aimeucoco.caf in Resources */ = {isa = PBXBuildFile; fileRef = 896B1B5F239D72D9007180B3 /* aimeucoco.caf */; };
+		896B1B62239D906B007180B3 /* gameover.caf in Resources */ = {isa = PBXBuildFile; fileRef = 896B1B61239D906B007180B3 /* gameover.caf */; };
+		896B1B64239D9076007180B3 /* hit.caf in Resources */ = {isa = PBXBuildFile; fileRef = 896B1B63239D9076007180B3 /* hit.caf */; };
+		896B1B6C239D936A007180B3 /* Magic.sks in Resources */ = {isa = PBXBuildFile; fileRef = 896B1B6B239D936A007180B3 /* Magic.sks */; };
+		896B1B71239D9484007180B3 /* Mud.sks in Resources */ = {isa = PBXBuildFile; fileRef = 896B1B6F239D9484007180B3 /* Mud.sks */; };
+		896B1B72239D9484007180B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 896B1B70239D9484007180B3 /* Assets.xcassets */; };
 		89E1D9D8239CBB0300425C6E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E1D9D7239CBB0300425C6E /* AppDelegate.swift */; };
 		89E1D9DA239CBB0300425C6E /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 89E1D9D9239CBB0300425C6E /* GameScene.sks */; };
 		89E1D9DE239CBB0300425C6E /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E1D9DD239CBB0300425C6E /* GameScene.swift */; };
@@ -32,6 +37,11 @@
 		896B1B5A239D71E4007180B3 /* downsound.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = downsound.caf; sourceTree = "<group>"; };
 		896B1B5D239D72D1007180B3 /* vacilao.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = vacilao.caf; sourceTree = "<group>"; };
 		896B1B5F239D72D9007180B3 /* aimeucoco.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = aimeucoco.caf; sourceTree = "<group>"; };
+		896B1B61239D906B007180B3 /* gameover.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gameover.caf; sourceTree = "<group>"; };
+		896B1B63239D9076007180B3 /* hit.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = hit.caf; sourceTree = "<group>"; };
+		896B1B6B239D936A007180B3 /* Magic.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Magic.sks; sourceTree = "<group>"; };
+		896B1B6F239D9484007180B3 /* Mud.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Mud.sks; sourceTree = "<group>"; };
+		896B1B70239D9484007180B3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		89E1D9D4239CBB0300425C6E /* Project _14_SKCropNode_SKTexture_SKAction.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project _14_SKCropNode_SKTexture_SKAction.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		89E1D9D7239CBB0300425C6E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89E1D9D9239CBB0300425C6E /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -60,6 +70,9 @@
 		89E1D9CB239CBB0300425C6E = {
 			isa = PBXGroup;
 			children = (
+				896B1B6F239D9484007180B3 /* Mud.sks */,
+				896B1B70239D9484007180B3 /* Assets.xcassets */,
+				896B1B6B239D936A007180B3 /* Magic.sks */,
 				89E1D9D6239CBB0300425C6E /* Project _14_SKCropNode_SKTexture_SKAction */,
 				89E1D9D5239CBB0300425C6E /* Products */,
 			);
@@ -87,6 +100,8 @@
 				89E1D9F0239CBDAC00425C6E /* whack.caf */,
 				89E1D9EF239CBDAC00425C6E /* whackBad.caf */,
 				89E1D9F3239CC18200425C6E /* WhackSlot.swift */,
+				896B1B63239D9076007180B3 /* hit.caf */,
+				896B1B61239D906B007180B3 /* gameover.caf */,
 				896B1B55239D6D41007180B3 /* acabou.caf */,
 				896B1B5D239D72D1007180B3 /* vacilao.caf */,
 				896B1B5F239D72D9007180B3 /* aimeucoco.caf */,
@@ -159,11 +174,16 @@
 				89E1D9E3239CBB0300425C6E /* Main.storyboard in Resources */,
 				896B1B60239D72D9007180B3 /* aimeucoco.caf in Resources */,
 				896B1B5E239D72D1007180B3 /* vacilao.caf in Resources */,
+				896B1B64239D9076007180B3 /* hit.caf in Resources */,
 				896B1B56239D6D41007180B3 /* acabou.caf in Resources */,
+				896B1B72239D9484007180B3 /* Assets.xcassets in Resources */,
 				89E1D9DA239CBB0300425C6E /* GameScene.sks in Resources */,
+				896B1B62239D906B007180B3 /* gameover.caf in Resources */,
 				89E1D9E5239CBB0B00425C6E /* Assets.xcassets in Resources */,
 				89E1D9E8239CBB0B00425C6E /* LaunchScreen.storyboard in Resources */,
 				896B1B5C239D71E4007180B3 /* downsound.caf in Resources */,
+				896B1B6C239D936A007180B3 /* Magic.sks in Resources */,
+				896B1B71239D9484007180B3 /* Mud.sks in Resources */,
 				89E1D9F2239CBDAC00425C6E /* whack.caf in Resources */,
 				896B1B5B239D71E4007180B3 /* upsound.caf in Resources */,
 				896B1B58239D6F50007180B3 /* Smoke.sks in Resources */,

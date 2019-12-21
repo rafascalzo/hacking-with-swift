@@ -35,7 +35,7 @@ class WhackSlot: SKNode {
     }
     
     func show(hideTime: Double) {
-        run(SKAction.playSoundFileNamed("upsound.caf", waitForCompletion: false))
+        //run(SKAction.playSoundFileNamed("upsound.caf", waitForCompletion: false))
         if isVisible { return }
         
         charNode.xScale = 1
@@ -58,18 +58,18 @@ class WhackSlot: SKNode {
     }
     
     func hide() {
-        run(SKAction.playSoundFileNamed("downsound.caf", waitForCompletion: false))
+        //run(SKAction.playSoundFileNamed("downsound.caf", waitForCompletion: false))
         if !isVisible { return }
-        if let fireParticles = SKEmitterNode(fileNamed: "Smoke") {
-            fireParticles.position = charNode.position
-            addChild(fireParticles)
-        }
+       
         charNode.run(SKAction.moveBy(x: 0, y: -80, duration: 0.05))
         isVisible = false
     }
     
     func hit() {
-        
+        if let fireParticles = SKEmitterNode(fileNamed: "Smoke") {
+            fireParticles.position = charNode.position
+            addChild(fireParticles)
+        }
        isHit = true
         let delay = SKAction.wait(forDuration: 0.25)
         let hide = SKAction.moveBy(x: 0, y: -80, duration: 0.5)

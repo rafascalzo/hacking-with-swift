@@ -61,7 +61,7 @@ class GameScene: SKScene {
                 score -= 5
 
                 //run(SKAction.playSoundFileNamed("whackBad.caf", waitForCompletion: false))
-                run(SKAction.playSoundFileNamed("vacilao.caf", waitForCompletion: false))
+                run(SKAction.playSoundFileNamed("hit.caf", waitForCompletion: false))
             } else if node.name == "charEnemy" {
                 // they should have whacked this one
                 whackSlot.charNode.xScale = 0.85
@@ -69,7 +69,7 @@ class GameScene: SKScene {
                 score += 1
 
                 //run(SKAction.playSoundFileNamed("whack.caf", waitForCompletion: false))
-                run(SKAction.playSoundFileNamed("aimeucoco.caf", waitForCompletion: false))
+                run(SKAction.playSoundFileNamed("hit.caf", waitForCompletion: false))
             }
         }
     }
@@ -93,7 +93,7 @@ class GameScene: SKScene {
             gameOver.position = CGPoint(x: 512, y: 384)
             gameOver.zPosition = 1
             addChild(gameOver)
-            run(SKAction.playSoundFileNamed("acabou.caf", waitForCompletion: false))
+            run(SKAction.playSoundFileNamed("gameover.caf", waitForCompletion: false))
             return
         }
         popupTime *= 0.991
