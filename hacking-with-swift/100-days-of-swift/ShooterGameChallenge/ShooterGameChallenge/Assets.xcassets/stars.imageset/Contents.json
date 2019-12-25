@@ -2,12 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "grass-trees.png",
+      "filename" : "stars.jpg",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "grass-trees@2x.png",
       "scale" : "2x"
     },
     {

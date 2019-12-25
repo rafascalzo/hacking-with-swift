@@ -12,21 +12,40 @@ import GameplayKit
 class GameScene: SKScene {
     
     var waterForeground: SKSpriteNode!
+    var scoreLabel: SKLabelNode!
+    
+    var score = 0 {
+        didSet {
+            scoreLabel.text = "Score \(score)"
+        }
+    }
     
     override func didMove(to view: SKView) {
         
-        let background = SKSpriteNode(imageNamed: "curtains")
+        let background = SKSpriteNode(imageNamed: "stars")
         background.position = CGPoint(x: 512, y: 386)
         background.zPosition = -1
-        //background.blendMode = .replace
+        background.blendMode = .replace
         addChild(background)
         
-        let water = SKSpriteNode(imageNamed: "water-bg")
-        water.position = CGPoint(x: 512, y: 198)
-        water.zPosition = -1
-        water.blendMode = .replace
-        addChild(water)
+        let stars = SKEmitterNode(fileNamed: "Spark")!
+        stars.position = CGPoint(x: 512, y: 386)
+        stars.advanceSimulationTime(10)
+        stars.zPosition = -1
+        addChild(stars)
         
+        scoreLabel = SKLabelNode(fontNamed: "Apple SD Gothic Neo")
+        scoreLabel.position = CGPoint(x: 16, y: 16)
+        scoreLabel.horizontalAlignmentMode = .left
+        scoreLabel.fontSize = 48
+        addChild(scoreLabel)
+        
+        score = 0
+        
+        let sprite = SKSpriteNode(imageNamed: "spacecraft")
+        sprite.position = CGPoint(x: 300, y: 300)
+        sprite.physicsBody = SKPhysicsBody(texture: sprite.texture!, size: sprite.size)
+        addChild(sprite)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

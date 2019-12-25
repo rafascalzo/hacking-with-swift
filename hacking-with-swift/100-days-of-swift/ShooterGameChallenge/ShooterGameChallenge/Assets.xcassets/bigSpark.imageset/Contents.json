@@ -2,12 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "water-fg.png",
+      "filename" : "bigSpark.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "water-fg@2x.png",
       "scale" : "2x"
     },
     {

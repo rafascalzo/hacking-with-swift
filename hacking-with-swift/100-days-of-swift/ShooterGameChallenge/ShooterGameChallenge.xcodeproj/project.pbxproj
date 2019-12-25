@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		89A727A723B32C3300C9B7A9 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A727A623B32C3300C9B7A9 /* GameView.swift */; };
+		89A727AE23B335B300C9B7A9 /* SpaceEffect.sks in Resources */ = {isa = PBXBuildFile; fileRef = 89A727AC23B335B300C9B7A9 /* SpaceEffect.sks */; };
+		89A727AF23B335B300C9B7A9 /* Spark.sks in Resources */ = {isa = PBXBuildFile; fileRef = 89A727AD23B335B300C9B7A9 /* Spark.sks */; };
 		89B3E3B623AEC03E00E04CC2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B3E3B523AEC03E00E04CC2 /* AppDelegate.swift */; };
 		89B3E3B823AEC03E00E04CC2 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 89B3E3B723AEC03E00E04CC2 /* GameScene.sks */; };
 		89B3E3BC23AEC03E00E04CC2 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B3E3BB23AEC03E00E04CC2 /* GameScene.swift */; };
@@ -17,6 +20,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		89A727A623B32C3300C9B7A9 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		89A727AC23B335B300C9B7A9 /* SpaceEffect.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SpaceEffect.sks; sourceTree = "<group>"; };
+		89A727AD23B335B300C9B7A9 /* Spark.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Spark.sks; sourceTree = "<group>"; };
 		89B3E3B223AEC03E00E04CC2 /* ShooterGameChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShooterGameChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89B3E3B523AEC03E00E04CC2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89B3E3B723AEC03E00E04CC2 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -66,6 +72,9 @@
 				89B3E3C223AEC03F00E04CC2 /* Assets.xcassets */,
 				89B3E3C423AEC03F00E04CC2 /* LaunchScreen.storyboard */,
 				89B3E3C723AEC03F00E04CC2 /* Info.plist */,
+				89A727A623B32C3300C9B7A9 /* GameView.swift */,
+				89A727AC23B335B300C9B7A9 /* SpaceEffect.sks */,
+				89A727AD23B335B300C9B7A9 /* Spark.sks */,
 			);
 			path = ShooterGameChallenge;
 			sourceTree = "<group>";
@@ -129,9 +138,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				89B3E3C123AEC03E00E04CC2 /* Main.storyboard in Resources */,
+				89A727AE23B335B300C9B7A9 /* SpaceEffect.sks in Resources */,
 				89B3E3B823AEC03E00E04CC2 /* GameScene.sks in Resources */,
 				89B3E3C323AEC03F00E04CC2 /* Assets.xcassets in Resources */,
 				89B3E3C623AEC03F00E04CC2 /* LaunchScreen.storyboard in Resources */,
+				89A727AF23B335B300C9B7A9 /* Spark.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,6 +155,7 @@
 			files = (
 				89B3E3BC23AEC03E00E04CC2 /* GameScene.swift in Sources */,
 				89B3E3BE23AEC03E00E04CC2 /* GameViewController.swift in Sources */,
+				89A727A723B32C3300C9B7A9 /* GameView.swift in Sources */,
 				89B3E3B623AEC03E00E04CC2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
