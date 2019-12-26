@@ -50,7 +50,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         physicsWorld.gravity = CGVector(dx: 0, dy: 0)
         physicsWorld.contactDelegate = self
         
-        
         gameTimer = Timer.scheduledTimer(timeInterval: scheduledTimeInterval, target: self, selector: #selector(createEnemy), userInfo: nil, repeats: true)
     }
     
