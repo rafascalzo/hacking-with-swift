@@ -10,6 +10,13 @@
 		89A727A723B32C3300C9B7A9 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A727A623B32C3300C9B7A9 /* GameView.swift */; };
 		89A727AE23B335B300C9B7A9 /* SpaceEffect.sks in Resources */ = {isa = PBXBuildFile; fileRef = 89A727AC23B335B300C9B7A9 /* SpaceEffect.sks */; };
 		89A727AF23B335B300C9B7A9 /* Spark.sks in Resources */ = {isa = PBXBuildFile; fileRef = 89A727AD23B335B300C9B7A9 /* Spark.sks */; };
+		89A727B123B51DA100C9B7A9 /* explosion.sks in Resources */ = {isa = PBXBuildFile; fileRef = 89A727B023B51DA100C9B7A9 /* explosion.sks */; };
+		89A727B323B51FE100C9B7A9 /* shot.wav in Resources */ = {isa = PBXBuildFile; fileRef = 89A727B223B51FE100C9B7A9 /* shot.wav */; };
+		89A727B623B51FF200C9B7A9 /* empty.wav in Resources */ = {isa = PBXBuildFile; fileRef = 89A727B423B51FF200C9B7A9 /* empty.wav */; };
+		89A727B723B51FF200C9B7A9 /* reload.wav in Resources */ = {isa = PBXBuildFile; fileRef = 89A727B523B51FF200C9B7A9 /* reload.wav */; };
+		89A727B923B522BA00C9B7A9 /* gameSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 89A727B823B522BA00C9B7A9 /* gameSound.wav */; };
+		89A727BB23B5245000C9B7A9 /* laserShot.wav in Resources */ = {isa = PBXBuildFile; fileRef = 89A727BA23B5245000C9B7A9 /* laserShot.wav */; };
+		89A727BD23B525B100C9B7A9 /* explosionSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 89A727BC23B525B100C9B7A9 /* explosionSound.wav */; };
 		89B3E3B623AEC03E00E04CC2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B3E3B523AEC03E00E04CC2 /* AppDelegate.swift */; };
 		89B3E3B823AEC03E00E04CC2 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 89B3E3B723AEC03E00E04CC2 /* GameScene.sks */; };
 		89B3E3BC23AEC03E00E04CC2 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B3E3BB23AEC03E00E04CC2 /* GameScene.swift */; };
@@ -23,6 +30,13 @@
 		89A727A623B32C3300C9B7A9 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		89A727AC23B335B300C9B7A9 /* SpaceEffect.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SpaceEffect.sks; sourceTree = "<group>"; };
 		89A727AD23B335B300C9B7A9 /* Spark.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Spark.sks; sourceTree = "<group>"; };
+		89A727B023B51DA100C9B7A9 /* explosion.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = explosion.sks; path = ../../Project17_SurvivalGame_Timer_LinearAndAngularDamping/Project17_SurvivalGame_Timer_LinearAndAngularDamping/explosion.sks; sourceTree = "<group>"; };
+		89A727B223B51FE100C9B7A9 /* shot.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = shot.wav; sourceTree = "<group>"; };
+		89A727B423B51FF200C9B7A9 /* empty.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = empty.wav; sourceTree = "<group>"; };
+		89A727B523B51FF200C9B7A9 /* reload.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = reload.wav; sourceTree = "<group>"; };
+		89A727B823B522BA00C9B7A9 /* gameSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = gameSound.wav; sourceTree = "<group>"; };
+		89A727BA23B5245000C9B7A9 /* laserShot.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = laserShot.wav; sourceTree = "<group>"; };
+		89A727BC23B525B100C9B7A9 /* explosionSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = explosionSound.wav; sourceTree = "<group>"; };
 		89B3E3B223AEC03E00E04CC2 /* ShooterGameChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShooterGameChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89B3E3B523AEC03E00E04CC2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89B3E3B723AEC03E00E04CC2 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -75,6 +89,13 @@
 				89A727A623B32C3300C9B7A9 /* GameView.swift */,
 				89A727AC23B335B300C9B7A9 /* SpaceEffect.sks */,
 				89A727AD23B335B300C9B7A9 /* Spark.sks */,
+				89A727B023B51DA100C9B7A9 /* explosion.sks */,
+				89A727B223B51FE100C9B7A9 /* shot.wav */,
+				89A727B823B522BA00C9B7A9 /* gameSound.wav */,
+				89A727BC23B525B100C9B7A9 /* explosionSound.wav */,
+				89A727B423B51FF200C9B7A9 /* empty.wav */,
+				89A727B523B51FF200C9B7A9 /* reload.wav */,
+				89A727BA23B5245000C9B7A9 /* laserShot.wav */,
 			);
 			path = ShooterGameChallenge;
 			sourceTree = "<group>";
@@ -138,11 +159,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				89B3E3C123AEC03E00E04CC2 /* Main.storyboard in Resources */,
+				89A727B923B522BA00C9B7A9 /* gameSound.wav in Resources */,
 				89A727AE23B335B300C9B7A9 /* SpaceEffect.sks in Resources */,
+				89A727B323B51FE100C9B7A9 /* shot.wav in Resources */,
 				89B3E3B823AEC03E00E04CC2 /* GameScene.sks in Resources */,
 				89B3E3C323AEC03F00E04CC2 /* Assets.xcassets in Resources */,
+				89A727B623B51FF200C9B7A9 /* empty.wav in Resources */,
+				89A727B123B51DA100C9B7A9 /* explosion.sks in Resources */,
+				89A727BD23B525B100C9B7A9 /* explosionSound.wav in Resources */,
 				89B3E3C623AEC03F00E04CC2 /* LaunchScreen.storyboard in Resources */,
 				89A727AF23B335B300C9B7A9 /* Spark.sks in Resources */,
+				89A727BB23B5245000C9B7A9 /* laserShot.wav in Resources */,
+				89A727B723B51FF200C9B7A9 /* reload.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
