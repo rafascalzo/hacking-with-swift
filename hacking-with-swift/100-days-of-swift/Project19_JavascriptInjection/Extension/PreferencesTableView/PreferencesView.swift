@@ -2,7 +2,7 @@
 //  PreferencesView.swift
 //  Extension
 //
-//  Created by FulltrackMobile on 30/12/19.
+//  Created by Rafael Scalzo on 30/12/19.
 //  Copyright © 2019 Rafael Scalzo. All rights reserved.
 //
 
@@ -12,7 +12,8 @@ let scriptIdentifier = "script"
 
 class PreferencesView: UITableViewController {
     
-    var scripts = [[String:String]]()
+    var scripts = [Script]()
+    var delegate: ActionViewDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,11 +46,15 @@ class PreferencesView: UITableViewController {
         }
 
         let script = scripts[indexPath.row]
-        cell.backgroundColor = .purple
-        cell.textLabel?.text = script.keys.first ?? ""
+        cell.textLabel?.text = script.scriptName
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedScript = scripts[indexPath.row]
+        delegate?.update(selectedScript.script)
+        dismiss(animated: true)
+    }
 
     /*
     // Override to support conditional editing of the table view.

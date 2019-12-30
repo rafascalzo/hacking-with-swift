@@ -6,8 +6,7 @@
 //  Copyright © 2019 Rafael Scalzo. All rights reserved.
 //
 
-class Preference:NSObject ,NSCoding {
-    
+class SitePreference:NSObject ,NSCoding {
     
     var url: String
     var scriptText: String
@@ -27,11 +26,71 @@ class Preference:NSObject ,NSCoding {
         coder.encode(scriptText, forKey: "preferences")
     }
     
-    static func == (_ lhs: Preference, _ rhs: Preference) -> Bool {
+    static func == (_ lhs: SitePreference, _ rhs: SitePreference) -> Bool {
         return lhs.url == rhs.url && lhs.scriptText == rhs.scriptText
     }
 }
 
+class Script:NSObject, NSCoding {
+    
+    var scriptName: String
+    var script: String
+    
+    init(_ scriptName: String,_ script: String) {
+        self.scriptName = scriptName
+        self.script = script
+    }
+    
+    required init?(coder: NSCoder) {
+        self.scriptName = coder.decodeObject(forKey: "scriptName") as? String ?? ""
+        self.script = coder.decodeObject(forKey: "script") as? String ?? ""
+    }
+    
+    func encode(with coder: NSCoder) {
+        coder.encode(scriptName, forKey: "scriptName")
+        coder.encode(script, forKey: "script")
+    }
+    
+    static func == (_ lhs: Script, _ rhs: Script) -> Bool {
+        return lhs.scriptName == rhs.scriptName && lhs.script == rhs.script
+    }
+}
+/*
+Hey, brother
+I miss you so
+You knocked on heaven's door
+And we won't see you anymore
+It must be crazy
+What we're living for
+'cause god's stopped keeping you
+On the ladder of your life
+I call your name with tears in my eyes
+
+I don't wanna cry no more
+Past gave me happiness and pain
+Life is fleeting like a flower
+From a distance, after sorrow
+I pray the lord to keep your soul
+I don't wanna cry no more
+We're still missing you
+
+Life's like walking
+On a high wire
+You slipped away
+I've seen you dying in a vein
+High as a mountains seem all the problems that i have
+But when i hear your voice far away out of teh dark
+You just go on and on in the back of my mind
+
+( chorus)
+
+Skin and bone won't touch the sky
+I hope you'll find passage out of the dark
+To the other side of the sea
+And i know that i'll see you again
+
+( chorus)
+*/
 import UIKit
 import MobileCoreServices
 
@@ -42,10 +101,12 @@ class ActionViewController: UIViewController {
     var pageTitle = ""
     var pageURL = ""
     var actualScriptText = ""
-    var preferences = [Preference]()
+    var preferences = [SitePreference]()
+    var scripts = [Script]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         /*
          When working with the keyboard, the notifications we care about are keyboardWillHideNotification and keyboardWillChangeFrameNotification. The first will be sent when the keyboard has finished hiding, and the second will be shown when any keyboard state change happens – including showing and hiding, but also orientation, QuickType and more.
 
@@ -59,17 +120,26 @@ class ActionViewController: UIViewController {
         notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard), name: UIResponder.keyboardWillHideNotification, object: nil)
         notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(done))
-        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(showCodeExamples))
+        let saveAction = UIBarButtonItem(title: "Save script", style: .plain, target: self, action: #selector(saveScript)) 
+        let doneAction = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(done))
+        navigationItem.rightBarButtonItems = [saveAction, doneAction]
+        let showCodeAction = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(showCodeExamples))
+        let loadScriptAction = UIBarButtonItem(title: "Load script", style: .plain, target: self, action: #selector(showCustomPreferences))
+        navigationItem.leftBarButtonItems = [showCodeAction, loadScriptAction]
         
         let defaults = UserDefaults.standard
         
         if let savedData = defaults.object(forKey: "preferences") as? Data {
-            if let savedPreferences = try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(savedData) as? [Preference] {
+            if let savedPreferences = try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(savedData) as? [SitePreference] {
                 self.preferences = savedPreferences
             }
         }
         
+        if let savedScriptsData = defaults.object(forKey: "scripts") as? Data {
+            if let savedScripts = try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(savedScriptsData) as? [Script] {
+                self.scripts = savedScripts
+            }
+        }
         //When our extension is created, its extensionContext lets us control how it interacts with the parent app. In the case of inputItems this will be an array of data the parent app is sending to our extension to use. We only care about this first item in this project, and even then it might not exist, so we conditionally typecast using if let and as?.
         if let inputItem = extensionContext?.inputItems.first as? NSExtensionItem {
             //Our input item contains an array of attachments, which are given to us wrapped up as an NSItemProvider. Our code pulls out the first attachment from the first input item.
@@ -104,7 +174,7 @@ class ActionViewController: UIViewController {
         }
     }
     
-    func save(preference: Preference) {
+    func save(preference: SitePreference) {
         for alreadySaved in self.preferences {
             if preference == alreadySaved {
                 return
@@ -122,7 +192,36 @@ class ActionViewController: UIViewController {
         }
     }
     
-    func delete(preference: Preference) {
+    func save(script: Script) {
+        for alreadySaved in scripts {
+            if alreadySaved == script {
+                return
+            }
+        }
+        
+        for savedScript in scripts {
+            if script.scriptName == savedScript.scriptName {
+                delete(savedScript)
+            }
+        }
+        
+        scripts.append(script)
+        if let dataToSave = try? NSKeyedArchiver.archivedData(withRootObject: scripts, requiringSecureCoding: false) {
+            let defaults = UserDefaults.standard
+            defaults.set(dataToSave, forKey: "scripts")
+        }
+    }
+    
+    func delete(_ script: Script) {
+        scripts.removeAll { (actualScript) -> Bool in
+            if script == actualScript {
+                return true
+            }
+            return false
+        }
+    }
+    
+    func delete(preference: SitePreference) {
         
         preferences.removeAll { (actualPreference) -> Bool in
             if preference == actualPreference {
@@ -130,6 +229,23 @@ class ActionViewController: UIViewController {
             }
             return false
         }
+    }
+    
+    @objc func saveScript() {
+        let ac = UIAlertController(title: "Choose script name", message: nil, preferredStyle: .alert)
+        ac.addTextField()
+        let ok = UIAlertAction(title: "Save", style: .default) { action in
+            guard let tf = ac.textFields?.first else { return }
+            guard tf.text != nil, tf.text != "",let text = tf.text else { return }
+            guard self.script.text != nil, self.script.text != "",let script = self.script.text else { return }
+            let scriptText = Script(text, script)
+            self.save(script: scriptText)
+            print(tf.text!)
+        }
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        ac.addAction(ok)
+        ac.addAction(cancel)
+        present(ac, animated: true)
     }
     
     @objc func showCodeExamples(action: UIBarButtonItem) {
@@ -147,23 +263,20 @@ class ActionViewController: UIViewController {
             })\n
             """
         }
-//        let a = ["Show alert":"alert(document.title);\n"]
-//        let b = ["Change backgroundcolor":"document.querySelector('body').style.backgroundColor = 'red';\n"]
-//        let c = ["change button colors":"""
-//        Array.from(document.querySelectorAll('button')).map(function(button) {
-//                   button.style.backgroundColor="green";
-//        })\n
-//        """]
-//        let scripts = [a,b,c]
-//        let controller = PreferencesView(nibName: "PreferencesView", bundle: .main)
-//        controller.scripts = scripts
-//
-//        navigationController?.pushViewController(controller, animated: true)
         ac.addAction(showAlert)
         ac.addAction(changeBackground)
         ac.addAction(changeButtonsColor)
         present(ac, animated: true)
     }
+    
+    @objc func showCustomPreferences() {
+        let controller = PreferencesView(nibName: "PreferencesView", bundle: .main)
+        controller.scripts = self.scripts
+        controller.delegate = self
+        controller.modalPresentationStyle = .formSheet
+        present(controller, animated: true)
+    }
+    
     /*
      The adjustForKeyboard() method is complicated, but that's because it has quite a bit of work to do. First, it will receive a parameter that is of type Notification. This will include the name of the notification as well as a Dictionary containing notification-specific information called userInfo.
 
@@ -225,7 +338,7 @@ class ActionViewController: UIViewController {
 
         extensionContext?.completeRequest(returningItems: [item])
         
-        let preference = Preference(self.pageURL, self.script.text ?? "")
+        let preference = SitePreference(self.pageURL, self.script.text ?? "")
         save(preference: preference)
     }
 }
@@ -238,3 +351,8 @@ class ActionViewController: UIViewController {
  
  Right now, there's nothing in that dictionary other than the data we sent from JavaScript, and that's stored in a special key called NSExtensionJavaScriptPreprocessingResultsKey. So, we pull that value out from the dictionary, and put it into a value called javaScriptValues.
  */
+extension ActionViewController: ActionViewDelegate {
+    func update(_ script: String) {
+        self.script.text = script
+    }
+}

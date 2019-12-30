@@ -2,9 +2,9 @@
 //  ScriptsCell.swift
 //  Extension
 //
-//  Created by FulltrackMobile on 30/12/19.
+//  Created by Rafael Scalzo on 30/12/19.
 //  Copyright © 2019 Rafael Scalzo. All rights reserved.
-//
+
 
 import UIKit
 
