@@ -6,20 +6,29 @@
 //  Copyright © 2019 Rafael Scalzo. All rights reserved.
 //
 
-public class SitePreferences: NSCoding {
+class Preference:NSObject ,NSCoding {
+    
     
     var url: String
+    var scriptText: String
     
-    init(_ url: String) {
+    init(_ url: String, _ preferences: String) {
         self.url = url
+        self.scriptText = preferences
     }
     
-    public required init?(coder: NSCoder) {
+   required init?(coder: NSCoder) {
         self.url = coder.decodeObject(forKey: "url") as? String ?? ""
+        self.scriptText = coder.decodeObject(forKey: "preferences") as? String ?? ""
     }
     
-    public func encode(with coder: NSCoder) {
+   func encode(with coder: NSCoder) {
         coder.encode(url, forKey: "url")
+        coder.encode(scriptText, forKey: "preferences")
+    }
+    
+    static func == (_ lhs: Preference, _ rhs: Preference) -> Bool {
+        return lhs.url == rhs.url && lhs.scriptText == rhs.scriptText
     }
 }
 
@@ -32,7 +41,8 @@ class ActionViewController: UIViewController {
     
     var pageTitle = ""
     var pageURL = ""
-    var preferences = [SitePreferences]()
+    var actualScriptText = ""
+    var preferences = [Preference]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,6 +62,14 @@ class ActionViewController: UIViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(done))
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(showCodeExamples))
         
+        let defaults = UserDefaults.standard
+        
+        if let savedData = defaults.object(forKey: "preferences") as? Data {
+            if let savedPreferences = try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(savedData) as? [Preference] {
+                self.preferences = savedPreferences
+            }
+        }
+        
         //When our extension is created, its extensionContext lets us control how it interacts with the parent app. In the case of inputItems this will be an array of data the parent app is sending to our extension to use. We only care about this first item in this project, and even then it might not exist, so we conditionally typecast using if let and as?.
         if let inputItem = extensionContext?.inputItems.first as? NSExtensionItem {
             //Our input item contains an array of attachments, which are given to us wrapped up as an NSItemProvider. Our code pulls out the first attachment from the first input item.
@@ -69,10 +87,16 @@ class ActionViewController: UIViewController {
                     
                     self?.pageTitle = javaScriptValues["title"] as? String ?? ""
                     self?.pageURL = javaScriptValues["URL"] as? String ?? ""
-                    
+                    self?.script.text = ""
+                    for preference in self?.preferences ?? [] {
+                        if preference.url == self?.pageURL {
+                            self?.actualScriptText = preference.scriptText
+                        }
+                    }
                     //This is needed because the closure being executed as a result of loadItem(forTypeIdentifier:) could be called on any thread, and we don't want to change the UI unless we're on the main thread.
                     DispatchQueue.main.async {
                         self?.title = self?.pageTitle
+                        self?.script.text = self?.actualScriptText
                     }
                     //You might have noticed that I haven't written [weak self] in for the async() call, and that's because it's not needed. The closure will capture the variables it needs, which includes self, but we're already inside a closure that has declared self to be weak, so this new closure will use that.
                 }
@@ -80,16 +104,64 @@ class ActionViewController: UIViewController {
         }
     }
     
+    func save(preference: Preference) {
+        for alreadySaved in self.preferences {
+            if preference == alreadySaved {
+                return
+            }
+        }
+        for pref in self.preferences {
+            if preference.url == pref.url {
+                delete(preference: pref)
+            }
+        }
+        self.preferences.append(preference)
+        if let dataToSave = try? NSKeyedArchiver.archivedData(withRootObject: preferences, requiringSecureCoding: false) {
+            let defaults = UserDefaults.standard
+            defaults.set(dataToSave, forKey: "preferences")
+        }
+    }
+    
+    func delete(preference: Preference) {
+        
+        preferences.removeAll { (actualPreference) -> Bool in
+            if preference == actualPreference {
+                return true
+            }
+            return false
+        }
+    }
+    
     @objc func showCodeExamples(action: UIBarButtonItem) {
         let ac = UIAlertController(title: "Code Examples", message: nil, preferredStyle: .alert)
-        let showAlert = UIAlertAction(title: "Show alert", style: .default) { action in
-            self.script.text = "alert(document.title);"
+        let showAlert = UIAlertAction(title: "Show alert", style: .default) { _ in
+            self.script.text += "alert(document.title);\n"
         }
-        let changeBackground = UIAlertAction(title: "Change Background", style: .default) { action in
-            self.script.text = "document.querySelector('body').style.backgroundColor = 'red';"
+        let changeBackground = UIAlertAction(title: "Change Background", style: .default) { _ in
+            self.script.text += "document.querySelector('body').style.backgroundColor = 'red';\n"
         }
+        let changeButtonsColor = UIAlertAction(title: "Change Buttons colors", style: .default) { _ in
+            self.script.text += """
+            Array.from(document.querySelectorAll('button')).map(function(button) {
+                       button.style.backgroundColor="green";
+            })\n
+            """
+        }
+//        let a = ["Show alert":"alert(document.title);\n"]
+//        let b = ["Change backgroundcolor":"document.querySelector('body').style.backgroundColor = 'red';\n"]
+//        let c = ["change button colors":"""
+//        Array.from(document.querySelectorAll('button')).map(function(button) {
+//                   button.style.backgroundColor="green";
+//        })\n
+//        """]
+//        let scripts = [a,b,c]
+//        let controller = PreferencesView(nibName: "PreferencesView", bundle: .main)
+//        controller.scripts = scripts
+//
+//        navigationController?.pushViewController(controller, animated: true)
         ac.addAction(showAlert)
         ac.addAction(changeBackground)
+        ac.addAction(changeButtonsColor)
         present(ac, animated: true)
     }
     /*
@@ -152,6 +224,9 @@ class ActionViewController: UIViewController {
         item.attachments = [customJavaScript]
 
         extensionContext?.completeRequest(returningItems: [item])
+        
+        let preference = Preference(self.pageURL, self.script.text ?? "")
+        save(preference: preference)
     }
 }
 /*
