@@ -2,9 +2,26 @@
 //  ActionViewController.swift
 //  Extension
 //
-//  Created by Fulltrack Mobile on 26/12/19.
+//  Created by Rafael Scalzo on 26/12/19.
 //  Copyright © 2019 Rafael Scalzo. All rights reserved.
 //
+
+public class SitePreferences: NSCoding {
+    
+    var url: String
+    
+    init(_ url: String) {
+        self.url = url
+    }
+    
+    public required init?(coder: NSCoder) {
+        self.url = coder.decodeObject(forKey: "url") as? String ?? ""
+    }
+    
+    public func encode(with coder: NSCoder) {
+        coder.encode(url, forKey: "url")
+    }
+}
 
 import UIKit
 import MobileCoreServices
@@ -15,6 +32,7 @@ class ActionViewController: UIViewController {
     
     var pageTitle = ""
     var pageURL = ""
+    var preferences = [SitePreferences]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
