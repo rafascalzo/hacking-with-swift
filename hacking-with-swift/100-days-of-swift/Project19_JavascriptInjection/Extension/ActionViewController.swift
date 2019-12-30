@@ -32,6 +32,7 @@ class ActionViewController: UIViewController {
         notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(done))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(showCodeExamples))
         
         //When our extension is created, its extensionContext lets us control how it interacts with the parent app. In the case of inputItems this will be an array of data the parent app is sending to our extension to use. We only care about this first item in this project, and even then it might not exist, so we conditionally typecast using if let and as?.
         if let inputItem = extensionContext?.inputItems.first as? NSExtensionItem {
@@ -59,6 +60,19 @@ class ActionViewController: UIViewController {
                 }
             }
         }
+    }
+    
+    @objc func showCodeExamples(action: UIBarButtonItem) {
+        let ac = UIAlertController(title: "Code Examples", message: nil, preferredStyle: .alert)
+        let showAlert = UIAlertAction(title: "Show alert", style: .default) { action in
+            self.script.text = "alert(document.title);"
+        }
+        let changeBackground = UIAlertAction(title: "Change Background", style: .default) { action in
+            self.script.text = "document.querySelector('body').style.backgroundColor = 'red';"
+        }
+        ac.addAction(showAlert)
+        ac.addAction(changeBackground)
+        present(ac, animated: true)
     }
     /*
      The adjustForKeyboard() method is complicated, but that's because it has quite a bit of work to do. First, it will receive a parameter that is of type Notification. This will include the name of the notification as well as a Dictionary containing notification-specific information called userInfo.
