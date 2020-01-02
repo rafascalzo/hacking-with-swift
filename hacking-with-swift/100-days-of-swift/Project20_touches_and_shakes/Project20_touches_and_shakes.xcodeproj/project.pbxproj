@@ -16,6 +16,7 @@
 		894E2B4423BA398100331DBB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 894E2B4223BA398100331DBB /* LaunchScreen.storyboard */; };
 		894E2B4D23BA3B3100331DBB /* fuse.sks in Resources */ = {isa = PBXBuildFile; fileRef = 894E2B4B23BA3B3100331DBB /* fuse.sks */; };
 		894E2B4E23BA3B3100331DBB /* explode.sks in Resources */ = {isa = PBXBuildFile; fileRef = 894E2B4C23BA3B3100331DBB /* explode.sks */; };
+		894E2B5023BA7B3E00331DBB /* firework.wav in Resources */ = {isa = PBXBuildFile; fileRef = 894E2B4F23BA7B3E00331DBB /* firework.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		894E2B4523BA398100331DBB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		894E2B4B23BA3B3100331DBB /* fuse.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = fuse.sks; sourceTree = "<group>"; };
 		894E2B4C23BA3B3100331DBB /* explode.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = explode.sks; sourceTree = "<group>"; };
+		894E2B4F23BA7B3E00331DBB /* firework.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = firework.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				894E2B4023BA398100331DBB /* Assets.xcassets */,
 				894E2B4223BA398100331DBB /* LaunchScreen.storyboard */,
 				894E2B4523BA398100331DBB /* Info.plist */,
+				894E2B4F23BA7B3E00331DBB /* firework.wav */,
 			);
 			path = Project20_touches_and_shakes;
 			sourceTree = "<group>";
@@ -135,6 +138,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				894E2B3F23BA397D00331DBB /* Main.storyboard in Resources */,
+				894E2B5023BA7B3E00331DBB /* firework.wav in Resources */,
 				894E2B3623BA397D00331DBB /* GameScene.sks in Resources */,
 				894E2B4D23BA3B3100331DBB /* fuse.sks in Resources */,
 				894E2B4123BA398100331DBB /* Assets.xcassets in Resources */,
@@ -297,6 +301,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BULGWQVW95;
 				INFOPLIST_FILE = Project20_touches_and_shakes/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -314,6 +319,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BULGWQVW95;
 				INFOPLIST_FILE = Project20_touches_and_shakes/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

@@ -13,6 +13,7 @@ class GameScene: SKScene {
     
     var gameTimer: Timer?
     var fireworks = [SKNode]()
+    var scoreLabel: SKLabelNode!
     
     let leftEdge = -22
     let bottomEdge = -22
@@ -20,7 +21,19 @@ class GameScene: SKScene {
     
     var score = 0 {
         didSet {
-            // update score later...
+            scoreLabel.text = "Score \(score)"
+        }
+    }
+    
+    var playTime = 0 {
+        didSet {
+            if playTime == 7 {
+                gameTimer?.invalidate()
+                DispatchQueue.main.asyncAfter(deadline: .now() + 6) {
+                    self.scoreLabel.text = "Game Over! Score: \(self.score)"
+                }
+                
+            }
         }
     }
 
@@ -32,10 +45,19 @@ class GameScene: SKScene {
         background.zPosition = -1
         addChild(background)
         
+        scoreLabel = SKLabelNode(fontNamed: "Chalkduster")
+        scoreLabel.position = CGPoint(x: 512, y: 16)
+        scoreLabel.horizontalAlignmentMode = .center
+        scoreLabel.zPosition = -1
+        addChild(scoreLabel)
+        
+        score = 0
+        
         gameTimer = Timer.scheduledTimer(timeInterval: 6, target: self, selector: #selector(launchFireworks), userInfo: nil, repeats: true)
     }
     
     @objc func launchFireworks() {
+       playTime += 1
         let movementAmount: CGFloat = 1800
         
         switch Int.random(in: 0...3) {
@@ -111,8 +133,93 @@ class GameScene: SKScene {
             node.addChild(emitter)
         }
         //Add the firework to our fireworks array and also to the scene.
-        
         fireworks.append(node)
         addChild(node)
+        
+    }
+    
+    func checkTouches(_ touches: Set<UITouch>) {
+        guard let touch = touches.first else { return }
+        
+        let location = touch.location(in: self)
+        let nodesAtPoint = nodes(at: location)
+        
+        for case let node as SKSpriteNode in nodesAtPoint {
+            guard node.name == "firework" else { continue }
+            for parent in fireworks {
+                guard let firework = parent.children.first as? SKSpriteNode else { continue }
+                if firework.name == "selected" && firework.color != node.color {
+                    firework.name = "firework"
+                    firework.colorBlendFactor = 1
+                }
+            }
+            node.name = "selected"
+            node.colorBlendFactor = 0
+        }
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        checkTouches(touches)
+    }
+    
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesMoved(touches, with: event)
+        checkTouches(touches)
+    }
+    
+    override func update(_ currentTime: TimeInterval) {
+        for (index, firework) in fireworks.enumerated().reversed() {
+            if firework.position.y > 900 {
+                // this uses a position high above so that rockets can explode off
+                fireworks.remove(at: index)
+                firework.removeFromParent()
+            }
+        }
+    }
+    
+    func explode(firework: SKNode) {
+        run(SKAction.playSoundFileNamed("firework", waitForCompletion: false))
+        
+        if let emmiter = SKEmitterNode(fileNamed: "explode") {
+            emmiter.position = firework.position
+            addChild(emmiter)
+            run(SKAction.wait(forDuration: TimeInterval(exactly: emmiter.particleLifetime) ?? 0.0)) {
+                emmiter.removeFromParent()
+            }
+        }
+        firework.removeFromParent()
+    }
+    
+    func explodeFireworks() {
+        var numExploded = 0
+        
+        for (index, fireworkContainer) in fireworks.enumerated().reversed() {
+            guard let firework = fireworkContainer.children.first as? SKSpriteNode else { return }
+            if firework.name == "selected" {
+                // esxplode this firework
+                explode(firework: fireworkContainer)
+                fireworks.remove(at: index)
+                numExploded += 1
+            }
+        }
+        
+        switch numExploded {
+        case 0:
+            // nothing - rubbish!
+            break
+        case 1:
+            score += 200
+        case 2:
+            score += 500
+        case 3:
+            score += 1500
+        case 4:
+            score += 2500
+        case 5:
+            score += 4000
+        default:
+            break
+        }
     }
 }
