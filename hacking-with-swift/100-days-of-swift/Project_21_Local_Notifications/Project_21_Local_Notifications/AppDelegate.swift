@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = UINavigationController(rootViewController: NotificationsView(nibName: "NotificationsView", bundle: .main))
         window?.makeKeyAndVisible()
+        
         return true
     }
 

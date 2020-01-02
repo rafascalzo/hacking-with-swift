@@ -55,42 +55,7 @@ class Script:NSObject, NSCoding {
         return lhs.scriptName == rhs.scriptName && lhs.script == rhs.script
     }
 }
-/*
-Hey, brother
-I miss you so
-You knocked on heaven's door
-And we won't see you anymore
-It must be crazy
-What we're living for
-'cause god's stopped keeping you
-On the ladder of your life
-I call your name with tears in my eyes
 
-I don't wanna cry no more
-Past gave me happiness and pain
-Life is fleeting like a flower
-From a distance, after sorrow
-I pray the lord to keep your soul
-I don't wanna cry no more
-We're still missing you
-
-Life's like walking
-On a high wire
-You slipped away
-I've seen you dying in a vein
-High as a mountains seem all the problems that i have
-But when i hear your voice far away out of teh dark
-You just go on and on in the back of my mind
-
-( chorus)
-
-Skin and bone won't touch the sky
-I hope you'll find passage out of the dark
-To the other side of the sea
-And i know that i'll see you again
-
-( chorus)
-*/
 import UIKit
 import MobileCoreServices
 
@@ -140,7 +105,9 @@ class ActionViewController: UIViewController {
                 self.scripts = savedScripts
             }
         }
+        
         //When our extension is created, its extensionContext lets us control how it interacts with the parent app. In the case of inputItems this will be an array of data the parent app is sending to our extension to use. We only care about this first item in this project, and even then it might not exist, so we conditionally typecast using if let and as?.
+        
         if let inputItem = extensionContext?.inputItems.first as? NSExtensionItem {
             //Our input item contains an array of attachments, which are given to us wrapped up as an NSItemProvider. Our code pulls out the first attachment from the first input item.
             if let itemProvider = inputItem.attachments?.first {
@@ -158,6 +125,7 @@ class ActionViewController: UIViewController {
                     self?.pageTitle = javaScriptValues["title"] as? String ?? ""
                     self?.pageURL = javaScriptValues["URL"] as? String ?? ""
                     self?.script.text = ""
+                    
                     for preference in self?.preferences ?? [] {
                         if preference.url == self?.pageURL {
                             self?.actualScriptText = preference.scriptText

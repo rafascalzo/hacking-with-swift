@@ -24,7 +24,6 @@ class NotificationsView: UIViewController , UNUserNotificationCenterDelegate {
 
         let show = UNNotificationAction(identifier: "show", title: "Tell me more…", options: .foreground)
         let category = UNNotificationCategory(identifier: "alarm", actions: [show], intentIdentifiers: [])
-        print(show)
         center.setNotificationCategories([category])
     }
     
@@ -79,6 +78,9 @@ class NotificationsView: UIViewController , UNUserNotificationCenterDelegate {
             case UNNotificationDefaultActionIdentifier:
                 print("Default identifier")
             case "show":
+                let ac = UIAlertController(title: "Do'h bdaba du", message: "dada tsdum bdum", preferredStyle: .alert)
+                ac.addAction(UIAlertAction(title: "ok", style: .default, handler: nil))
+                present(ac, animated: true)
                 print("Show more information")
             default:
                 break
