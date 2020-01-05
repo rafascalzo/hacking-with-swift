@@ -165,7 +165,12 @@ class MainViewController: UIViewController {
     
     func save() {
         let defaults = UserDefaults.standard
-        if let encodedPlayer = try? NSKeyedArchiver.archivedData(withRootObject: player!, requiringSecureCoding: false) {
+        if #available(iOS 11.0, *) {
+            if let encodedPlayer = try? NSKeyedArchiver.archivedData(withRootObject: player!, requiringSecureCoding: false) {
+                defaults.set(encodedPlayer, forKey: "player")
+            }
+        } else {
+             let encodedPlayer = NSKeyedArchiver.archivedData(withRootObject: player!)
             defaults.set(encodedPlayer, forKey: "player")
         }
     }

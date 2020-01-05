@@ -23,7 +23,8 @@ class NotificationsView: UIViewController , UNUserNotificationCenterDelegate {
         center.delegate = self
 
         let show = UNNotificationAction(identifier: "show", title: "Tell me more…", options: .foreground)
-        let category = UNNotificationCategory(identifier: "alarm", actions: [show], intentIdentifiers: [])
+        let remindMeLater = UNNotificationAction(identifier: "later", title: "Remind-me later", options: .destructive)
+        let category = UNNotificationCategory(identifier: "alarm", actions: [show, remindMeLater], intentIdentifiers: [])
         center.setNotificationCategories([category])
     }
     
@@ -50,16 +51,14 @@ class NotificationsView: UIViewController , UNUserNotificationCenterDelegate {
         content.userInfo = ["CustomData":"fizzbuzz"]
         content.sound = UNNotificationSound.default
         
-        /*
-        var dateComponents = DateComponents()
-               dateComponents.hour = 7
-               dateComponents.minute = 33
-        print(dateComponents)
-        print(Date())
         
-        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
-         */
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+//        var dateComponents = DateComponents()
+//               dateComponents.hour = 15
+//               dateComponents.minute = 25
+//
+//        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+         
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 7, repeats: false)
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
         center.add(request) { (error) in
             if let error = error {
@@ -78,10 +77,14 @@ class NotificationsView: UIViewController , UNUserNotificationCenterDelegate {
             case UNNotificationDefaultActionIdentifier:
                 print("Default identifier")
             case "show":
-                let ac = UIAlertController(title: "Do'h bdaba du", message: "dada tsdum bdum", preferredStyle: .alert)
+                let ac = UIAlertController(title: "Cheers", message: "You have earned $ 1.000.000,00 from your last transaction", preferredStyle: .alert)
                 ac.addAction(UIAlertAction(title: "ok", style: .default, handler: nil))
                 present(ac, animated: true)
                 print("Show more information")
+                
+            case "later":
+                print("remind-me later")
+                scheduleLocal()
             default:
                 break
             }
