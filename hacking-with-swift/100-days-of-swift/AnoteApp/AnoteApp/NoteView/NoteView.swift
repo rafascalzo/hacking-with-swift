@@ -105,10 +105,11 @@ class NoteView: UIViewController {
         guard note != nil else {
             textView.text = ""
             return }
+        
         if let savedNotes = getNotes() {
             var notes = savedNotes
             notes.removeAll { (savedNote) -> Bool in
-                if (note.textAttributed == savedNote.textAttributed) {
+                if (note.title == savedNote.title) {
                     return true
                 }
                 return false
@@ -142,7 +143,7 @@ class NoteView: UIViewController {
         if let savedNotes = getNotes() {
             var notes = savedNotes
             notes.removeAll { (savedNote) -> Bool in
-                if savedNote.textAttributed == note.textAttributed {
+                if savedNote.textAttributed.string == note.textAttributed.string {
                     return true
                 } else {
                     return false
@@ -158,6 +159,8 @@ class NoteView: UIViewController {
         if #available(iOS 11.0, *) {
             if let dataToSave = try? NSKeyedArchiver.archivedData(withRootObject: notes, requiringSecureCoding: false) {
                 User.shared.saveUserNotes(dataToSave)
+            } else {
+                print("failed to archuve")
             }
         } else {
             let dataToSave = NSKeyedArchiver.archivedData(withRootObject: notes)
