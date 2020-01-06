@@ -13,10 +13,12 @@ class User: NSObject {
     static var shared = User()
     
     var user = UserDefaults.standard
-    var hasSeenSplashKey = "hasSeenSplashKey"
     
+    var hasSeenSplashKey = "hasSeenSplashKey"
     var hasSeenNotesViewKey = "hasSeenNotesViewKey"
     var hasSetupICloudKey = "hasSetupICloudKey"
+    
+    var userNotesKey = "userNotesKey"
     
     var hasSeenSplash: Bool {
         return user.bool(forKey: hasSeenSplashKey)
@@ -38,4 +40,10 @@ class User: NSObject {
         user.set(status, forKey: hasSetupICloudKey)
     }
     
+    func saveUserNotes(_ data: Data) {
+        user.set(data, forKey: userNotesKey)
+    }
+    func getUserNotes() -> Data? {
+        return user.object(forKey: userNotesKey) as? Data
+    }
 }

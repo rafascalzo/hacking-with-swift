@@ -1,3 +1,4 @@
+
 //
 //  NotesView.swift
 //  AnoteApp
@@ -8,16 +9,29 @@
 
 import UIKit
 private let notesCellReuseIdentifier = "notesCellReuseIdentifier"
-class NotesView: UIViewController {
+class NotesView: UITableViewController {
     
-    @IBOutlet var tableView: UITableView!
+    var notes = [Note]()
     
     var numberOfNotes: Int {
         get {
             return 0
         }
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        updateNotes()
+    }
+    func updateNotes() {
+        if let savedData = User.shared.getUserNotes() {
+            if let savedNotes = try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(savedData) as? [Note] {
+                self.notes = savedNotes
+                tableView.reloadData()
+            } else {
+                print("failed to unarchive notes")
+            }
+        }
+    }
     fileprivate func configureTableView() {
         let nib = UINib(nibName: "NotesCell", bundle: .main)
         tableView.register(nib, forCellReuseIdentifier: notesCellReuseIdentifier)
@@ -32,8 +46,6 @@ class NotesView: UIViewController {
     }
     
     func configureToolbar()  {
-        let toolbar = UIToolbar()
-        toolbar.translatesAutoresizingMaskIntoConstraints = false
         let ok = UIBarButtonItem(barButtonSystemItem: .organize, target: self, action: #selector(handleOkToolbar))
         ok.tintColor = .eggYellow
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
@@ -47,21 +59,17 @@ class NotesView: UIViewController {
         let cancel = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(handleComposeButtonToolbar))
         cancel.tintColor = .eggYellow
         
-        toolbar.setItems([ok,toolbarTitle,cancel], animated: false)
+        toolbarItems = [ok,toolbarTitle,cancel]
         
-        view.addSubview(toolbar)
-        
-        toolbar.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        toolbar.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        toolbar.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        toolbar.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        navigationController?.isToolbarHidden = false
     }
     
     @objc func handleOkToolbar(_ action: UIBarButtonItem) {
-        
+        NSLog("%@", "folders media etc")
     }
     @objc func handleComposeButtonToolbar(_ action: UIBarButtonItem) {
         NSLog("%@", "compose")
+        navigationController?.pushViewController(NoteView(nibName: "NoteView", bundle: .main), animated: true)
     }
     
     fileprivate func renderNavigationBar() {
@@ -82,7 +90,9 @@ class NotesView: UIViewController {
         navigationItem.rightBarButtonItem = editButton
     }
     @objc func handleBackArrow(_ sender: UIBarButtonItem) {
-        print("back")
+        NSLog("%@", "backing")
+        let controller = FolderNotesListView(style: .plain)
+        navigationController?.pushViewController(controller, animated: true)
     }
     @objc func handleEditButton(_ sender: UIBarButtonItem) {
         print("edit")
@@ -107,28 +117,24 @@ class NotesView: UIViewController {
         User.shared.updateFirstTimeAppearNotesView()
     }
     
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
-extension NotesView: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+extension NotesView {
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return notes.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: notesCellReuseIdentifier, for: indexPath) as! NotesCell
-        cell.textLabel?.text = "TEst"
+        let selectedNote = notes[indexPath.row]
+        cell.textLabel?.text = selectedNote.title
         return cell
     }
     
-    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedNote = notes[indexPath.row]
+        let controller = NoteView(nibName: "NoteView", bundle: .main)
+        controller.note = selectedNote
+        navigationController?.pushViewController(controller, animated: true)
+    }
 }

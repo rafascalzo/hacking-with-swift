@@ -29,12 +29,6 @@
 		89C26A2D23C13BCD00720653 /* SplashCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89C26A2923C13BCD00720653 /* SplashCell.xib */; };
 		89C26A2E23C13BCD00720653 /* SplashCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89C26A2923C13BCD00720653 /* SplashCell.xib */; };
 		89C26A2F23C13BCD00720653 /* SplashCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89C26A2923C13BCD00720653 /* SplashCell.xib */; };
-		89C26A3323C1567300720653 /* NotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C26A3123C1567300720653 /* NotesView.swift */; };
-		89C26A3423C1567300720653 /* NotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C26A3123C1567300720653 /* NotesView.swift */; };
-		89C26A3523C1567300720653 /* NotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C26A3123C1567300720653 /* NotesView.swift */; };
-		89C26A3623C1567300720653 /* NotesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89C26A3223C1567300720653 /* NotesView.xib */; };
-		89C26A3723C1567300720653 /* NotesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89C26A3223C1567300720653 /* NotesView.xib */; };
-		89C26A3823C1567300720653 /* NotesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89C26A3223C1567300720653 /* NotesView.xib */; };
 		89C26A3A23C1AF8300720653 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C26A3923C1AF8300720653 /* Colors.swift */; };
 		89C26A4223C1B4B000720653 /* NotesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C26A4023C1B4B000720653 /* NotesCell.swift */; };
 		89C26A4323C1B4B000720653 /* NotesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C26A4023C1B4B000720653 /* NotesCell.swift */; };
@@ -45,6 +39,33 @@
 		89C26A4A23C1B88700720653 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C26A4923C1B88700720653 /* User.swift */; };
 		89C26A4B23C1B88700720653 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C26A4923C1B88700720653 /* User.swift */; };
 		89C26A4C23C1B88700720653 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C26A4923C1B88700720653 /* User.swift */; };
+		89C26A5023C1C46F00720653 /* NoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C26A4E23C1C46F00720653 /* NoteView.swift */; };
+		89C26A5123C1C46F00720653 /* NoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C26A4E23C1C46F00720653 /* NoteView.swift */; };
+		89C26A5223C1C46F00720653 /* NoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C26A4E23C1C46F00720653 /* NoteView.swift */; };
+		89C26A5323C1C46F00720653 /* NoteView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89C26A4F23C1C46F00720653 /* NoteView.xib */; };
+		89C26A5423C1C46F00720653 /* NoteView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89C26A4F23C1C46F00720653 /* NoteView.xib */; };
+		89C26A5523C1C46F00720653 /* NoteView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89C26A4F23C1C46F00720653 /* NoteView.xib */; };
+		89C26A5923C29CA600720653 /* FolderNotesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C26A5723C29CA600720653 /* FolderNotesListView.swift */; };
+		89C26A5A23C29CA600720653 /* FolderNotesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C26A5723C29CA600720653 /* FolderNotesListView.swift */; };
+		89C26A5B23C29CA600720653 /* FolderNotesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C26A5723C29CA600720653 /* FolderNotesListView.swift */; };
+		89C26A5C23C29CA600720653 /* FolderNotesListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89C26A5823C29CA600720653 /* FolderNotesListView.xib */; };
+		89C26A5D23C29CA600720653 /* FolderNotesListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89C26A5823C29CA600720653 /* FolderNotesListView.xib */; };
+		89C26A5E23C29CA600720653 /* FolderNotesListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89C26A5823C29CA600720653 /* FolderNotesListView.xib */; };
+		89C26A6523C29F4900720653 /* NotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C26A6323C29F4900720653 /* NotesView.swift */; };
+		89C26A6623C29F4900720653 /* NotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C26A6323C29F4900720653 /* NotesView.swift */; };
+		89C26A6723C29F4900720653 /* NotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C26A6323C29F4900720653 /* NotesView.swift */; };
+		89C26A6823C29F4900720653 /* NotesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89C26A6423C29F4900720653 /* NotesView.xib */; };
+		89C26A6923C29F4900720653 /* NotesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89C26A6423C29F4900720653 /* NotesView.xib */; };
+		89C26A6A23C29F4900720653 /* NotesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89C26A6423C29F4900720653 /* NotesView.xib */; };
+		89C26A6E23C2A20F00720653 /* FolderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C26A6C23C2A20F00720653 /* FolderCell.swift */; };
+		89C26A6F23C2A20F00720653 /* FolderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C26A6C23C2A20F00720653 /* FolderCell.swift */; };
+		89C26A7023C2A20F00720653 /* FolderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C26A6C23C2A20F00720653 /* FolderCell.swift */; };
+		89C26A7123C2A20F00720653 /* FolderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89C26A6D23C2A20F00720653 /* FolderCell.xib */; };
+		89C26A7223C2A20F00720653 /* FolderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89C26A6D23C2A20F00720653 /* FolderCell.xib */; };
+		89C26A7323C2A20F00720653 /* FolderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89C26A6D23C2A20F00720653 /* FolderCell.xib */; };
+		89C26A7523C2A32700720653 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C26A7423C2A32700720653 /* Note.swift */; };
+		89C26A7623C2A32700720653 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C26A7423C2A32700720653 /* Note.swift */; };
+		89C26A7723C2A32700720653 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C26A7423C2A32700720653 /* Note.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,12 +104,19 @@
 		891DE44B23C1234C00A2F317 /* MalleableStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MalleableStackView.swift; sourceTree = "<group>"; };
 		89C26A2823C13BCD00720653 /* SplashCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashCell.swift; sourceTree = "<group>"; };
 		89C26A2923C13BCD00720653 /* SplashCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashCell.xib; sourceTree = "<group>"; };
-		89C26A3123C1567300720653 /* NotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesView.swift; sourceTree = "<group>"; };
-		89C26A3223C1567300720653 /* NotesView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotesView.xib; sourceTree = "<group>"; };
 		89C26A3923C1AF8300720653 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		89C26A4023C1B4B000720653 /* NotesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesCell.swift; sourceTree = "<group>"; };
 		89C26A4123C1B4B000720653 /* NotesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotesCell.xib; sourceTree = "<group>"; };
 		89C26A4923C1B88700720653 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		89C26A4E23C1C46F00720653 /* NoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteView.swift; sourceTree = "<group>"; };
+		89C26A4F23C1C46F00720653 /* NoteView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoteView.xib; sourceTree = "<group>"; };
+		89C26A5723C29CA600720653 /* FolderNotesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderNotesListView.swift; sourceTree = "<group>"; };
+		89C26A5823C29CA600720653 /* FolderNotesListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FolderNotesListView.xib; sourceTree = "<group>"; };
+		89C26A6323C29F4900720653 /* NotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesView.swift; sourceTree = "<group>"; };
+		89C26A6423C29F4900720653 /* NotesView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotesView.xib; sourceTree = "<group>"; };
+		89C26A6C23C2A20F00720653 /* FolderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderCell.swift; sourceTree = "<group>"; };
+		89C26A6D23C2A20F00720653 /* FolderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FolderCell.xib; sourceTree = "<group>"; };
+		89C26A7423C2A32700720653 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +167,8 @@
 		891DE41123C0582700A2F317 /* AnoteApp */ = {
 			isa = PBXGroup;
 			children = (
+				89C26A5623C29AD500720653 /* FolderNotesListView */,
+				89C26A4D23C1C44D00720653 /* NoteView */,
 				89C26A4823C1B84600720653 /* Utils */,
 				89C26A3023C152D700720653 /* NotesView */,
 				891DE44223C111F000A2F317 /* SplashView */,
@@ -148,6 +178,7 @@
 				891DE41D23C0582B00A2F317 /* LaunchScreen.storyboard */,
 				891DE42023C0582B00A2F317 /* Info.plist */,
 				89C26A3923C1AF8300720653 /* Colors.swift */,
+				89C26A7423C2A32700720653 /* Note.swift */,
 			);
 			path = AnoteApp;
 			sourceTree = "<group>";
@@ -187,8 +218,8 @@
 			isa = PBXGroup;
 			children = (
 				89C26A3B23C1B45D00720653 /* NotesCell */,
-				89C26A3123C1567300720653 /* NotesView.swift */,
-				89C26A3223C1567300720653 /* NotesView.xib */,
+				89C26A6323C29F4900720653 /* NotesView.swift */,
+				89C26A6423C29F4900720653 /* NotesView.xib */,
 			);
 			path = NotesView;
 			sourceTree = "<group>";
@@ -208,6 +239,34 @@
 				89C26A4923C1B88700720653 /* User.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		89C26A4D23C1C44D00720653 /* NoteView */ = {
+			isa = PBXGroup;
+			children = (
+				89C26A4E23C1C46F00720653 /* NoteView.swift */,
+				89C26A4F23C1C46F00720653 /* NoteView.xib */,
+			);
+			path = NoteView;
+			sourceTree = "<group>";
+		};
+		89C26A5623C29AD500720653 /* FolderNotesListView */ = {
+			isa = PBXGroup;
+			children = (
+				89C26A6B23C2A1ED00720653 /* FolderCell */,
+				89C26A5723C29CA600720653 /* FolderNotesListView.swift */,
+				89C26A5823C29CA600720653 /* FolderNotesListView.xib */,
+			);
+			path = FolderNotesListView;
+			sourceTree = "<group>";
+		};
+		89C26A6B23C2A1ED00720653 /* FolderCell */ = {
+			isa = PBXGroup;
+			children = (
+				89C26A6C23C2A20F00720653 /* FolderCell.swift */,
+				89C26A6D23C2A20F00720653 /* FolderCell.xib */,
+			);
+			path = FolderCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -314,9 +373,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				89C26A3623C1567300720653 /* NotesView.xib in Resources */,
+				89C26A5323C1C46F00720653 /* NoteView.xib in Resources */,
+				89C26A7123C2A20F00720653 /* FolderCell.xib in Resources */,
 				891DE41F23C0582B00A2F317 /* LaunchScreen.storyboard in Resources */,
+				89C26A6823C29F4900720653 /* NotesView.xib in Resources */,
 				891DE44423C1127000A2F317 /* SplashView.xib in Resources */,
+				89C26A5C23C29CA600720653 /* FolderNotesListView.xib in Resources */,
 				89C26A2D23C13BCD00720653 /* SplashCell.xib in Resources */,
 				891DE41C23C0582B00A2F317 /* Assets.xcassets in Resources */,
 				89C26A4523C1B4B000720653 /* NotesCell.xib in Resources */,
@@ -327,9 +389,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89C26A5423C1C46F00720653 /* NoteView.xib in Resources */,
 				89C26A2E23C13BCD00720653 /* SplashCell.xib in Resources */,
-				89C26A3723C1567300720653 /* NotesView.xib in Resources */,
+				89C26A5D23C29CA600720653 /* FolderNotesListView.xib in Resources */,
 				891DE44523C1127000A2F317 /* SplashView.xib in Resources */,
+				89C26A7223C2A20F00720653 /* FolderCell.xib in Resources */,
+				89C26A6923C29F4900720653 /* NotesView.xib in Resources */,
 				89C26A4623C1B4B000720653 /* NotesCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -338,9 +403,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89C26A5523C1C46F00720653 /* NoteView.xib in Resources */,
 				89C26A2F23C13BCD00720653 /* SplashCell.xib in Resources */,
-				89C26A3823C1567300720653 /* NotesView.xib in Resources */,
+				89C26A5E23C29CA600720653 /* FolderNotesListView.xib in Resources */,
 				891DE44623C1127000A2F317 /* SplashView.xib in Resources */,
+				89C26A7323C2A20F00720653 /* FolderCell.xib in Resources */,
+				89C26A6A23C29F4900720653 /* NotesView.xib in Resources */,
 				89C26A4723C1B4B000720653 /* NotesCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -352,13 +420,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				89C26A3323C1567300720653 /* NotesView.swift in Sources */,
 				89C26A3A23C1AF8300720653 /* Colors.swift in Sources */,
 				89C26A2A23C13BCD00720653 /* SplashCell.swift in Sources */,
+				89C26A6523C29F4900720653 /* NotesView.swift in Sources */,
 				891DE44823C115E500A2F317 /* MalleableButton.swift in Sources */,
+				89C26A5023C1C46F00720653 /* NoteView.swift in Sources */,
 				891DE41723C0582700A2F317 /* SplashView.swift in Sources */,
 				891DE41323C0582700A2F317 /* AppDelegate.swift in Sources */,
+				89C26A6E23C2A20F00720653 /* FolderCell.swift in Sources */,
 				89C26A4223C1B4B000720653 /* NotesCell.swift in Sources */,
+				89C26A7523C2A32700720653 /* Note.swift in Sources */,
+				89C26A5923C29CA600720653 /* FolderNotesListView.swift in Sources */,
 				891DE41523C0582700A2F317 /* SceneDelegate.swift in Sources */,
 				89C26A4A23C1B88700720653 /* User.swift in Sources */,
 				891DE44C23C1234C00A2F317 /* MalleableStackView.swift in Sources */,
@@ -370,12 +442,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				891DE44D23C1234C00A2F317 /* MalleableStackView.swift in Sources */,
+				89C26A6F23C2A20F00720653 /* FolderCell.swift in Sources */,
 				891DE44923C115E500A2F317 /* MalleableButton.swift in Sources */,
-				89C26A3423C1567300720653 /* NotesView.swift in Sources */,
+				89C26A5123C1C46F00720653 /* NoteView.swift in Sources */,
 				89C26A4323C1B4B000720653 /* NotesCell.swift in Sources */,
 				89C26A2B23C13BCD00720653 /* SplashCell.swift in Sources */,
 				891DE42A23C0582B00A2F317 /* AnoteAppTests.swift in Sources */,
+				89C26A7623C2A32700720653 /* Note.swift in Sources */,
 				89C26A4B23C1B88700720653 /* User.swift in Sources */,
+				89C26A5A23C29CA600720653 /* FolderNotesListView.swift in Sources */,
+				89C26A6623C29F4900720653 /* NotesView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,12 +460,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				891DE44E23C1234C00A2F317 /* MalleableStackView.swift in Sources */,
+				89C26A7023C2A20F00720653 /* FolderCell.swift in Sources */,
 				891DE44A23C115E500A2F317 /* MalleableButton.swift in Sources */,
-				89C26A3523C1567300720653 /* NotesView.swift in Sources */,
+				89C26A5223C1C46F00720653 /* NoteView.swift in Sources */,
 				89C26A4423C1B4B000720653 /* NotesCell.swift in Sources */,
 				89C26A2C23C13BCD00720653 /* SplashCell.swift in Sources */,
 				891DE43523C0582B00A2F317 /* AnoteAppUITests.swift in Sources */,
+				89C26A7723C2A32700720653 /* Note.swift in Sources */,
 				89C26A4C23C1B88700720653 /* User.swift in Sources */,
+				89C26A5B23C29CA600720653 /* FolderNotesListView.swift in Sources */,
+				89C26A6723C29F4900720653 /* NotesView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -539,6 +619,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BULGWQVW95;
 				INFOPLIST_FILE = AnoteApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -556,6 +637,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BULGWQVW95;
 				INFOPLIST_FILE = AnoteApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
