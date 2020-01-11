@@ -210,12 +210,15 @@ extension NoteView: UIImagePickerControllerDelegate, UINavigationControllerDeleg
         
         guard let oldImageWidth = textAttachment.image?.size.width else { print("no image size"); return }
         let scaleFactor = oldImageWidth / (textView.frame.width - (textView.frame.width / 2))
+        
+        
         textAttachment.image = UIImage(cgImage: (textAttachment.image?.cgImage)!, scale: scaleFactor, orientation: .up)
+        
         let attributedStringWithImage = NSAttributedString(attachment: textAttachment)
         atributedString.append(attributedStringWithImage)
         atributedString.append(NSAttributedString(string: "\n"))
         textView.attributedText = atributedString
-        
+        print(oldImageWidth, textAttachment.image?.size.width, scaleFactor)
         picker.dismiss(animated: true, completion: nil)
         
     }

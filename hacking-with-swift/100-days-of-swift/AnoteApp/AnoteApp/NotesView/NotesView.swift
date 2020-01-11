@@ -13,11 +13,28 @@ class NotesView: UITableViewController {
     
     var notes = [Note]()
     
-    var numberOfNotes: Int {
-        get {
-            return 0
+    var numberOfNotes: Int = 0 {
+        didSet {
+            for item in toolbarItems! {
+                if item.accessibilityIdentifier == "tabnotas" {
+                    let lb = item.customView as! UILabel
+                    lb.text = "\(numberOfNotes) Notas"
+                }
+            }
         }
     }
+    
+    lazy var labelNotes: UILabel = {
+        let lb = UILabel()
+        lb.text = "\(numberOfNotes) Notas"
+        lb.center = CGPoint(x: view.frame.midX, y: view.frame.height)
+        lb.textAlignment = NSTextAlignment.center
+        lb.textColor = .black
+        lb.font = UIFont.systemFont(ofSize: 10)
+        lb.frame = CGRect(x: 0, y: 0, width: 200, height: 21)
+        return lb
+    }()
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         updateNotes()
@@ -26,6 +43,7 @@ class NotesView: UITableViewController {
         if let savedData = User.shared.getUserNotes() {
             if let savedNotes = try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(savedData) as? [Note] {
                 self.notes = savedNotes
+                numberOfNotes = notes.count
                 tableView.reloadData()
             } else {
                 print("failed to unarchive notes")
@@ -48,18 +66,14 @@ class NotesView: UITableViewController {
     func configureToolbar()  {
         let ok = UIBarButtonItem(barButtonSystemItem: .organize, target: self, action: #selector(handleOkToolbar))
         ok.tintColor = .eggYellow
-        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
-        label.text = "\(numberOfNotes) Notas"
-        label.center = CGPoint(x: view.frame.midX, y: view.frame.height)
-        label.textAlignment = NSTextAlignment.center
-        label.textColor = .black
-        label.font = UIFont.systemFont(ofSize: 10)
         
-        let toolbarTitle = UIBarButtonItem(customView: label)
+        let toolbarTitle = UIBarButtonItem(customView: labelNotes)
+        toolbarTitle.accessibilityIdentifier = "tabnotas"
         let cancel = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(handleComposeButtonToolbar))
         cancel.tintColor = .eggYellow
-        
-        toolbarItems = [ok,toolbarTitle,cancel]
+        let flexible1 = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let flexible2 = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        toolbarItems = [ok, flexible1 ,toolbarTitle, flexible2, cancel]
         
         navigationController?.isToolbarHidden = false
     }
@@ -88,12 +102,20 @@ class NotesView: UITableViewController {
         
         editButton.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.eggYellow, NSAttributedString.Key.shadow: shadow], for: .normal)
         navigationItem.rightBarButtonItem = editButton
+        
+        if #available(iOS 11.0, *) {
+            navigationController?.navigationBar.prefersLargeTitles = true
+        } else {
+            // Fallback on earlier versions
+        }
     }
+    
     @objc func handleBackArrow(_ sender: UIBarButtonItem) {
         NSLog("%@", "backing")
         let controller = FolderNotesListView(style: .plain)
         navigationController?.pushViewController(controller, animated: true)
     }
+    
     @objc func handleEditButton(_ sender: UIBarButtonItem) {
         print("edit")
     }
