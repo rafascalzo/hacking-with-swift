@@ -15,6 +15,8 @@ import CoreLocation
 class ViewController: UIViewController {
     
     @IBOutlet var distanceReading: UILabel!
+    @IBOutlet var deviceInformation: UILabel!
+    @IBOutlet var circularView: CircularView!
     
     var locationManager: CLLocationManager?
     
@@ -48,18 +50,28 @@ class ViewController: UIViewController {
             case .unknown:
                 self.view.backgroundColor = .gray
                 self.distanceReading.text = "UNKNOW"
+                self.circularView.transform = CGAffineTransform(scaleX: 0.001, y: 0.001)
+                self.circularView.cornerRadius = 128 * 0.001
             case .immediate:
                 self.view.backgroundColor = .blue
                 self.distanceReading.text = "RIGHT HERE"
+                self.circularView.transform = CGAffineTransform(scaleX: 1, y: 1)
+                self.circularView.cornerRadius = 128
             case .near:
                 self.view.backgroundColor = .orange
                 self.distanceReading.text = "NEAR"
+                self.circularView.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
+                self.circularView.cornerRadius = 128 * 0.5
             case .far:
                 self.view.backgroundColor = .blue
                 self.distanceReading.text = "FAR"
+                self.circularView.transform = CGAffineTransform(scaleX: 0.25, y: 0.25)
+                self.circularView.cornerRadius = 128 * 0.25
             default:
                 self.view.backgroundColor = .black
                 self.distanceReading.text = "WHOA!"
+                self.circularView.transform = CGAffineTransform(scaleX: 0.001, y: 0.001)
+                self.circularView.cornerRadius = self.circularView.cornerRadius * 0.001
             }
         }) { finished in
             //
@@ -95,7 +107,11 @@ extension ViewController: CLLocationManagerDelegate {
                 ac.addAction(UIAlertAction(title: "Ok", style: .default))
                 present(ac, animated: true)
             }
-            print("first")
+            if #available(iOS 13.0, *) {
+                deviceInformation.text = beacon.uuid.uuidString
+            } else {
+                deviceInformation.text = beacon.proximityUUID.uuidString
+            }
             update(distance: beacon.proximity)
         } else {
             print("unknow")

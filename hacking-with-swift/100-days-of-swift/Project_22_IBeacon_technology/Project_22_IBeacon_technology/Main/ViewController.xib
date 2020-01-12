@@ -9,6 +9,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewController" customModule="Project_22_IBeacon_technology" customModuleProvider="target">
             <connections>
+                <outlet property="circularView" destination="U4F-1R-rxP" id="Lha-7Q-Lro"/>
+                <outlet property="deviceInformation" destination="0nw-ds-zsf" id="j0H-Eb-Ncl"/>
                 <outlet property="distanceReading" destination="cus-NU-sl2" id="Et6-zw-6LW"/>
                 <outlet property="view" destination="iN0-l3-epB" id="yfJ-gt-hqc"/>
             </connections>
@@ -19,17 +21,17 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UNKNOWN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cus-NU-sl2">
-                    <rect key="frame" x="105" y="380" width="204.5" height="48"/>
+                    <rect key="frame" x="105" y="151" width="204.5" height="48"/>
                     <fontDescription key="fontDescription" type="system" pointSize="40"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U4F-1R-rxP" customClass="CircularView" customModule="Project_22_IBeacon_technology" customModuleProvider="target">
-                    <rect key="frame" x="79" y="62" width="256" height="256"/>
+                    <rect key="frame" x="79" y="249" width="256" height="256"/>
                     <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="256" id="gjW-Fb-5eF"/>
-                        <constraint firstAttribute="width" constant="256" id="x0A-5C-nfE"/>
+                        <constraint firstAttribute="height" constant="256" id="Lce-VF-JPI"/>
+                        <constraint firstAttribute="width" constant="256" id="dZO-WE-cB9"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -37,20 +39,21 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Device Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0nw-ds-zsf">
-                    <rect key="frame" x="186" y="33" width="102" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Device Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0nw-ds-zsf">
+                    <rect key="frame" x="137.5" y="100" width="139" height="29"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
             <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="cus-NU-sl2" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="ROp-ck-vxa"/>
-                <constraint firstItem="cus-NU-sl2" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="a7m-ac-ihW"/>
-                <constraint firstItem="cus-NU-sl2" firstAttribute="top" secondItem="U4F-1R-rxP" secondAttribute="bottom" constant="62" id="b2o-Y8-gMH"/>
-                <constraint firstItem="U4F-1R-rxP" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="nbN-bP-6rK"/>
+                <constraint firstItem="0nw-ds-zsf" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="100" id="CFa-71-SHI"/>
+                <constraint firstItem="U4F-1R-rxP" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Ckx-Mj-33v"/>
+                <constraint firstItem="cus-NU-sl2" firstAttribute="top" secondItem="0nw-ds-zsf" secondAttribute="bottom" constant="22" id="Hpc-PJ-eHM"/>
+                <constraint firstItem="0nw-ds-zsf" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Iux-Sh-VmN"/>
+                <constraint firstItem="cus-NU-sl2" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="kDm-Z2-tJV"/>
+                <constraint firstItem="U4F-1R-rxP" firstAttribute="top" secondItem="cus-NU-sl2" secondAttribute="bottom" constant="50" id="tMv-hN-NHI"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
