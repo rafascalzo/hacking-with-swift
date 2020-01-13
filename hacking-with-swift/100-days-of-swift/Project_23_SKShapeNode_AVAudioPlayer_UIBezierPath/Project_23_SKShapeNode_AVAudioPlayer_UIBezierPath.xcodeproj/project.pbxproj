@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8901616223CBBB2100EF57BC /* game-over-arcade.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8901616123CBBB2100EF57BC /* game-over-arcade.wav */; };
+		8901616423CBBC9B00EF57BC /* game-over-evil.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8901616323CBBC9B00EF57BC /* game-over-evil.wav */; };
+		8901616623CBCE4100EF57BC /* monsters-scream.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8901616523CBCE4100EF57BC /* monsters-scream.wav */; };
 		8925FAA823CAB4680083396C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8925FAA723CAB4680083396C /* AppDelegate.swift */; };
 		8925FAAA23CAB4680083396C /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8925FAA923CAB4680083396C /* GameScene.sks */; };
 		8925FAAC23CAB4680083396C /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8925FAAB23CAB4680083396C /* Actions.sks */; };
@@ -15,9 +18,23 @@
 		8925FAB323CAB4680083396C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8925FAB123CAB4680083396C /* Main.storyboard */; };
 		8925FAB523CAB4680083396C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8925FAB423CAB4680083396C /* Assets.xcassets */; };
 		8925FAB823CAB4680083396C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8925FAB623CAB4680083396C /* LaunchScreen.storyboard */; };
+		8925FAC823CAD22F0083396C /* launch.caf in Resources */ = {isa = PBXBuildFile; fileRef = 8925FAC023CAD22D0083396C /* launch.caf */; };
+		8925FAC923CAD22F0083396C /* swoosh1.caf in Resources */ = {isa = PBXBuildFile; fileRef = 8925FAC123CAD22D0083396C /* swoosh1.caf */; };
+		8925FACA23CAD22F0083396C /* sliceBombFuse.caf in Resources */ = {isa = PBXBuildFile; fileRef = 8925FAC223CAD22E0083396C /* sliceBombFuse.caf */; };
+		8925FACB23CAD22F0083396C /* whack.caf in Resources */ = {isa = PBXBuildFile; fileRef = 8925FAC323CAD22E0083396C /* whack.caf */; };
+		8925FACC23CAD22F0083396C /* wrong.caf in Resources */ = {isa = PBXBuildFile; fileRef = 8925FAC423CAD22E0083396C /* wrong.caf */; };
+		8925FACD23CAD22F0083396C /* swoosh2.caf in Resources */ = {isa = PBXBuildFile; fileRef = 8925FAC523CAD22E0083396C /* swoosh2.caf */; };
+		8925FACE23CAD22F0083396C /* explosion.caf in Resources */ = {isa = PBXBuildFile; fileRef = 8925FAC623CAD22E0083396C /* explosion.caf */; };
+		8925FACF23CAD22F0083396C /* swoosh3.caf in Resources */ = {isa = PBXBuildFile; fileRef = 8925FAC723CAD22E0083396C /* swoosh3.caf */; };
+		8925FAD423CAD24A0083396C /* sliceFuse.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8925FAD123CAD24A0083396C /* sliceFuse.sks */; };
+		8925FAD523CAD24A0083396C /* sliceHitBomb.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8925FAD223CAD24A0083396C /* sliceHitBomb.sks */; };
+		8925FAD623CAD24A0083396C /* sliceHitEnemy.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8925FAD323CAD24A0083396C /* sliceHitEnemy.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8901616123CBBB2100EF57BC /* game-over-arcade.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "game-over-arcade.wav"; sourceTree = "<group>"; };
+		8901616323CBBC9B00EF57BC /* game-over-evil.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "game-over-evil.wav"; sourceTree = "<group>"; };
+		8901616523CBCE4100EF57BC /* monsters-scream.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "monsters-scream.wav"; sourceTree = "<group>"; };
 		8925FAA423CAB4670083396C /* Project_23_SKShapeNode_AVAudioPlayer_UIBezierPath.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project_23_SKShapeNode_AVAudioPlayer_UIBezierPath.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8925FAA723CAB4680083396C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8925FAA923CAB4680083396C /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -28,6 +45,17 @@
 		8925FAB423CAB4680083396C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8925FAB723CAB4680083396C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8925FAB923CAB4680083396C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8925FAC023CAD22D0083396C /* launch.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = launch.caf; sourceTree = "<group>"; };
+		8925FAC123CAD22D0083396C /* swoosh1.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = swoosh1.caf; sourceTree = "<group>"; };
+		8925FAC223CAD22E0083396C /* sliceBombFuse.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = sliceBombFuse.caf; sourceTree = "<group>"; };
+		8925FAC323CAD22E0083396C /* whack.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = whack.caf; sourceTree = "<group>"; };
+		8925FAC423CAD22E0083396C /* wrong.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = wrong.caf; sourceTree = "<group>"; };
+		8925FAC523CAD22E0083396C /* swoosh2.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = swoosh2.caf; sourceTree = "<group>"; };
+		8925FAC623CAD22E0083396C /* explosion.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = explosion.caf; sourceTree = "<group>"; };
+		8925FAC723CAD22E0083396C /* swoosh3.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = swoosh3.caf; sourceTree = "<group>"; };
+		8925FAD123CAD24A0083396C /* sliceFuse.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = sliceFuse.sks; sourceTree = "<group>"; };
+		8925FAD223CAD24A0083396C /* sliceHitBomb.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = sliceHitBomb.sks; sourceTree = "<group>"; };
+		8925FAD323CAD24A0083396C /* sliceHitEnemy.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = sliceHitEnemy.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +88,8 @@
 		8925FAA623CAB4670083396C /* Project_23_SKShapeNode_AVAudioPlayer_UIBezierPath */ = {
 			isa = PBXGroup;
 			children = (
+				8925FAD023CAD2340083396C /* Effects */,
+				8925FABF23CAD2020083396C /* Audio Files */,
 				8925FAA723CAB4680083396C /* AppDelegate.swift */,
 				8925FAA923CAB4680083396C /* GameScene.sks */,
 				8925FAAB23CAB4680083396C /* Actions.sks */,
@@ -71,6 +101,34 @@
 				8925FAB923CAB4680083396C /* Info.plist */,
 			);
 			path = Project_23_SKShapeNode_AVAudioPlayer_UIBezierPath;
+			sourceTree = "<group>";
+		};
+		8925FABF23CAD2020083396C /* Audio Files */ = {
+			isa = PBXGroup;
+			children = (
+				8901616323CBBC9B00EF57BC /* game-over-evil.wav */,
+				8901616123CBBB2100EF57BC /* game-over-arcade.wav */,
+				8901616523CBCE4100EF57BC /* monsters-scream.wav */,
+				8925FAC623CAD22E0083396C /* explosion.caf */,
+				8925FAC023CAD22D0083396C /* launch.caf */,
+				8925FAC223CAD22E0083396C /* sliceBombFuse.caf */,
+				8925FAC123CAD22D0083396C /* swoosh1.caf */,
+				8925FAC523CAD22E0083396C /* swoosh2.caf */,
+				8925FAC723CAD22E0083396C /* swoosh3.caf */,
+				8925FAC323CAD22E0083396C /* whack.caf */,
+				8925FAC423CAD22E0083396C /* wrong.caf */,
+			);
+			path = "Audio Files";
+			sourceTree = "<group>";
+		};
+		8925FAD023CAD2340083396C /* Effects */ = {
+			isa = PBXGroup;
+			children = (
+				8925FAD123CAD24A0083396C /* sliceFuse.sks */,
+				8925FAD223CAD24A0083396C /* sliceHitBomb.sks */,
+				8925FAD323CAD24A0083396C /* sliceHitEnemy.sks */,
+			);
+			path = Effects;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -131,10 +189,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8901616223CBBB2100EF57BC /* game-over-arcade.wav in Resources */,
+				8925FAC923CAD22F0083396C /* swoosh1.caf in Resources */,
 				8925FAB323CAB4680083396C /* Main.storyboard in Resources */,
+				8925FACD23CAD22F0083396C /* swoosh2.caf in Resources */,
+				8925FAD623CAD24A0083396C /* sliceHitEnemy.sks in Resources */,
+				8925FACB23CAD22F0083396C /* whack.caf in Resources */,
+				8925FAC823CAD22F0083396C /* launch.caf in Resources */,
+				8925FAD423CAD24A0083396C /* sliceFuse.sks in Resources */,
 				8925FAAA23CAB4680083396C /* GameScene.sks in Resources */,
+				8925FACE23CAD22F0083396C /* explosion.caf in Resources */,
+				8925FACA23CAD22F0083396C /* sliceBombFuse.caf in Resources */,
+				8925FAD523CAD24A0083396C /* sliceHitBomb.sks in Resources */,
 				8925FAB523CAB4680083396C /* Assets.xcassets in Resources */,
 				8925FAB823CAB4680083396C /* LaunchScreen.storyboard in Resources */,
+				8925FACF23CAD22F0083396C /* swoosh3.caf in Resources */,
+				8901616623CBCE4100EF57BC /* monsters-scream.wav in Resources */,
+				8925FACC23CAD22F0083396C /* wrong.caf in Resources */,
+				8901616423CBBC9B00EF57BC /* game-over-evil.wav in Resources */,
 				8925FAAC23CAB4680083396C /* Actions.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -301,7 +373,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "rafascalzo-com.guithub.Project-23-SKShapeNode-AVAudioPlayer-UIBezierPath";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -318,7 +390,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "rafascalzo-com.guithub.Project-23-SKShapeNode-AVAudioPlayer-UIBezierPath";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};

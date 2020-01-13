@@ -2,8 +2,8 @@
 //  AppDelegate.swift
 //  Project_23_SKShapeNode_AVAudioPlayer_UIBezierPath
 //
-//  Created by FulltrackMobile on 11/01/20.
-//  Copyright © 2020 Rafael Scalzo. All rights reserved.
+//  Created by Rafael VSM on 11/01/20.
+//  Copyright © 2020 Rafael VSM. All rights reserved.
 //
 
 import UIKit
