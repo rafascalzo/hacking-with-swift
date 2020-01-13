@@ -27,6 +27,49 @@ class GameScene: SKScene {
             gameScore.text = "Score \(score)"
         }
     }
+    var rightHighAngleXValue:Int {
+        get {
+            return Int.random(in: 8...15)
+        }
+    }
+    
+    var rightLowAngleXValue:Int {
+        get {
+            return Int.random(in: 3...5)
+        }
+    }
+    
+    var leftHighAngleXValue:Int {
+        get {
+            return -Int.random(in: 8...15)
+        }
+    }
+    
+    var leftLowAngleXValue:Int {
+        get {
+            return -Int.random(in: 3...5)
+        }
+    }
+    
+    var topOfTheBomb:CGPoint {
+        get {
+            return CGPoint(x: 76, y: 64)
+        }
+    }
+    
+    private var randomXRange: ClosedRange<Int> = 64...960
+    private var bottomOutOfScreenY:Int = -128
+    
+    private var xOneFourthOfTheScreen:Int = 256
+    private var xHalfOfTheScreen:Int = 512
+    private var xThreeFourthOfTheScreen:Int = 768
+    private var enemyRadius:CGFloat = 64
+    
+    var spinningVelocity:CGFloat {
+        get {
+            return CGFloat.random(in: -3...3)
+        }
+    }
     
     var livesImages = [SKSpriteNode]()
     var lives = 3
@@ -97,7 +140,7 @@ class GameScene: SKScene {
             
             // Create a particle emitter node, position it so that it's at the end of the bomb image's fuse, and add it to the container.
             if let emitter = SKEmitterNode(fileNamed: "sliceFuse") {
-                emitter.position = CGPoint(x: 76, y: 64)
+                emitter.position = topOfTheBomb
                 enemy.addChild(emitter)
             }
             
@@ -112,31 +155,30 @@ class GameScene: SKScene {
         }
         
         // position code goes here
-        let randomPosition = CGPoint(x: Int.random(in: 64...960), y: -128)
+        let randomPosition = CGPoint(x: Int.random(in: randomXRange), y: bottomOutOfScreenY)
         enemy.position = randomPosition
         
         // Create a random angular velocity, which is how fast something should spin.
-        let randomAngularVelocity = CGFloat.random(in: -3...3)
+        let randomAngularVelocity = spinningVelocity
         let randomXVelocity: Int
         
         // Create a random X velocity (how far to move horizontally) that takes into account the enemy's position.
-        if randomPosition.x < 256 {
-            randomXVelocity = Int.random(in: 8...15)
-        } else if randomPosition.x < 512 {
-            randomXVelocity = Int.random(in: 3...5)
-        } else if randomPosition.x < 768 {
-            randomXVelocity = -Int.random(in: 3...5)
+        if randomPosition.x < CGFloat(xOneFourthOfTheScreen) {
+            randomXVelocity = rightHighAngleXValue
+        } else if randomPosition.x < CGFloat(xHalfOfTheScreen) {
+            randomXVelocity = rightLowAngleXValue
+        } else if randomPosition.x < CGFloat(xThreeFourthOfTheScreen) {
+            randomXVelocity = leftLowAngleXValue
         } else {
-            randomXVelocity = -Int.random(in: 8...15)
+            randomXVelocity = leftHighAngleXValue
         }
-        
         // Create a random Y velocity just to make things fly at different speeds.
         
         let randomYVelocity = Int.random(in: 24...32)
         
         // Give all enemies a circular physics body where the collisionBitMask is set to 0 so they don't collide.
         
-        enemy.physicsBody = SKPhysicsBody(circleOfRadius: 64)
+        enemy.physicsBody = SKPhysicsBody(circleOfRadius: enemyRadius)
         enemy.physicsBody?.velocity = CGVector(dx: randomXVelocity * 40, dy: randomYVelocity * 40)
         enemy.physicsBody?.angularVelocity = randomAngularVelocity
         enemy.physicsBody?.collisionBitMask = 0
@@ -273,7 +315,7 @@ class GameScene: SKScene {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let touch = touches.first else { return }
-       
+        
         let location = touch.location(in: self)
         
         let object = nodes(at: location)
@@ -333,13 +375,13 @@ class GameScene: SKScene {
         
         for case let node as SKSpriteNode in nodesAtPoint {
             if node.name == "enemy" || node.name == "monster" {
+                
                 if let emmiter = SKEmitterNode(fileNamed: "sliceHitEnemy") {
                     emmiter.position = node.position
                     addChild(emmiter)
                 }
                 
-                // Clear its node name so that it can't be swiped repeatedly.
-                node.name = ""
+                
                 
                 // Disable the isDynamic of its physics body so that it doesn't carry on falling.
                 node.physicsBody?.isDynamic = false
@@ -352,8 +394,8 @@ class GameScene: SKScene {
                 // After making the penguin scale out and fade out, we should remove it from the scene.
                 let sequence = SKAction.sequence([group, .removeFromParent()])
                 node.run(sequence)
-                
                 if node.name == "monster" {
+                    print("cai no monsterrr")
                     score += 10
                     lives = 3
                     for i in 0 ..< 3 {
@@ -362,7 +404,8 @@ class GameScene: SKScene {
                 } else {
                     score += 1
                 }
-                
+                // Clear its node name so that it can't be swiped repeatedly.
+                node.name = ""
                 
                 // Remove the enemy from our activeEnemies array.
                 if let index = activeEnemies.firstIndex(of: node) {
@@ -398,7 +441,7 @@ class GameScene: SKScene {
     
     func endGame(triggeredByBomb: Bool) {
         if isGameEnded {
-           return
+            return
         }
         
         isGameEnded = true
@@ -496,6 +539,10 @@ class GameScene: SKScene {
                         node.name = ""
                         subtractLife()
                         
+                        node.removeFromParent()
+                        activeEnemies.remove(at: index)
+                    } else if node.name == "monster" {
+                        node.name = ""
                         node.removeFromParent()
                         activeEnemies.remove(at: index)
                     } else if node.name == "bombContainer" {
