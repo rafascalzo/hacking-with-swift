@@ -5,7 +5,14 @@
 //  Created by Rafael VSM on 11/01/20.
 //  Copyright © 2020 Rafael VSM. All rights reserved.
 //
-
+/*
+ for controller in self.navigationController!.viewControllers as Array {
+     if controller.isKind(of: ViewController.self) {
+         self.navigationController!.popToViewController(controller, animated: true)
+         break
+     }
+ }
+ */
 import UIKit
 import CoreLocation
 //This is the Core Location class that lets us configure how we want to be notified about location, and will also deliver location updates to us.

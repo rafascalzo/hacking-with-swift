@@ -395,7 +395,6 @@ class GameScene: SKScene {
                 let sequence = SKAction.sequence([group, .removeFromParent()])
                 node.run(sequence)
                 if node.name == "monster" {
-                    print("cai no monsterrr")
                     score += 10
                     lives = 3
                     for i in 0 ..< 3 {
