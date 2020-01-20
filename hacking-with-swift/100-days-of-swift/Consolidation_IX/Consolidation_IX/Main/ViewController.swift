@@ -27,6 +27,14 @@ class ViewController: UIViewController , CLLocationManagerDelegate {
         locationManager.requestAlwaysAuthorization()
         locationManager.requestLocation()
         locationManager.startMonitoringVisits()
+      
+        5.times({
+            print("we are")
+        })
+        
+        var numbers = [1, 2, 3, 4, 5]
+        numbers.remove(item: 3)
+        print(numbers)
         // Do any additional setup after loading the view.
     }
     

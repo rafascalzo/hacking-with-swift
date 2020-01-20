@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 extension Int {
     
@@ -53,16 +54,16 @@ extension Collection {
         
         
         /* go over all values
-               for val in self {
-                   if val.isMultiple(of: 2) {
-                       // this is even; add one to our even count
-                       even += 1
-                   } else {
-                       // this must be odd; add one to our odd count
-                       odd += 1
-                   }
-               }
-        */
+         for val in self {
+         if val.isMultiple(of: 2) {
+         // this is even; add one to our even count
+         even += 1
+         } else {
+         // this must be odd; add one to our odd count
+         odd += 1
+         }
+         }
+         */
         return (odd,even)
     }
 }
@@ -99,5 +100,49 @@ extension Collection where Element: BinaryInteger {
 extension Array where Element: Comparable {
     func doStuff(with: Element) {
         //
+    }
+}
+
+
+extension UIView {
+    
+    func bounceOut(duration: TimeInterval) {
+        UIView.animate(withDuration: duration) { [unowned self] in
+            self.transform = CGAffineTransform(scaleX: 0.0001, y: 0.0001)
+        }
+    }
+}
+
+extension Int {
+    
+    typealias Closure = () -> Void
+    
+    func times(_ closure: Closure) {
+        // guard self > 0 else { return }
+        // abs = absolute value
+        for _ in 0 ..< abs(self) {
+            closure()
+        }
+    }
+}
+
+extension Array where Element: Comparable {
+    
+    mutating func remove(item: Element) {
+        if let firstIndex = self.firstIndex(of: item) {
+            self.remove(at: firstIndex)
+        }
+    }
+    
+    mutating func removeDuplicated(item: Element) {
+        if let firstIndex = self.firstIndex(of: item) {
+            for (index, item) in self.enumerated().reversed() {
+                if item == self[firstIndex] {
+                    if index != firstIndex {
+                        self.remove(at: index)
+                    }
+                }
+            }
+        }
     }
 }
