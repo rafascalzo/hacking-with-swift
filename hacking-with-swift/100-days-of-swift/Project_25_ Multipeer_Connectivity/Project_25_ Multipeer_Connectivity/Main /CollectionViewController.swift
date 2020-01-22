@@ -47,12 +47,61 @@ class CollectionViewController: UICollectionViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .camera, target: self, action: #selector(importPicture))
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(showConnectionPrompt))
         
+        navigationController?.isToolbarHidden = false
+        let sendText = UIBarButtonItem(barButtonSystemItem: .reply, target: self, action: #selector(handleAddNewMessage))
+        let flexible = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let show = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(showConnectedDevices))
+        let itens: [UIBarButtonItem] = [sendText, flexible, show]
+        setToolbarItems(itens, animated: false)
+        
+        
+        
         // Our peer ID is used to create the session, along with the encryption option of .required to ensure that any data transferred is kept safe.
         mcSession = MCSession(peer: peerID, securityIdentity: nil, encryptionPreference: .required)
         mcSession?.delegate = self
         // Do any additional setup after loading the view.
     }
     
+    @objc func showConnectedDevices() {
+        guard let session = mcSession else { return }
+        
+        if !session.connectedPeers.isEmpty {
+            var devices = ""
+            session.connectedPeers.forEach { (peerId) in
+                devices += "\(peerID.displayName)\n"
+            }
+            let ac = UIAlertController(title: "Connected devices", message: devices, preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            present(ac, animated: true)
+        }
+    }
+    
+    @objc func handleAddNewMessage() {
+        let ac = UIAlertController(title: "Write message", message: nil, preferredStyle: .alert)
+        ac.addTextField { (tf) in
+            tf.textColor = .red
+        }
+        let send = UIAlertAction(title: "send", style: .default) { [weak self] (_) in
+            guard let textField = ac.textFields?.first else { return }
+            guard textField.text != nil, textField.text != "", let text = textField.text else { return }
+            guard let mcSession = self?.mcSession else { return }
+            if mcSession.connectedPeers.count > 0 {
+                if let dataText = text.data(using: .utf8) {
+                    do {
+                        try mcSession.send(dataText, toPeers: mcSession.connectedPeers, with: .reliable)
+                    } catch {
+                        let ac = UIAlertController(title: "Send error", message: error.localizedDescription, preferredStyle: .alert)
+                        ac.addAction(UIAlertAction(title: "Ok", style: .default))
+                        self?.present(ac, animated: true)
+                    }
+                }
+            }
+            
+        }
+        ac.addAction(send)
+        ac.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        present(ac, animated: true)
+    }
     @objc func importPicture() {
         let picker = UIImagePickerController()
         picker.allowsEditing = true
@@ -154,6 +203,7 @@ extension CollectionViewController: UIImagePickerControllerDelegate, UINavigatio
             if let imageData = image.pngData() {
                 // Send it to all peers, ensuring it gets delivered.
                 do {
+                    //Unreliable networking is usually better for live streaming, where getting the latest data there quickly is more important than ensuring old data arrives.
                     try mcSession.send(imageData, toPeers: mcSession.connectedPeers, with: .reliable)
                 } catch {
                     // Show an error message if there's a problem.
@@ -173,13 +223,17 @@ extension CollectionViewController: MCSessionDelegate {
         switch state {
         case .connected:
             print("Connected: \(peerID.displayName)")
-            break
         case .connecting:
             print("Connecting: \(peerID.displayName)")
-            break
         case .notConnected:
+            let ac = UIAlertController(title: "\(peerID.displayName) has disconnected", message: nil, preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            DispatchQueue.main.async { [weak self] in
+                self?.present(ac, animated: true)
+            }
+            
+            
             print("Not connected: \(peerID.displayName)")
-            break
             //There’s one final case in there to handle any unknown cases that crop up in the future. While we could have made one of the other cases handle that using a regular default case, in this project none of them really make sense for whatever might occur in the future so implement a dedicated @unknown default case to handle future cases.
         @unknown default:
             print("Unknown state received: \(peerID.displayName)")
@@ -191,6 +245,10 @@ extension CollectionViewController: MCSessionDelegate {
             if let image = UIImage(data: data) {
                 self?.images.insert(image, at: 0)
                 self?.collectionView.reloadData()
+            } else if let text = String(data: data, encoding: .utf8) {
+                let ac = UIAlertController(title: text, message: nil, preferredStyle: .alert)
+                ac.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                self?.present(ac, animated: true)
             }
         }
     }
