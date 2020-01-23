@@ -54,8 +54,6 @@ class CollectionViewController: UICollectionViewController {
         let itens: [UIBarButtonItem] = [sendText, flexible, show]
         setToolbarItems(itens, animated: false)
         
-        
-        
         // Our peer ID is used to create the session, along with the encryption option of .required to ensure that any data transferred is kept safe.
         mcSession = MCSession(peer: peerID, securityIdentity: nil, encryptionPreference: .required)
         mcSession?.delegate = self
