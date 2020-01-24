@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8978DBD323DA8E75000F33B4 /* level2.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8978DBD223DA8E75000F33B4 /* level2.txt */; };
+		8978DBDB23DA9047000F33B4 /* level1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8978DBDA23DA9047000F33B4 /* level1.txt */; };
 		89BA037423D8F45F00F47C31 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BA037323D8F45F00F47C31 /* AppDelegate.swift */; };
 		89BA037623D8F45F00F47C31 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 89BA037523D8F45F00F47C31 /* GameScene.sks */; };
 		89BA037823D8F45F00F47C31 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 89BA037723D8F45F00F47C31 /* Actions.sks */; };
@@ -15,10 +17,11 @@
 		89BA037F23D8F45F00F47C31 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89BA037D23D8F45F00F47C31 /* Main.storyboard */; };
 		89BA038123D8F46200F47C31 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89BA038023D8F46200F47C31 /* Assets.xcassets */; };
 		89BA038423D8F46200F47C31 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89BA038223D8F46200F47C31 /* LaunchScreen.storyboard */; };
-		89BA038C23D8F53500F47C31 /* level1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 89BA038B23D8F53500F47C31 /* level1.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8978DBD223DA8E75000F33B4 /* level2.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = level2.txt; sourceTree = "<group>"; };
+		8978DBDA23DA9047000F33B4 /* level1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = level1.txt; sourceTree = "<group>"; };
 		89BA037023D8F45F00F47C31 /* Project_26_Accelerometer_Gyroscope.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project_26_Accelerometer_Gyroscope.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89BA037323D8F45F00F47C31 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89BA037523D8F45F00F47C31 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -29,7 +32,6 @@
 		89BA038023D8F46200F47C31 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		89BA038323D8F46200F47C31 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89BA038523D8F46200F47C31 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		89BA038B23D8F53500F47C31 /* level1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = level1.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +64,8 @@
 		89BA037223D8F45F00F47C31 /* Project_26_Accelerometer_Gyroscope */ = {
 			isa = PBXGroup;
 			children = (
-				89BA038B23D8F53500F47C31 /* level1.txt */,
+				8978DBDA23DA9047000F33B4 /* level1.txt */,
+				8978DBD223DA8E75000F33B4 /* level2.txt */,
 				89BA037323D8F45F00F47C31 /* AppDelegate.swift */,
 				89BA037523D8F45F00F47C31 /* GameScene.sks */,
 				89BA037723D8F45F00F47C31 /* Actions.sks */,
@@ -135,9 +138,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				89BA037F23D8F45F00F47C31 /* Main.storyboard in Resources */,
+				8978DBD323DA8E75000F33B4 /* level2.txt in Resources */,
+				8978DBDB23DA9047000F33B4 /* level1.txt in Resources */,
 				89BA037623D8F45F00F47C31 /* GameScene.sks in Resources */,
 				89BA038123D8F46200F47C31 /* Assets.xcassets in Resources */,
-				89BA038C23D8F53500F47C31 /* level1.txt in Resources */,
 				89BA038423D8F46200F47C31 /* LaunchScreen.storyboard in Resources */,
 				89BA037823D8F45F00F47C31 /* Actions.sks in Resources */,
 			);
@@ -297,6 +301,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BULGWQVW95;
 				INFOPLIST_FILE = Project_26_Accelerometer_Gyroscope/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -314,6 +319,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BULGWQVW95;
 				INFOPLIST_FILE = Project_26_Accelerometer_Gyroscope/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

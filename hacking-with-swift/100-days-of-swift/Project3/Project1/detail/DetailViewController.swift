@@ -44,7 +44,7 @@ class DetailViewController: UIViewController {
             print("no found name")
             return
         }
-        share(itens: imageView,imageName)
+        share(itens: image,imageName)
        
     }
 }
