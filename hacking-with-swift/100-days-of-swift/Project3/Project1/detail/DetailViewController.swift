@@ -36,12 +36,25 @@ class DetailViewController: UIViewController {
     }
     @objc func shareTapped(_ action: UIBarButtonItem) {
         
-        guard let image = imageView.image?.jpegData(compressionQuality: 0.8) else {
-            print("no image found")
-            return
+        let renderer = UIGraphicsImageRenderer(size: imageView.bounds.size)
+        
+        let image = renderer.pngData { context in
+            guard let image = imageView.image else { return }
+            image.draw(at: CGPoint(x: imageView.bounds.minX, y: imageView.bounds.minY))
+            let string = "Created by Rafael Scalzo"
+            let attributes: [NSAttributedString.Key: Any] = [.font: UIFont.systemFont(ofSize: 12)]
+            let attributedString = NSAttributedString(string: string, attributes: attributes)
+           
+            attributedString.draw(with: CGRect(origin: CGPoint(x: (imageView.bounds.minX + 30), y: (imageView.bounds.minY + 30)), size: CGSize(width: imageView.bounds.width, height: 30)), options: .usesLineFragmentOrigin, context: nil)
+            
         }
+        imageView.image = UIImage(data: image)
+//        guard let image = imageView.image?.jpegData(compressionQuality: 0.8) else {
+//            print("no image found")
+//            return
+//        }
         guard let imageName = selectedImage else {
-            print("no found name")
+            NSLog("%@ not found", "image name")
             return
         }
         share(itens: image,imageName)
