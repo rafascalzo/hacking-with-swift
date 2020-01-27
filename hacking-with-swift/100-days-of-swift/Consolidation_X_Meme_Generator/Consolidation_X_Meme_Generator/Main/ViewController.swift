@@ -184,7 +184,46 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
             }
             imageView.image = image
         } else {
+            //UIGraphicsBeginImageContextWithOptions(). This starts a new Core Graphics rendering pass. Pass it your size, then a rendering scale, and whether the image should be opaque. If you want to use the current device’s scale, use 0 for the scale parameter.
+            UIGraphicsBeginImageContextWithOptions(CGSize(width: 512, height: 512), false, 0)
             
+            //Just starting a rendering pass doesn’t give you a context. To do that, you need to use UIGraphicsGetCurrentContext(), which returns a CGContext?. It’s optional because of course Swift doesn’t know we just started a rendering pass.
+            if let _ = UIGraphicsGetCurrentContext() {
+                image.draw(in: imageView.bounds)
+                
+                if let title = title {
+                    let shadow = NSShadow()
+                    shadow.shadowOffset = CGSize(width: 3, height: 3)
+                    shadow.shadowColor = UIColor.black
+                    
+                    let paragraphStyle = NSMutableParagraphStyle()
+                    paragraphStyle.alignment = .center
+                    
+                    let attributes: [NSAttributedString.Key: Any] = [.font: UIFont.systemFont(ofSize: 30), .foregroundColor: UIColor.white, .shadow: shadow, .paragraphStyle: paragraphStyle]
+                    let attributedString = NSAttributedString(string: title, attributes: attributes)
+                    attributedString.draw(with: CGRect(origin: CGPoint(x: imageView.bounds.minX, y: imageView.bounds.minY + 5), size: CGSize(width: imageView.bounds.width, height: 50)), options: .usesLineFragmentOrigin, context: nil)
+                }
+                
+                if let subtitle = subtitle {
+                    let shadow = NSShadow()
+                    shadow.shadowOffset = CGSize(width: 3, height: 3)
+                    shadow.shadowColor = UIColor.black
+                    
+                    let paragraphStyle = NSMutableParagraphStyle()
+                    paragraphStyle.alignment = .center
+                    paragraphStyle.lineBreakMode = .byWordWrapping
+                    
+                    let attributes: [NSAttributedString.Key: Any] = [.font: UIFont.systemFont(ofSize: 30), .foregroundColor: UIColor.white, .shadow: shadow, .paragraphStyle: paragraphStyle]
+                    let attributedString = NSAttributedString(string: subtitle, attributes: attributes)
+                    attributedString.draw(with: CGRect(origin: CGPoint(x: imageView.bounds.minX, y: imageView.bounds.maxY - 100), size: CGSize(width: imageView.bounds.width, height: 100)), options: .usesLineFragmentOrigin, context: nil)
+                }
+            }
+            //Call UIGraphicsGetImageFromCurrentImageContext() when you want to extract a UIImage from your rendering. Again, this returns an optional (in this case UIImage?) because Swift doesn’t know a rendering pass is active.
+            if let image = UIGraphicsGetImageFromCurrentImageContext() {
+                imageView.image = image
+            }
+            //Call UIGraphicsEndImageContext() when you’ve finished, to free up the memory from your rendering.
+            UIGraphicsEndImageContext()
         }
     }
 }
