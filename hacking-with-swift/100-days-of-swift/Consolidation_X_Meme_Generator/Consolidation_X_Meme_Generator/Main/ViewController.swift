@@ -153,7 +153,10 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
             
             let image = renderer.image { context in
                
+                
                 image.draw(in: imageView.bounds)
+                let logo = UIImage(named: "brazz")!
+                logo.draw(in: CGRect(origin: CGPoint(x: imageView.bounds.minX + 20, y: imageView.bounds.maxY - 15), size: CGSize(width: 200, height: 50)))
                 
                 if let title = title {
                     let shadow = NSShadow()
@@ -190,7 +193,8 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
             //Just starting a rendering pass doesn’t give you a context. To do that, you need to use UIGraphicsGetCurrentContext(), which returns a CGContext?. It’s optional because of course Swift doesn’t know we just started a rendering pass.
             if let _ = UIGraphicsGetCurrentContext() {
                 image.draw(in: imageView.bounds)
-                
+                let logo = UIImage(named: "brazz")!
+                               logo.draw(in: CGRect(origin: CGPoint(x: imageView.bounds.midX, y: imageView.bounds.midY), size: CGSize(width: 300, height: 50)))
                 if let title = title {
                     let shadow = NSShadow()
                     shadow.shadowOffset = CGSize(width: 3, height: 3)
