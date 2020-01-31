@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 extension UIView {
+    
   public class func instantiateViewFromNib<T>(_ nibName: String, inBundle bundle: Bundle = Bundle.main) -> T? {
     if let objects = bundle.loadNibNamed(nibName, owner: nil) {
       for object in objects {
@@ -26,6 +27,7 @@ extension UICollectionViewCell {
     
 }
 class CollectionViewCell: UIView {
+    
 var cell: PersonCell!
 
     required init?(coder aDecoder: NSCoder) {

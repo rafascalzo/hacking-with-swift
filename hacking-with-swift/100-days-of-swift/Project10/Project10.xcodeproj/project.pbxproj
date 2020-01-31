@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		89DCE84E23E233DC00DF5757 /* KeychainWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DCE84C23E233DC00DF5757 /* KeychainWrapper.swift */; };
+		89DCE84F23E233DC00DF5757 /* KeychainItemAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DCE84D23E233DC00DF5757 /* KeychainItemAccessibility.swift */; };
 		AF1289BC236DF4D5003973BD /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1289BB236DF4D5003973BD /* Extensions.swift */; };
 		AF1289BF236E1C5E003973BD /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1289BD236E1C5E003973BD /* CollectionCell.swift */; };
 		AF1289C0236E1C5E003973BD /* PersonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF1289BE236E1C5E003973BD /* PersonCell.xib */; };
@@ -20,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		89DCE84C23E233DC00DF5757 /* KeychainWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainWrapper.swift; sourceTree = "<group>"; };
+		89DCE84D23E233DC00DF5757 /* KeychainItemAccessibility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainItemAccessibility.swift; sourceTree = "<group>"; };
 		AF1289BB236DF4D5003973BD /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		AF1289BD236E1C5E003973BD /* CollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCell.swift; sourceTree = "<group>"; };
 		AF1289BE236E1C5E003973BD /* PersonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonCell.xib; sourceTree = "<group>"; };
@@ -77,6 +81,8 @@
 		AF6D5AEA2367E51A00305908 /* Project10 */ = {
 			isa = PBXGroup;
 			children = (
+				89DCE84D23E233DC00DF5757 /* KeychainItemAccessibility.swift */,
+				89DCE84C23E233DC00DF5757 /* KeychainWrapper.swift */,
 				AF118378236A8E88004C759C /* view */,
 				AF6D5AEB2367E51A00305908 /* AppDelegate.swift */,
 				AF6D5AED2367E51A00305908 /* SceneDelegate.swift */,
@@ -162,7 +168,9 @@
 				AF1289C6236E5989003973BD /* Person.swift in Sources */,
 				AF1289BC236DF4D5003973BD /* Extensions.swift in Sources */,
 				AF6D5AEC2367E51A00305908 /* AppDelegate.swift in Sources */,
+				89DCE84E23E233DC00DF5757 /* KeychainWrapper.swift in Sources */,
 				AF6D5AEE2367E51A00305908 /* SceneDelegate.swift in Sources */,
+				89DCE84F23E233DC00DF5757 /* KeychainItemAccessibility.swift in Sources */,
 				AF1289BF236E1C5E003973BD /* CollectionCell.swift in Sources */,
 				AF1289C3236E2923003973BD /* CollectionViewController.swift in Sources */,
 			);

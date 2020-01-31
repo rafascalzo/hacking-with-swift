@@ -145,8 +145,6 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
         picker.dismiss(animated: true)
     }
     
-
-    
     func addMeme(image: UIImage, title: String? = nil, subtitle: String? = nil) {
         if #available(iOS 10.0, *) {
             let renderer = UIGraphicsImageRenderer(size: imageView.bounds.size)
