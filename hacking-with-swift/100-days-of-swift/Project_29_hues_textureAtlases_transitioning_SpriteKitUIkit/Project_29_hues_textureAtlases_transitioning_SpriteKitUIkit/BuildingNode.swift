@@ -69,7 +69,6 @@ class BuildingNode: SKSpriteNode {
                     } else {
                         lightOffColor.setFill()
                     }
-                    
                     ctx.fill(CGRect(x: col, y: row, width: 15, height: 20))
                 }
             }
@@ -86,5 +85,39 @@ class BuildingNode: SKSpriteNode {
         physicsBody?.categoryBitMask = CollisionTypes.building.rawValue
         physicsBody?.contactTestBitMask = CollisionTypes.banana.rawValue
     }
+    
+    /* 
+     And now for the part where we handle destroying chunks of the building. With your current knowledge of Core Graphics, this is something you can do with only one new thing: blend modes. When you draw anything to a Core Graphics context, you can set how it should be drawn. For example, should it be be drawn normally, or should it add to what's there to create a combination?
 
+     Core Graphics has quite a few blend modes that might look similar, but we're going to use one called .clear, which means "delete whatever is there already." When combined with the fact that we already have a property called currentImage you might be able to see how our destructible terrain technique will work!
+
+     Put simply, when we create the building we save its UIImage to a property of the BuildingNode class. When we want to destroy part of the building, we draw that image into a new context, draw an ellipse using .clear to blast a hole, then save that back to our currentImage property and update our sprite's texture.
+     
+     Figure out where the building was hit. Remember: SpriteKit's positions things from the center and Core Graphics from the bottom left!
+     Create a new Core Graphics context the size of our current sprite.
+     Draw our current building image into the context. This will be the full building to begin with, but it will change when hit.
+     Create an ellipse at the collision point. The exact co-ordinates will be 32 points up and to the left of the collision, then 64x64 in size - an ellipse centered on the impact point.
+     Set the blend mode .clear then draw the ellipse, literally cutting an ellipse out of our image.
+     Convert the contents of the Core Graphics context back to a UIImage, which is saved in the currentImage property for next time we’re hit, and used to update our building texture.
+     Call configurePhysics() again so that SpriteKit will recalculate the per-pixel physics for our damaged building.
+ */
+    func hit(at point: CGPoint) {
+        let convertedPoint = CGPoint(x: point.x + size.width / 2.0, y: abs(point.y - (size.height / 2.0)))
+        
+        let renderer = UIGraphicsImageRenderer(size: size)
+        
+        let image = renderer.image { context in
+            let ctx = context.cgContext
+            
+            currentImage.draw(at: .zero)
+            
+            ctx.addEllipse(in: CGRect(x: convertedPoint.x - 32, y: convertedPoint.y - 32, width: 64, height: 64))
+            ctx.setBlendMode(.clear)
+            ctx.drawPath(using: .fill)
+        }
+        
+        texture = SKTexture(image: image)
+        currentImage = image
+        configurePhysics()
+    }
 }

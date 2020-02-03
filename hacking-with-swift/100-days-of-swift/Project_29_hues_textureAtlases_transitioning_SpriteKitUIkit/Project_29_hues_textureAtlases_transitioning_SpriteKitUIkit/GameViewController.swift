@@ -20,21 +20,40 @@ class GameViewController: UIViewController {
     @IBOutlet var velocityLabel: UILabel!
     @IBOutlet var launchButton: UIButton!
     @IBOutlet var playerNumber: UILabel!
+    @IBOutlet var scoreLabel: UILabel!
+    @IBOutlet var windImageView: UIImageView!
+    @IBOutlet var windLabel: UILabel!
+    
+    var player1Score:Int = 0 {
+        didSet {
+            scoreLabel.text = "Score: \(player1Score) X \(player2Score)"
+        }
+    }
+    
+    var player2Score: Int = 0 {
+        didSet {
+            scoreLabel.text = "Score: \(player1Score) x \(player2Score)"
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         angleChanged(angleSlider as Any)
         velocityChanged(velocitySlider as Any)
+        let image = UIImage(named: "wind")?.withRenderingMode(.alwaysTemplate)
+        windImageView.image = image
         if let view = self.view as! SKView? {
             // Load the SKScene from 'GameScene.sks'
             if let scene = SKScene(fileNamed: "GameScene") {
                 // Set the scale mode to scale to fit the window
                 scene.scaleMode = .aspectFill
                 
+                // -->
                 currentGame = scene as? GameScene
                 currentGame.viewcontroller = self
                 // Present the scene
                 view.presentScene(scene)
+                // <--
             }
             
             view.ignoresSiblingOrder = true
@@ -42,8 +61,9 @@ class GameViewController: UIViewController {
             view.showsFPS = true
             view.showsNodeCount = true
         }
+        
     }
-
+    
     override var shouldAutorotate: Bool {
         return true
     }
@@ -69,6 +89,7 @@ class GameViewController: UIViewController {
     }
     
     @IBAction func launch(_ sender: Any) {
+        
         angleSlider.isHidden = true
         angleLabel.isHidden = true
         
@@ -81,7 +102,6 @@ class GameViewController: UIViewController {
     }
     
     func activatePlayer(number: Int) {
-        
         if number == 1 {
             playerNumber.text = "<<< PLAYER 1"
         } else {
@@ -95,5 +115,37 @@ class GameViewController: UIViewController {
         velocityLabel.isHidden = false
 
         launchButton.isHidden = false
+    }
+    
+    func windChange(gravity: Double) {
+        let force = gravity * 100
+        if gravity < 0.0 {
+            windLabel.text = String(format:"East %.2f", CGFloat(abs(force)))
+            if gravity < -0.7 {
+                // strong
+                windImageView.tintColor = .red
+            } else if gravity > -0.7 && gravity < -0.3 {
+                // medium
+                windImageView.tintColor = .yellow
+            } else {
+                // soft
+                windImageView.tintColor = .green
+            }
+        } else if gravity > 0.0 {
+            windLabel.text = String(format:"Weast %.2f", CGFloat(abs(force)))
+            if gravity > 0.7 {
+                // strong
+                windImageView.tintColor = .red
+            } else if gravity < 0.7 && gravity > 0.3 {
+                // medium
+                windImageView.tintColor = .yellow
+            } else {
+                // soft
+                windImageView.tintColor = .green
+            }
+        } else {
+            windLabel.text = String(format:"Sunny %.2f", CGFloat(abs(force)))
+            windImageView.tintColor = .blue
+        }
     }
 }

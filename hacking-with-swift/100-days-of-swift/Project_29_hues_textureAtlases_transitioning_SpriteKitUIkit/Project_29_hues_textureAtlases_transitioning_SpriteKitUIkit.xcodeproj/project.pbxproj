@@ -16,6 +16,8 @@
 		890553FA23E3A2D90058F758 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 890553F923E3A2D90058F758 /* Assets.xcassets */; };
 		890553FD23E3A2D90058F758 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 890553FB23E3A2D90058F758 /* LaunchScreen.storyboard */; };
 		8905540523E3A4EC0058F758 /* BuildingNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8905540423E3A4EC0058F758 /* BuildingNode.swift */; };
+		8915D0A523E67E39008F2A73 /* hitBuilding.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8915D0A323E67E38008F2A73 /* hitBuilding.sks */; };
+		8915D0A623E67E39008F2A73 /* hitPlayer.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8915D0A423E67E39008F2A73 /* hitPlayer.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		890553FC23E3A2D90058F758 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		890553FE23E3A2D90058F758 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8905540423E3A4EC0058F758 /* BuildingNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingNode.swift; sourceTree = "<group>"; };
+		8915D0A323E67E38008F2A73 /* hitBuilding.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = hitBuilding.sks; sourceTree = "<group>"; };
+		8915D0A423E67E39008F2A73 /* hitPlayer.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = hitPlayer.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +66,8 @@
 		890553EB23E3A2D70058F758 /* Project_29_hues_textureAtlases_transitioning_SpriteKitUIkit */ = {
 			isa = PBXGroup;
 			children = (
+				8915D0A323E67E38008F2A73 /* hitBuilding.sks */,
+				8915D0A423E67E39008F2A73 /* hitPlayer.sks */,
 				890553EC23E3A2D70058F758 /* AppDelegate.swift */,
 				890553EE23E3A2D70058F758 /* GameScene.sks */,
 				890553F023E3A2D70058F758 /* Actions.sks */,
@@ -134,11 +140,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8915D0A623E67E39008F2A73 /* hitPlayer.sks in Resources */,
 				890553F823E3A2D70058F758 /* Main.storyboard in Resources */,
 				890553EF23E3A2D70058F758 /* GameScene.sks in Resources */,
 				890553FA23E3A2D90058F758 /* Assets.xcassets in Resources */,
 				890553FD23E3A2D90058F758 /* LaunchScreen.storyboard in Resources */,
 				890553F123E3A2D70058F758 /* Actions.sks in Resources */,
+				8915D0A523E67E39008F2A73 /* hitBuilding.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,7 +313,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "rafascalzo-com.guithub.Project-29-hues-textureAtlases-transitioning-SpriteKitUIkit";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -322,7 +330,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "rafascalzo-com.guithub.Project-29-hues-textureAtlases-transitioning-SpriteKitUIkit";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};
