@@ -134,8 +134,6 @@ class ViewController: UIViewController {
                 letterButtons.append(letterButton)
             }
         }
-        
-        
     }
 
     override func viewDidLoad() {
