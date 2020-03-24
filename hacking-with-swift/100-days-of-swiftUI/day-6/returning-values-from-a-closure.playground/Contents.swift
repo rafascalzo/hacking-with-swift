@@ -16,3 +16,22 @@ let drivingWithReturn = { (place: String) -> String in
 
 let message = drivingWithReturn("London")
 print(message)
+
+
+let canIPlayWith = { (word: String, power: Int) -> String in
+    switch power {
+    case 0..<2:
+        return "Can i play with \(word) ??"
+    case 2..<4:
+        return "Can i play with \(word) ????"
+    case 4..<6:
+    return "Can i play with \(word) ??????"
+    case 6..<8:
+        return "Can i play with \(word) ????????"
+    default:
+    return "Can i play with \(word) ??????????!!!"
+    }
+}
+
+let can = canIPlayWith("Madness", 2)
+print(can)

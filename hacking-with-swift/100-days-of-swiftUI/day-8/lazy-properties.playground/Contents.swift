@@ -42,3 +42,23 @@ var ed = Person(name: "Ed")
 //So, if you want to see the “Creating family tree!” message, you need to access the property at least once:
 
 ed.familyTree
+
+struct MerryChristmas {
+    init() {
+        print("Hohoho Merry Xmas!!")
+    }
+}
+
+struct Natal {
+    var date: Date
+    lazy var xmas = MerryChristmas()
+    
+    init(_ date: Date) {
+        self.date = date
+    }
+}
+
+var natal = Natal(Date())
+
+// late init
+natal.xmas

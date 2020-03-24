@@ -27,4 +27,7 @@ struct Student {
 }
 //Because the classSize struct belongs to the struct itself rather than instances of the struct, we need to read it using Student.classSize:
 
+let stud = Student(name: "Rofoood")
+let studi = Student(name: "fooras")
+let st = Student(name: "Porwea")
 print(Student.classSize)

@@ -5,7 +5,22 @@ import UIKit
 //First we need to define an enum that describes the errors we can throw. These must always be based on Swift’s existing Error type. We’re going to write a function that checks whether a password is good, so we’ll throw an error if the user tries an obvious password:
 
 enum PasswordError: Error {
+    
     case obvious
+    
+    var localizedDescription: String {
+        switch self {
+        case .obvious:
+            return "Password Is Obvious"
+        }
+    }
+    
+    func localized() -> String {
+        switch self {
+        case .obvious:
+            return "Password is obvious"
+        }
+    }
 }
 //Now we’ll write a checkPassword() function that will throw that error if something goes wrong. This means using the throws keyword before the function’s return value, then using throw PasswordError.obvious if their password is “password”.
 //
@@ -17,4 +32,11 @@ func checkPassword(_ password: String) throws -> Bool {
     }
     
     return true
+}
+
+do {
+    try checkPassword("password")
+} catch let error as PasswordError {
+    print(error.localizedDescription)
+    print(error.localized())
 }

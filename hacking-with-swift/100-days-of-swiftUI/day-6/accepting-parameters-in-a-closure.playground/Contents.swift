@@ -12,3 +12,13 @@ let driving = { (place: String) in
 //One of the differences between functions and closures is that you don’t use parameter labels when running closures. So, to call driving() now we’d write this:
 
 driving("London")
+
+let canIPlayWithMadness = { (bool: Bool) in
+    switch bool {
+    case true :
+        print("Yes")
+    case false:
+        print("No")
+    }
+}
+canIPlayWithMadness(true)

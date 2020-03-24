@@ -31,3 +31,18 @@ let result = travel()
 result("London")
 result("London")
 result("London")
+
+
+func review() -> (String) -> String {
+    var count = 0
+    return {
+        count += 1
+        return "notaaa \($0) irraaa \(count)"
+    }
+}
+
+let reviews = review()
+
+print(reviews("5"))
+print(reviews("6"))
+print(reviews("7"))

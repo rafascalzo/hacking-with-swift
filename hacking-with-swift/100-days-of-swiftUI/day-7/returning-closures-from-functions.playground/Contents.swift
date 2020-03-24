@@ -20,3 +20,18 @@ result("London")
 //It’s technically allowable – although really not recommended! – to call the return value from travel() directly:
 
 let result2 = travel()("London")
+
+func review() -> (String, Int) -> Void {
+    return { (first: String, second: Int) in
+        print("String is \(first) and number is \(second)")
+    }
+}
+
+let reviews = review()
+
+reviews("rwar", 4)
+reviews("test", 3)
+reviews("hahaha", 43)
+
+let reviews1 = review()("String", 40)
+

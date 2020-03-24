@@ -27,3 +27,19 @@ class Person {
 //And now for the deinitializer. This will be called when the Person instance is being destroyed:
 
 
+class Xmas {
+    var santaName: String
+    
+    init(_ santaName: String) {
+        self.santaName = santaName
+        print("\(self.santaName) merry Xmas")
+    }
+    
+    deinit {
+        print("See you later \(santaName)")
+    }
+}
+
+for _ in 0..<10 {
+    let _ = Xmas("GoldNoel")
+}

@@ -23,3 +23,19 @@ print(singer.name)
 struct Singer1 {
     var name = "Taylor Swift"
 }
+
+class Mutable {
+    var myName: String
+    
+    init(_ myName: String) {
+        self.myName = myName
+    }
+    
+}
+
+var my = Mutable("Rafael")
+var myCopy = my
+
+myCopy.myName = "Papaya"
+
+print(my.myName)

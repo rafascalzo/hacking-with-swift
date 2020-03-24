@@ -12,3 +12,18 @@ let set = Set(["aardvark", "astronaut", "azalea"])
 
 let pythons = ["Eric", "Graham", "John", "Michael", "Terry", "Terry"]
 //Arrays are by far the most common of the three types.
+
+
+struct Start: Hashable, Equatable {
+    let code: String
+    let translate: String
+}
+
+enum Street: Int {
+    case _0
+    case _1 = 2
+}
+
+
+
+let itens = Set([Start(code: "0", translate: "vish"),Start(code: "0", translate: "vish")])

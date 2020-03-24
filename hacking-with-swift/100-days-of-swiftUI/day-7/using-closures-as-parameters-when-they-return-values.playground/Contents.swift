@@ -15,3 +15,14 @@ func travel(action: (String) -> String) {
 travel { (place: String) -> String in
     return "I'm going to \(place) in my car"
 }
+
+func review(description: String , action: (String) -> String) {
+    let description = action(description)
+    print("Description is \(description)")
+}
+
+review(description: "Day 13232") { (description: String) -> String in
+    return "hhasduhsa \(description)"
+}
+
+

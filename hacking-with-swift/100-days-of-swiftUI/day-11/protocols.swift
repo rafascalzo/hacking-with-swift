@@ -23,3 +23,22 @@ struct User: Identifiable {
 func displayID(thing: Identifiable) {
     print("My ID is \(thing.id)")
 }
+
+protocol Rafael {
+    var isBusy: Bool { get set }
+    
+    func printMyName()
+}
+
+struct Rafa: Rafael {
+    //var isBusy : Bool
+    func printMyName() {
+        print("My name is"")
+    }
+}
+
+func printRafa(thing: Rafael) {
+    thing.printMyName
+}
+
+printRafa(Rafael())

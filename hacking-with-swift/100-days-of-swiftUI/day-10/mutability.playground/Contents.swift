@@ -18,3 +18,26 @@ print(taylor.name)
 class Singer1 {
     let name = "Taylor Swift"
 }
+
+struct Ohhhh {
+    var test = "Vish"
+    init() {
+        print("OOOOOHHHHHHHHhhh")
+    }
+}
+
+let oh = Ohhhh()
+
+//oh.test = "ue"
+
+class Eeeee {
+    var e = "EEEE"
+    
+    init() {
+        print(e)
+    }
+}
+
+let e = Eeeee()
+
+e.e = "Aeeeeeee"

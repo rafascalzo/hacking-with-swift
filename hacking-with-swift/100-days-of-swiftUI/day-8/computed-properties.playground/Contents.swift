@@ -27,3 +27,19 @@ struct Sport {
 
 let chessBoxing = Sport(name: "Chessboxing", isOlympicSport: false)
 print(chessBoxing.olympicStatus)
+
+struct Guitar {
+    var model: String
+    var isFender: Bool
+    
+    var fenderStstus: String {
+        if isFender {
+            return "\(model) is a fender guitar"
+        } else {
+            return "\(model) isn't a fender guitar"
+        }
+    }
+}
+
+let stratocaster = Guitar(model: "Stratocaster", isFender: true)
+print(stratocaster.fenderStstus)

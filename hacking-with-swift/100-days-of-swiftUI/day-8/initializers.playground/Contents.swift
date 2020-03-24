@@ -25,4 +25,6 @@ struct User {
 //Now our initializer accepts no parameters, we need to create the struct like this:
 
 var user1 = User()
-user1	.username = "twostraws"
+print(user1.username)
+user1.username = "rafaekscakzi"
+print(user1.username)

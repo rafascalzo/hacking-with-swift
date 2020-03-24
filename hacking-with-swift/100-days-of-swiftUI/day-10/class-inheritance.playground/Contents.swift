@@ -28,3 +28,39 @@ class Poodle1: Dog {
     }
 }
 //For safety reasons, Swift always makes you call super.init() from child classes – just in case the parent class does some important work when it’s created.
+
+
+class Science {
+    var topic: String
+    
+    init(_ topic: String) {
+        self.topic = topic
+    }
+    
+    func myTopic() -> String {
+        return "My topic is: \(topic)"
+    }
+}
+
+class Math: Science {
+    
+    var number: Double
+    
+    init(_ topic: String,_ number: Double) {
+        self.number = number
+        super.init(topic)
+    }
+    
+    func multiplyBy(_ multiplier: Double) -> Double {
+        return multiplier * number
+    }
+    
+    override func myTopic() -> String {
+        return "Ayayayayyy " + topic
+    }
+}
+
+let math = Math("Math", 3)
+
+print(math.myTopic())
+print(math.multiplyBy(3.5))

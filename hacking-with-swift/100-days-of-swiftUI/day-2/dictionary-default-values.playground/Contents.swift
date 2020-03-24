@@ -17,3 +17,22 @@ favoriteIceCream["Charlotte"]
 //We can fix this by giving the dictionary a default value of “Unknown”, so that when no ice cream is found for Charlotte we get back “Unknown” rather than nil:
 
 favoriteIceCream["Charlotte", default: "Unknown"]
+
+extension String {
+ static let DEFAULT_STRING_VALUE = "Unknown"
+}
+
+extension Int {
+    static let DEFAULT_INT_VALUE = 999
+}
+
+let things = [
+    "iniciar": 0,
+    "finalizar":1,
+    "parada":3
+]
+
+things["iniciare", default: Int.DEFAULT_INT_VALUE]
+
+
+

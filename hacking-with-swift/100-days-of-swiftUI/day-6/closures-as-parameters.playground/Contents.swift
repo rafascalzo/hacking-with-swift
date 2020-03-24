@@ -19,3 +19,25 @@ func travel(action: () -> Void) {
 //We can now call that using our driving closure, like this:
 
 travel(action: driving)
+
+
+let newAction = { () -> String in
+   return "is a new action from Garça"
+}
+
+func whatIsNewAction(action: () -> String) {
+    print("James, where from this your new action?")
+    let str = action()
+    print("Oh sir, my action " + str)
+}
+whatIsNewAction(action: newAction)
+
+let another = {
+    return "is from another place"
+}
+
+whatIsNewAction(action: another)
+
+
+
+

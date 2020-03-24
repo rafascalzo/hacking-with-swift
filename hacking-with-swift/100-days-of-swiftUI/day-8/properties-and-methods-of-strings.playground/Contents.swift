@@ -18,3 +18,21 @@ print(string.uppercased())
 
 print(string.sorted())
 //Strings have lots more properties and methods – try typing string. to bring up Xcode’s code completion options.
+
+let rafael = "Rafael Varanelli Scalzo Moraes"
+
+print(rafael.components(separatedBy: " "))
+
+print(rafael.distance(from: rafael.startIndex, to: rafael.endIndex))
+
+print(rafael.localizedCapitalized)
+
+let str = NSLocalizedString(rafael, tableName: nil, bundle: .main, value: rafael, comment: "")
+
+print(rafael.sorted())
+
+print(rafael.trimmingCharacters(in: .whitespaces).sorted())
+
+let index = rafael.firstIndex(of: "S")!
+
+print(rafael.distance(from: rafael.startIndex, to: index)) 

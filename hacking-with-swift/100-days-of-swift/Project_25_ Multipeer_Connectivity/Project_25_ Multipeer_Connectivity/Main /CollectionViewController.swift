@@ -2,7 +2,7 @@
 //  CollectionViewController.swift
 //  Project_25_ Multipeer_Connectivity
 //
-//  Created by FulltrackMobile on 20/01/20.
+//  Created by Rafael VSM on 20/01/20.
 //  Copyright © 2020 Rafael Scalzo. All rights reserved.
 //
 
@@ -94,7 +94,6 @@ class CollectionViewController: UICollectionViewController {
                     }
                 }
             }
-            
         }
         ac.addAction(send)
         ac.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))

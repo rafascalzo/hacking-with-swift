@@ -17,3 +17,23 @@ struct City {
 
 let london = City(population: 9_000_000)
 london.collectTaxes()
+
+struct Math {
+    
+    var number: Int
+    
+    func square() -> Int {
+        return number * number
+    }
+    
+    mutating func subtract(_ num: inout Int) {
+        let old = number
+        number -= num
+        num -= old
+    }
+}
+
+var math = Math(number: 10)
+var number = 56
+math.subtract(&number)
+print(number)

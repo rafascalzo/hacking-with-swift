@@ -14,3 +14,10 @@ func square(number: Int) -> Int {
 let result = square(number: 8)
 print(result)
 //If you need to return multiple values, this is a perfect example of when to use tuples.
+
+func returnMultiplesValues() -> (Int, Int, Int) {
+    return (10, 30, 60)
+}
+
+let numbers = returnMultiplesValues()
+print(numbers.2)

@@ -35,3 +35,13 @@ travel { place in
 travel {
     "I'm going to \($0) in my car"
 }
+
+func review(_ string: String , action: (String) -> String) {
+    let actionString = action(string)
+    print("Action is " + actionString)
+}
+
+review("Carai viado") {
+   "\($0)"
+}
+

@@ -13,3 +13,12 @@ func doubleInPlace(number: inout Int) {
 
 var myNum = 10
 doubleInPlace(number: &myNum)
+
+
+func changeMy(name: inout String) {
+    name = "Your name is: " + name
+}
+var myName = "Rafael"
+changeMy(name: &myName)
+
+print(myName)
