@@ -122,7 +122,26 @@
  
  alerts will show when your state are true! and keybinding will set to false when dismiss
  */
+
 import SwiftUI
+
+struct FlagImage: ViewModifier {
+    
+    var imageName: String
+    func body(content: Content) -> some View {
+            Image(imageName)
+            .renderingMode(.original)
+            .clipShape(Capsule())
+            .overlay(Capsule().stroke(Color.black,lineWidth: 1))
+            .shadow(color: .black, radius: 2)
+    }
+}
+
+extension View {
+    func flagImage(named name: String) -> some View {
+        self.modifier(FlagImage(imageName: name))
+    }
+}
 
 struct ContentView: View {
     @State var countries = ["Estonia", "France", "Germany", "Ireland", "Italy", "Nigeria", "Poland", "Russia", "Spain", "UK", "US"].shuffled()
@@ -130,6 +149,8 @@ struct ContentView: View {
     
     @State private var showingScore = false
     @State private var scoreTitle = ""
+    @State private var scoreMessage = ""
+    @State private var score = 0
     
     var body: some View {
         ZStack {
@@ -151,15 +172,15 @@ struct ContentView: View {
                         self.flagTapped(number)
                     }) {
                         Image(self.countries[number])
-                            .renderingMode(.original)
-                            .clipShape(Capsule())
-                            .overlay(Capsule().stroke(Color.black,lineWidth: 1))
-                            .shadow(color: .black, radius: 2)
+                        .flagImage(named: self.countries[number])
                     }
                 }
                 Spacer()
+                Text("Your Score is: \(score) points")
+                    .foregroundColor(.white)
+                Spacer()
                     .alert(isPresented: $showingScore) { () -> Alert in
-                        Alert(title: Text(scoreTitle), message: Text("Yout score is???"), dismissButton: .default(Text("Ok"), action: {
+                        Alert(title: Text(scoreTitle), message: Text(scoreMessage), dismissButton: .default(Text("Ok"), action: {
                             self.askQuestion()
                         }))
                 }
@@ -168,10 +189,13 @@ struct ContentView: View {
     }
     
     func flagTapped(_ number: Int) {
+        scoreMessage = ""
         if number == correctAnswer {
             scoreTitle = "Correct"
+            score += 1
         } else {
             scoreTitle = "Wrong"
+            scoreMessage = "That's the flag of \(countries[number])"
         }
         
         showingScore = true

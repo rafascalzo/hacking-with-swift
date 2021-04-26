@@ -41,11 +41,14 @@ struct ContentView: View {
     @State private var numberOfPeople = "2"
     @State private var tipPercentage = 2
     
+    var nothing: Bool {
+        return self.tipPercentages[self.tipPercentage] == 0
+    }
+    
     var totalPerPerson: Double {
         let peopleCount = Double(Int(numberOfPeople) ?? 0)
         let tipSelection = Double(tipPercentages[tipPercentage])
         let orderAmount = Double(checkAmount) ?? 0
-        
         let tipValue = orderAmount / 100 * tipSelection
         let grandTotal = orderAmount + tipValue
         return grandTotal / peopleCount
@@ -60,6 +63,7 @@ struct ContentView: View {
     }
     
     var body: some View {
+        
         NavigationView {
             Form {
                 Section {
@@ -81,6 +85,7 @@ struct ContentView: View {
                 }
                 Section(header: Text("Total amount for the check")) {
                     Text("\(totalAmountForCheck, specifier: "%.2f")")
+                        .foregroundColor( nothing ? .red : .black)
                 }
             }
         .navigationBarTitle("We Split")
